@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1"/>
+<title>Insert title here</title>
+</head>
+<body>
+<form action="#" th:action="@{/Admin/addProducto}" th:object="${produ}"
+		method="post">
+		<input type="hidden" th:field="*{idProdcutos}"/> 
+		<p>
+			Nombre:<input type="text" th:field="*{nombreProducto}" />
+		</p>
+		<p>
+			Precio:<input type="text" th:field="*{precio}" />
+		</p>
+		<p>
+			Descripcion:<input type="text" th:field="*{descripcion}" />
+		</p>
+		<p>
+			Garantia:<input type="text" th:field="*{tiempoGarantia}" />
+		</p>
+		<p>
+			<input type="submit" value="Guardar" />
+		</p>
+
+	</form>
+
+</body>
+</html>

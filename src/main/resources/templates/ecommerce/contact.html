@@ -1,0 +1,294 @@
+<!DOCTYPE html  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" >
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:h="http://java.sun.com/jsf/html" 
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+    <meta name="robots" content="all,follow"/>
+    <meta name="googlebot" content="index,follow,snippet,archive"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Obaju e-commerce template"/>
+    <meta name="author" content="Ondrej Svestka | ondrejsvestka.cz"/>
+    <meta name="keywords" content=""/>
+
+    <title>MWM E-commerce</title>
+
+    <meta name="keywords" content=""/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'/>
+
+   <!-- Estilos -->    
+    <link  th:href="@{/ecommerce/css/font-awesome.css}" rel="stylesheet"/>
+    <link  th:href="@{/ecommerce/css/font-awesome.min.css}" rel="stylesheet"/>
+    <link  th:href="@{/ecommerce/css/bootstrap.min.css}" rel="stylesheet"/>     
+    <link th:href="@{/ecommerce/css/animate.min.css}" rel="stylesheet"/>     
+    <link th:href="@{/ecommerce/css/owl.carousel.css}" rel="stylesheet"/>     
+    <link th:href="@{/ecommerce/css/owl.theme.css}" rel="stylesheet"/>      
+    
+    <!-- theme stylesheet -->     
+    <link  th:href="@{/ecommerce/css/style.default.css}" rel="stylesheet" id="theme-stylesheet"/>      
+    
+    <!-- your stylesheet with modifications -->     
+    <link th:href="@{/ecommerce/css/custom.css}" rel="stylesheet"/>      
+    <script th:src="@{/ecommerce/js/respond.min.js}"></script>                           
+
+
+<link rel="shortcut icon" href="favicon.png" type="image/x-icon"/>
+		
+
+
+
+</h:head>
+
+<h:body>
+
+   <link th:href="@{/ecommerce/encabezado.html}" rel="import" />
+       
+    <div id="all">
+        <div id="content">      
+            <div class="container">
+                <div class="col-md-12">
+                    <ul class="breadcrumb">
+                        <li><a href="#">Inicio</a>
+                        </li>
+                        <li>Contacto</li>
+                    </ul>
+
+                </div>
+
+                <div class="col-md-3">
+                    <!-- *** PAGES MENU ***-->
+                    <div class="panel panel-default sidebar-menu">
+
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Página</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li>
+                                    <a href="#">Facebook</a>
+                                </li>
+                                <li>
+                                    <a href="contact.xhtml">Whatsapp</a>
+                                </li>
+                                <li>
+                                    <a href="faq.xhtml">Twitter</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- *** PAGES MENU END *** -->
+
+
+                    <div class="banner">
+                        <a href="#">
+                            <img th:src="@{/ecommerce/img/banner.png}" class="img-responsive" alt="Obaju template"/>
+                            
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-9">
+
+
+                    <div class="box" id="contact">
+                        <h1>Contacto</h1>
+
+                        <p class="lead">¿Tienes curiosidad por algo? ¿Tienes algún tipo de problema con nuestros productos?</p>
+                        <p>Por favor, siéntase libre de contactarnos, nuestro centro de servicio al cliente está trabajando para usted 24/7.</p>
+
+                        <hr></hr>
+
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <h3><i class="fa fa-map-marker"></i> Dirección</h3>
+                                <p>Calle Fuente de Cristal
+                                    <br>Fraccionamiento Fuentes del Bosque</br>
+                                    <br>Código Postal 81229</br>
+                                    <br>Los Mochis, Sinaloa</br>                                    
+                                    <br></br>
+                                    <strong>México</strong>
+                                </p>
+                            </div>
+                            <!-- /.col-sm-4 -->
+                            <div class="col-sm-4">
+                                <h3><i class="fa fa-phone"></i> Centro de llamadas</h3>
+                                <p class="text-muted">Este número es gratuito si llama desde Los Mochis, Sinaloa, de lo contrario, le recomendamos utilizar la forma electrónica de comunicación.</p>
+                                <p><strong>55 555 444 333</strong>
+                                </p>
+                            </div>
+                            <!-- /.col-sm-4 -->
+                            <div class="col-sm-4">
+                                <h3><i class="fa fa-envelope"></i> Soporte electrónico</h3>
+                                <p class="text-muted">Por favor, siéntase libre de escribirnos un correo electrónico o utilizar nuestro sistema electrónico de venta de entradas.</p>
+                                <ul>
+                                    <li><strong><a href="mailto:">mwm@gmail.com</a></strong>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- /.col-sm-4 -->
+                        </div>
+                        <!-- /.row -->
+
+                        <hr></hr>
+
+                        <div id="map">
+
+                        </div>
+
+                        <hr></hr>
+                        <h2>Formulario de contacto</h2>
+
+                        <h:form>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="firstname">Nombre(s)</label>
+                                        <input type="text" class="form-control" id="firstname"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="lastname">Apellidos</label>
+                                        <input type="text" class="form-control" id="lastname"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="text" class="form-control" id="email"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="subject">Asunto</label>
+                                        <input type="text" class="form-control" id="subject"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="message">Mensaje</label>
+                                        <textarea id="message" class="form-control"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12 text-center">
+                                    <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Enviar mensaje</button>
+
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                        </h:form>
+
+
+                    </div>
+
+
+                </div>
+                <!-- /.col-md-9 -->
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /#content -->
+
+
+       
+<!-- PIE DE PÁGINA-->
+   <div class="box marcas">    
+    <div class="row">
+        <div class="col-sm-12">
+                    <p class="font-weight-bold text-center">LAS MEJORES MARCAS</p>            
+        </div>        
+    </div>    
+    <div class="row">                
+        <div class="col-sm-3 "></div>
+        <div class="col-sm-1 col-xs-2">
+            <img  th:src="@{/ecommerce/img/marca1.png}" class="img-responsive"  alt=""/>        
+        </div>
+        <div class="col-sm-1 col-xs-2">
+            <img  th:src="@{/ecommerce/img/marca2.png}" class="img-responsive"  alt=""/>        
+        </div>
+        <div class="col-sm-1 col-xs-2">
+        <img  th:src="@{/ecommerce/img/marca3.png}" class="img-responsive"  alt=""/>
+        </div>
+        <div class="col-sm-1 col-xs-2">
+        <img  th:src="@{/ecommerce/img/marca4.png}" class="img-responsive"  alt=""/>
+        </div>   
+        <div class="col-sm-1 col-xs-2">
+        <img  th:src="@{/ecommerce/img/marca5.png}" class="img-responsive"  alt=""/>
+        </div>
+        <div class="col-sm-2 col-xs-2   ">
+        <img  th:src="@{/ecommerce/img/marca6.png}" class="img-responsive"  alt=""/>
+        </div>                  
+        <div class="col-sm-2"></div>
+    </div>        
+</div>  
+        <div id="footer" data-animate="fadeInUp">
+            
+                <p class="parrafo">2017 © Mercado Wisp México Todos los derechos reservados</p>            
+                        <p class="social">
+                            <a href="https://www.facebook.com/groups/1429817027341749/" class="facebook external" data-animate-hover="shake"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="twitter external" data-animate-hover="shake"><i class="fa fa-twitter"></i></a> 
+                            <a href="#" class="email external" data-animate-hover="shake"><i class="fa fa-whatsapp" ></i></a>
+                        </p>
+          </div>   
+    </div>      
+    <!-- *** SCRIPTS TO INCLUDE ***
+ _________________________________________________________ -->
+<script th:src="@{/ecommerce/js/jquery-1.11.0.min.js}"></script>     
+    <script th:src="@{/ecommerce/js/bootstrap.min.js}"></script>     
+    <script th:src="@{/ecommerce/js/jquery.cookie.js}"></script>     
+    <script th:src="@{/ecommerce/js/waypoints.min.js}"></script>     
+    <script th:src="@{/ecommerce/js/modernizr.js}"></script>     
+    <script th:src="@{/ecommerce/js/bootstrap-hover-dropdown.js}"></script>     
+    <script th:src="@{/ecommerce/js/owl.carousel.min.js}"></script>     
+    <script th:src="@{/ecommerce/js/front.js}"></script>
+
+
+
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhod3cFLS-YpLC7HMQczdixy-8mHkbkOI"></script>
+
+    <script>
+        function initialize() {
+            var mapOptions = {
+                zoom: 15,
+                center: new google.maps.LatLng(25.81143,-108.9918581),
+                mapTypeId: google.maps.MapTypeId.ROAD,
+                scrollwheel: false
+            }
+            var map = new google.maps.Map(document.getElementById('map'),
+                mapOptions);
+
+            var myLatLng = new google.maps.LatLng(25.8114252, -108.9896694);
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map
+            });
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+
+
+        /*---------------------------------
+        CABECERA ANIMADA
+      ----------------------------------*/
+     $(window).scroll(function () {
+
+         var nav = $('.navbar-default');
+         var scroll = $(window).scrollTop();
+
+         if (scroll >= 80) {
+             nav.addClass("fondo-menu");
+         } else {
+             nav.removeClass("fondo-menu");
+         }
+     });
+       
+    </script> 
+
+</h:body>
+
+</html>

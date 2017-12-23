@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1" />
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+
+
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+	
+	</div>
+	
+	<div class="row" style="margin: 100px">
+	<div   class="col-sm-4 border border-dark" th:each="objEach : ${objProducto}">
+	<ul>
+	<li>
+	nombre: <span th:text="${objEach.nombreProducto}"></span>
+	</li>
+	<li>
+	Categoria: <span th:text="${objEach.categoria.nombreCategoria}"></span>
+	</li>
+	<li>
+	precio: <span th:text="${objEach.precio}"></span>
+	</li>
+	<li>	
+	Descripcion: <span  th:text="${objEach.descripcion}"></span>
+	</li>
+	<li>
+	Garantia: <span  th:text="${objEach.tiempoGarantia}" ></span>
+	</li>
+	<li>
+	<a href="www.facebook.com">Comprar</a>
+	</li>
+	</ul>
+	
+	</div>
+		</div>
+
+</body>
+</html>

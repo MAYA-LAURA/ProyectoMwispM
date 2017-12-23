@@ -1,0 +1,15 @@
+package com.mx.mwisp.mwsipfinal.service;
+
+import java.util.List;
+
+import com.mx.mwisp.mwsipfinal.entity.Productos;
+
+public interface ProductoService {
+	public abstract List<Productos> listarProductos();
+	public abstract Productos addProducto(Productos producto);
+	public abstract int eliminarPorId(int id);
+	public abstract Productos actualizarProducto(Productos producto);
+	
+	public abstract Productos encontrarPorId(int id);
+	
+}

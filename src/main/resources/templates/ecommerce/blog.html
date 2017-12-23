@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:h="http://java.sun.com/jsf/html" 
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+<h:head>
+
+    <meta charset="utf-8"/>
+    <meta name="robots" content="all,follow"/>
+    <meta name="googlebot" content="index,follow,snippet,archive"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Obaju e-commerce template"/>
+    <meta name="author" content="Ondrej Svestka | ondrejsvestka.cz"/>
+    <meta name="keywords" content=""/>
+
+    <title>MWM E-commerce</title>
+
+    <meta name="keywords" content=""/>	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'/>
+
+    <!-- Estilos -->    
+    <link  th:href="@{/ecommerce/css/font-awesome.css}" rel="stylesheet"/>
+    <link  th:href="@{/ecommerce/css/font-awesome.min.css}" rel="stylesheet"/>
+    <link  th:href="@{/ecommerce/css/bootstrap.min.css}" rel="stylesheet"/>     
+    <link th:href="@{/ecommerce/css/animate.min.css}" rel="stylesheet"/>     
+    <link th:href="@{/ecommerce/css/owl.carousel.css}" rel="stylesheet"/>     
+    <link th:href="@{/ecommerce/css/owl.theme.css}" rel="stylesheet"/>      
+    
+    <!-- theme stylesheet -->     
+    <link  th:href="@{/ecommerce/css/style2.blue.css}" rel="stylesheet" id="theme-stylesheet"/>      
+    
+    <!-- your stylesheet with modifications -->     
+    <link th:href="@{/ecommerce/css/custom.css}" rel="stylesheet"/>      
+    <script th:src="@{/ecommerce/js/respond.min.js}"></script>                           
+
+<link rel="shortcut icon" href="favicon.png" type="image/x-icon"/>		
+</h:head>
+
+<h:body>
+
+<link th:href="@{/ecommerce/encabezado.html}" rel="import" />
+    
+    <!-- *** NAVBAR END *** -->
+
+    <div id="all">
+
+        <div id="content">
+            <div class="container">
+              <!-- *** LEFT COLUMN ***
+		     _________________________________________________________ -->
+
+                <div class="col-sm-9" id="blog-listing">
+
+                    <ul class="breadcrumb">
+
+                        <li><a href="#">Inicio</a>
+                        </li>
+                        <li>Blog</li>
+                    </ul>
+
+
+                    <div class="box">
+
+                        <h1>Nombre de la categoría del blog</h1>
+                        <p>Sed neque est, tempor et vestibulum sit amet, dapibus laoreet lacus. Aliquam non sapien efficitur dui pulvinar malesuada a nec lacus. Etiam faucibus luctus rhoncus. Ut vulputate volutpat nulla non interdum. Pellentesque quam nibh, imperdiet vitae nisl et, euismod mattis mi. Pellentesque varius, metus ac viverra suscipit, augue erat bibendum diam, eget placerat enim justo quis massa. Morbi congue lacus ac euismod pulvinar.</p>
+
+                    </div>
+
+                    <div class="post">
+                        <h2><a href="post.xhtml">Enlaces Punto a Multipunto</a></h2>
+                        <p class="author-category">Por <a href="#">John Slim</a> en<a href="">Mercado Wisp México </a>
+                        </p>
+                        <hr></hr>
+                        <p class="date-comments">
+                            <a href="post.xhtml"><i class="fa fa-calendar-o"></i> 06 de noviembre de 2017</a>
+                            <a href="post.xhtml"><i class="fa fa-comment-o"></i> # comentarios</a>
+                        </p>
+                        <div class="image">
+                            <a href="post.xhtml">
+                            <img  th:src="@{/ecommerce/img/blog2.jpg}" class="img-responsive"  alt=""/>                                
+                            </a>
+                        </div>
+                        <p class="intro">Nam est lacus, accumsan a sollicitudin at, lacinia vitae urna. Phasellus non urna hendrerit, aliquet ex vel, pharetra diam. Curabitur convallis, risus non molestie facilisis, erat arcu tincidunt justo, a dictum sem ex vitae dui. Phasellus sit amet hendrerit leo. </p>
+                        <p class="read-more"><a href="post.xhtml" class="btn btn-primary">Continuar leyendo</a>
+                        </p>
+                    </div>
+
+
+                    <div class="post">
+                        <h2><a href="post.xhtml">Enlaces Punto a Punto</a></h2>
+                        <p class="author-category">Por <a href="#">John Slim</a> en <a href="">Mercado Wisp México</a>
+                        </p>
+                        <hr></hr>
+                        <p class="date-comments">
+                            <a href="post.xhtml"><i class="fa fa-calendar-o"></i> 06 de noviembre de 2017</a>
+                            <a href="post.xhtml"><i class="fa fa-comment-o"></i> # comentarios</a>
+                        </p>
+                        <div class="image">
+                            <a href="post.xhtml">
+                                <img  th:src="@{/ecommerce/img/epp.png}" class="img-responsive"  alt=""/>                                
+                            </a>
+                        </div>
+                        <p class="intro">Vivamus lobortis suscipit odio, porta aliquam justo ullamcorper in. Sed accumsan massa a condimentum pretium. Mauris vel ligula vel lorem convallis euismod. Nam pulvinar eros ac risus venenatis condimentum</p>
+                        <p class="read-more"><a href="post.xhtml" class="btn btn-primary">Continuar leyendo 	 </a>
+                        </p>
+                    </div>
+
+                    <ul class="pager">
+                        <li class="previous"><a href="#"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>Atrás</a>
+                        </li>
+                        <li class="next disabled"><a href="#">Siguiente<i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+
+
+
+                </div>
+                <!-- /.col-md-9 -->
+
+                <!-- *** LEFT COLUMN END *** -->
+
+
+                <div class="col-md-3">
+                    <!-- *** BLOG MENU ***
+ _________________________________________________________ -->
+                    <div class="panel panel-default sidebar-menu">
+
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Blog</h3>
+                        </div>
+
+                        <div class="panel-body">
+
+                            <ul class="nav nav-pills nav-stacked">
+                                <li>
+                                    <a href="blog.xhtml">Sobre nosotros</a>
+                                </li>
+                                <li class="active">
+                                    <a href="blog.xhtml">Redes</a>
+                                </li>
+                                <li>
+                                    <a href="blog.xhtml">Noticiass</a>
+                                </li>
+                                <li>
+                                    <a href="blog.xhtml">Proyectos recientes</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <!-- /.col-md-3 -->
+
+                    <!-- *** BLOG MENU END *** -->
+
+                    <div class="banner">
+                        <a href="#">
+                            <img  th:src="@{/ecommerce/img/banner.jpg}" class="img-responsive"  alt=""/>                             
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /#content -->
+
+        
+ <div id="footer" data-animate="fadeInUp">
+            
+                <p class="parrafo">2017 © Mercado Wisp México Todos los derechos reservados</p>            
+                        <p class="social">
+                            <a href="https://www.facebook.com/groups/1429817027341749/" class="facebook external" data-animate-hover="shake"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="twitter external" data-animate-hover="shake"><i class="fa fa-twitter"></i></a>                            
+                            <a href="#" class="email external" data-animate-hover="shake"><i class="fa fa-whatsapp" ></i></a>
+                        </p>
+            </div>   
+
+    </div>
+    <!-- /#all -->
+    <!-- *** SCRIPTS TO INCLUDE *** -->
+
+    <script th:src="@{/ecommerce/js/jquery-1.11.0.min.js}"></script>     
+    <script th:src="@{/ecommerce/js/bootstrap.min.js}"></script>     
+    <script th:src="@{/ecommerce/js/jquery.cookie.js}"></script>     
+    <script th:src="@{/ecommerce/js/waypoints.min.js}"></script>     
+    <script th:src="@{/ecommerce/js/modernizr.js}"></script>     
+    <script th:src="@{/ecommerce/js/bootstrap-hover-dropdown.js}"></script>     
+    <script th:src="@{/ecommerce/js/owl.carousel.min.js}"></script>     
+    <script th:src="@{/ecommerce/js/front.js}"></script>
+
+</h:body>
+
+</html>

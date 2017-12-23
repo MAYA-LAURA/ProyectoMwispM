@@ -1,0 +1,38 @@
+/** Your theme modifications here **/
+
+.search {
+	display: inline-block;
+	padding: 10px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	height:35px;
+	width:50px;
+}
+
+.form-control-sesion {
+	position: absolute;
+	top: 446px;
+	right: 0;
+	z-index: 2;
+	display: block;
+	width: 469px;
+	height: 334px;
+	line-height: 34px;
+	text-align: center;
+	color:white;		
+}
+
+

@@ -1,0 +1,337 @@
+<!DOCTYPE html  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" >
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:h="http://java.sun.com/jsf/html" 
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+<h:head>
+    
+    <meta name="robots" content="all,follow"/>
+    <meta name="googlebot" content="index,follow,snippet,archive"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Obaju e-commerce template"/>
+    <meta name="author" content="Ondrej Svestka | ondrejsvestka.cz"/>
+    <meta name="keywords" content=""/>
+
+    <title>MWM E-commerce</title>
+
+    <meta name="keywords" content=""/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'/>
+
+<!-- Estilos -->    
+    <link  th:href="@{/ecommerce/css/font-awesome.css}" rel="stylesheet"/>
+    <link  th:href="@{/ecommerce/css/font-awesome.min.css}" rel="stylesheet"/>
+    <link  th:href="@{/ecommerce/css/bootstrap.min.css}" rel="stylesheet"/>     
+    <link th:href="@{/ecommerce/css/animate.min.css}" rel="stylesheet"/>     
+    <link th:href="@{/ecommerce/css/owl.carousel.css}" rel="stylesheet"/>     
+    <link th:href="@{/ecommerce/css/owl.theme.css}" rel="stylesheet"/>      
+    
+    <!-- theme stylesheet -->     
+    <link  th:href="@{/ecommerce/css/style2.blue.css}" rel="stylesheet" id="theme-stylesheet"/>      
+    
+    <!-- your stylesheet with modifications -->     
+    <link th:href="@{/ecommerce/css/custom.css}" rel="stylesheet"/>      
+    <script th:src="@{/ecommerce/js/respond.min.js}"></script>                           
+
+
+<link rel="shortcut icon" href="favicon.png" type="image/x-icon"/>
+		
+
+
+
+</h:head>
+
+<h:body>
+
+   <link th:href="@{/ecommerce/encabezado.html}" rel="import" />
+    <!-- *** NAVBAR END *** -->
+
+    <div id="all">
+
+        <div id="content">
+            <div class="container">
+
+                <div class="col-md-12">
+                    <ul class="breadcrumb">
+                        <li><a href="#">Inicio</a>
+                        </li>
+                        <li>Videovigilancia</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <!-- *** MENUS AND FILTERS ***
+ _________________________________________________________ -->
+                    <div class="panel panel-default sidebar-menu">
+
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Categorias</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <ul class="nav nav-pills nav-stacked category-menu">
+                                <li>
+                                    <a href="category.xhtml">Videovigilancia<span class="badge pull-right">42</span></a>
+                                    <ul>
+                                        <li><a href="category.xhtml">Accesorios</a>
+                                        </li>
+                                        <li><a href="category.xhtml">Audio</a>
+                                        </li>
+                                        <li><a href="category.xhtml">Cámaras HD-SDI/Grabación</a>
+                                        </li>
+                                        <li><a href="category.xhtml">Cables</a>
+                                        </li>
+                                         <li><a href="category.xhtml">Herramientas</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="active">
+                                    <a href="category.xhtml">Torres y accesorios <span class="badge pull-right">123</span></a>
+                                    <ul>
+                                        <li><a href="category.xhtml">Accesorios para torres arriostradas</a>
+                                        </li>
+                                        <li><a href="category.xhtml">Mástiles</a>
+                                        </li>
+                                        <li><a href="category.xhtml">Ánclas temporales</a>
+                                        </li>
+                                        <li><a href="category.xhtml">Torres serie G</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="category.xhtml">Redes<span class="badge pull-right">11</span></a>
+                                    <ul>
+                                        <li><a href="category.xhtml">Antenas</a>
+                                        </li>
+                                        <li><a href="category.xhtml">Racks y gabinetes</a>
+                                        </li>
+                                        <li><a href="category.xhtml">Protección contra descargas</a>
+                                        </li>
+                                        <li><a href="category.xhtml">Redes</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default sidebar-menu">
+
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Marcas<a class="btn btn-xs btn-danger pull-right" href="#"></a></h3>
+                        </div>
+
+                        <div class="panel-body">
+
+                            <h:form>
+                                <div class="form-group">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"/>Ubiquiti
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"/>Mimosa
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"/>Epcom
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"/>Hikvision
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-default btn-sm btn-primary"><i class="fa fa-pencil"></i>Aplicar</button>
+
+                            </h:form>
+
+                        </div>
+                    </div>
+
+                    <!-- *** MENUS AND FILTERS END *** -->
+
+                    <div class="banner">
+                        <a href="#">
+                            <h:graphicImage value="/resources/ecommerce/img/banner.png" alt="" class="img-responsive"/>                            
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-9">
+                    <div class="box">
+                        <h1>Videovigilancia</h1>
+                        <p>En nuestro departamento de "Videovigilancia" ofrecemos una amplia gama de los mejores productos</p>
+                    </div>
+
+                    <div class="box info-bar">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-4 products-showing">
+                               Mostrando <strong>#</strong> de <strong>#</strong> productos
+                            </div>
+
+                            <div class="col-sm-12 col-md-8  products-number-sort">
+                                <div class="row">
+                                    <form class="form-inline">
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="products-number">
+                                                <strong>Show</strong>  <a href="#" class="btn btn-default btn-sm btn-primary">12</a>  <a href="#" class="btn btn-default btn-sm">24</a>  <a href="#" class="btn btn-default btn-sm">Todos</a> productos
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="products-sort-by">
+                                                <strong>Ordenar por</strong>
+                                                <select name="sort-by" class="form-control">
+                                                    <option>Precio de Menor a Mayor</option>
+                                                    <option>Precio de Menor a Mayor</option>                                                    
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row products">
+
+                        <div class="col-md-4 col-sm-6"   th:each="objEach : ${listProduc}">
+                            <div class="product">
+                                <div class="flip-container">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <a href="detail.xhtml">
+                                                <img  th:src="@{/ecommerce/img/y.jpg}" class="img-responsive"  alt=""/>
+                                            </a>
+                                        </div>
+                                        <div class="back">
+                                            <a href="detail.xhtml">
+                                                <img  th:src="@{/ecommerce/img/y2.jpg}" class="img-responsive"  alt=""/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="detail.xhtml" class="invisible">
+                                    <img  th:src="@{/ecommerce/img/y.jpg}" class="img-responsive"  alt=""/>
+                                </a>
+                                <div class="text">
+                                    <h3><a href="detail.xhtml"><span  th:text="${objEach.descripcion}"></span></a></h3>
+                                    <p class="price"><span th:text="${objEach.precio}"></span></p>
+                                    <p class="buttons">
+                                        <a href="detail.xhtml" class="btn btn-default">Ver detalles</a>
+                                        <a href="basket.xhtml" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Agregar al carrito</a>
+                                    </p>
+                                </div>
+                                <!-- /.text -->
+                            </div>
+                            <!-- /.product -->
+                        </div>
+
+                      
+
+                       
+
+                        
+
+                
+                        
+                        <!-- /.col-md-4 -->
+                    </div>
+                    <!-- /.products -->
+
+                    <div class="pages">
+
+                        <p class="loadMore">
+                            <a href="#" class="btn btn-primary btn-lg"><i class="fa fa-chevron-down"></i> Ver más</a>
+                        </p>
+
+                        <ul class="pagination">
+                            <li><a href="#"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a>
+                            </li>
+                            <li class="active"><a href="#">1</a>
+                            </li>
+                            <li><a href="#">2</a>
+                            </li>
+                            <li><a href="#">3</a>
+                            </li>
+                            <li><a href="#">4</a>
+                            </li>
+                            <li><a href="#">5</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+                <!-- /.col-md-9 -->
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /#content -->
+
+
+        <!-- *** FOOTER ***
+ _________________________________________________________ -->
+     <div class="box marcas">    
+    <div class="row">
+        <div class="col-sm-12">
+                    <p class="font-weight-bold text-center">LAS MEJORES MARCAS</p>            
+        </div>        
+    </div>    
+    <div class="row">                
+        <div class="col-sm-3 "></div>
+        <div class="col-sm-1 col-xs-2">
+            <img  th:src="@{/ecommerce/img/marca1.png}" class="img-responsive"  alt=""/>        
+        </div>
+        <div class="col-sm-1 col-xs-2">
+            <img  th:src="@{/ecommerce/img/marca2.png}" class="img-responsive"  alt=""/>        
+        </div>
+        <div class="col-sm-1 col-xs-2">
+        <img  th:src="@{/ecommerce/img/marca3.png}" class="img-responsive"  alt=""/>
+        </div>
+        <div class="col-sm-1 col-xs-2">
+        <img  th:src="@{/ecommerce/img/marca4.png}" class="img-responsive"  alt=""/>
+        </div>   
+        <div class="col-sm-1 col-xs-2">
+        <img  th:src="@{/ecommerce/img/marca5.png}" class="img-responsive"  alt=""/>
+        </div>
+        <div class="col-sm-2 col-xs-2   ">
+        <img  th:src="@{/ecommerce/img/marca6.png}" class="img-responsive"  alt=""/>
+        </div>                  
+        <div class="col-sm-2"></div>
+    </div>        
+</div>  
+        <div id="footer" data-animate="fadeInUp">
+            
+                <p class="parrafo">2017 © Mercado Wisp México Todos los derechos reservados</p>            
+                        <p class="social">
+                            <a href="https://www.facebook.com/groups/1429817027341749/" class="facebook external" data-animate-hover="shake"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="twitter external" data-animate-hover="shake"><i class="fa fa-twitter"></i></a> 
+                            <a href="#" class="email external" data-animate-hover="shake"><i class="fa fa-whatsapp" ></i></a>
+                        </p>
+          </div>   
+    </div>      
+    <!-- *** SCRIPTS TO INCLUDE ***
+ _________________________________________________________ -->
+<script th:src="@{/ecommerce/js/jquery-1.11.0.min.js}"></script>     
+    <script th:src="@{/ecommerce/js/bootstrap.min.js}"></script>     
+    <script th:src="@{/ecommerce/js/jquery.cookie.js}"></script>     
+    <script th:src="@{/ecommerce/js/waypoints.min.js}"></script>     
+    <script th:src="@{/ecommerce/js/modernizr.js}"></script>     
+    <script th:src="@{/ecommerce/js/bootstrap-hover-dropdown.js}"></script>     
+    <script th:src="@{/ecommerce/js/owl.carousel.min.js}"></script>     
+    <script th:src="@{/ecommerce/js/front.js}"></script>
+
+</h:body>
+
+</html>
