@@ -12,5 +12,6 @@ public class ControllerIndex {
 		ModelAndView mav=new ModelAndView (principal);
 		return mav;
 				}
+	//commit
 
 }
