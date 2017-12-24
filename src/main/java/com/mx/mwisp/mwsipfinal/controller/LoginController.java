@@ -21,7 +21,7 @@ public class LoginController {
 		return "login";
 	}
 
-	@GetMapping({ "/loginsuccess", "/" })
+	@GetMapping({ "/loginsuccess"})
 	public String loginCheck() {
 		LOG.info("Metodo: loginCheck");
 		return "redirect:/Admin/listaProductosAdmin";

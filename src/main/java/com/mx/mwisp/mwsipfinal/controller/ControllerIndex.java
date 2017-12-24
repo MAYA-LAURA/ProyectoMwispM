@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class ControllerIndex {
 	private static final String principal="index";
-	@GetMapping ("/index")
+	@GetMapping ({"/index","/"})
 	public ModelAndView vistaIndex() {
 		ModelAndView mav=new ModelAndView (principal);
 		return mav;
