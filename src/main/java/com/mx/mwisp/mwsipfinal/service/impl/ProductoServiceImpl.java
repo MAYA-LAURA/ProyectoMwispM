@@ -8,9 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import com.mx.mwisp.mwsipfinal.converter.ProductoConverter;
 import com.mx.mwisp.mwsipfinal.dao.ProductoJpaRepository;
 import com.mx.mwisp.mwsipfinal.entity.Categoria;
 import com.mx.mwisp.mwsipfinal.entity.Productos;
+import com.mx.mwisp.mwsipfinal.model.ProductoModel;
 import com.mx.mwisp.mwsipfinal.service.ProductoService;
 
 
@@ -22,6 +24,9 @@ public class ProductoServiceImpl implements ProductoService{
 	@Autowired
 	@Qualifier("productoJpaRepository")
 	private ProductoJpaRepository productoJpaRepository;
+	@Autowired
+	@Qualifier("productoConverter")
+	private ProductoConverter productoConverter;
 	
 	@Override
 	public List<Productos> listarProductos() {
@@ -30,13 +35,14 @@ public class ProductoServiceImpl implements ProductoService{
 	}
 
 	@Override
-	public Productos addProducto(Productos producto) {
+	public Productos addProducto(ProductoModel productoModel) {
 		// TODO Auto-generated method stub
 		Categoria categoria=new Categoria("Redes", "productos redes");
-		categoria.setIdCategoria(1);		
-		producto.setCategoria(categoria);
+		categoria.setIdCategoria(1);
+		Productos productos=  productoConverter.modelEntity(productoModel);
+		productos.setCategoria(categoria);
 		
-		return productoJpaRepository.save(producto);
+		return productoJpaRepository.save(productos);
 	}
 
 	@Override
