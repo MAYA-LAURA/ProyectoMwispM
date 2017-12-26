@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.mx.mwisp.mwsipfinal.entity.Productos;
+
+import com.mx.mwisp.mwsipfinal.model.ProductoModel;
 import com.mx.mwisp.mwsipfinal.service.ProductoService;
 
 @Controller
@@ -41,7 +42,7 @@ public class ProductosController {
 			mav.addObject("produ", productoServiceImpl.encontrarPorId(id));
 		}
 		else {
-			mav.addObject("produ", new Productos());
+			mav.addObject("produ", new ProductoModel());
 			
 		}
 		return mav;
@@ -49,8 +50,8 @@ public class ProductosController {
 	}
 
 	@PostMapping("/addProducto")
-	public String agregarProductos(@ModelAttribute("prod") Productos producto) {
-		productoServiceImpl.addProducto(producto);
+	public String agregarProductos(@ModelAttribute("prod") ProductoModel productoModel) {
+		productoServiceImpl.addProducto(productoModel);
 		return "redirect:/Admin/listaProductosAdmin";
 
 	}
