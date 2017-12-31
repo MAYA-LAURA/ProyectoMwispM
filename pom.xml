@@ -72,6 +72,20 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
+		<!-- Dependencias miKrotik -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>10.0.1</version>
+		</dependency>
+		<!-- Mikrotik -->
+
+		<dependency>
+			<groupId>me.legrange</groupId>
+			<artifactId>mikrotik</artifactId>
+			<version>3.0.4</version>
+		</dependency>
+		
 	</dependencies>
 
 

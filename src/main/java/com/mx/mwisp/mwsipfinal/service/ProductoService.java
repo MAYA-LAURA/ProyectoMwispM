@@ -10,7 +10,6 @@ public interface ProductoService {
 	public abstract Productos addProducto(ProductoModel productoModel);
 	public abstract int eliminarPorId(int id);
 	public abstract Productos actualizarProducto(Productos producto);
-	
 	public abstract Productos encontrarPorId(int id);
 	
 }
