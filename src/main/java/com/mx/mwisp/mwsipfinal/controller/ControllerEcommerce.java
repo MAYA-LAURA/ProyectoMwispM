@@ -34,6 +34,7 @@ ProductoService productoServiceImpl;
 @GetMapping("/principal")
 public ModelAndView vistaPrincipal() {
 	ModelAndView mav=new ModelAndView("/ecommerce/indexecommerce");
+	mav.addObject("listProduc", productoServiceImpl.listarProductos());
 	return mav;
 }
 

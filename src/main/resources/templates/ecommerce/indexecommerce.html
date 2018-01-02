@@ -65,7 +65,8 @@
 
                 <div class="container">
                     <div class="product-slider">
-                        <div class="item">
+                    
+                        <div class="item" th:each="objEach : ${listProduc}">
                             <div class="product">
                                 <div class="flip-container">
                                     <div class="flipper">
@@ -85,230 +86,49 @@
                                      <img  th:src="@{/ecommerce/img/y.jpg}" class="img-responsive"  alt=""/>                                          
                                 </a>
                                 <div class="text">
-                                    <h3><a href="detail.html">Cámara falsa(fantasma), con Leds que encienden en la noche (No parpadea) baterías no incluidas</a></h3>
-                                    <p class="price">$143.00</p>
+                                    <h3><a href="detail.html"><span  th:text="${objEach.descripcion}"></span></a></h3>
+                                    <p class="price"><span th:text="${objEach.precio}"></span></p> 
                                 </div>
+                                <a href="basket.xhtml" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Agregar al carrito</a>
                                 <!-- /.text -->
+                                
                             </div>
                             <!-- /.product -->
                         </div>
 
-                        <div class="item">
-                            <div class="product">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="detail.xhtml">
-                                                 <img  th:src="@{/ecommerce/img/b1.jpg}" class="img-responsive img-thumbnail"  alt=""/>                                                
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a href="detail.xhtml">
-                                                 <img  th:src="@{/ecommerce/img/c.jpg}" class="img-responsive"  alt=""/>  >                                                
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="detail.xhtml" class="invisible">
-                                     <img  th:src="@{/ecommerce/img/b1.jpg}" class="img-responsive"  alt=""/>                                        
-                                </a>
-                                <div class="text">
-                                    <h3><a href="detail.html">Inyector PoE Gigabit de pared para B5-Lite, C5(MC5) y C5c de Mimosa Networks (100-00051)</a></h3>
-                                    <p class="price"> <del style="color: black">$280 </del>    $143.00</p>
-                                </div>
-                                <!-- /.text -->                               
-                                <div class="ribbon new">
-                                    <div class="theribbon">Nuevo</div>
-                                    <div class="ribbon-background"></div>
-                                </div>
-                            </div>
-                            <!-- /.product -->
-                        </div>
+<!--                         <div class="item"> -->
+<!--                             <div class="product"> -->
+<!--                                 <div class="flip-container"> -->
+<!--                                     <div class="flipper"> -->
+<!--                                         <div class="front"> -->
+<!--                                             <a href="detail.xhtml"> -->
+<!--                                                  <img  th:src="@{/ecommerce/img/b1.jpg}" class="img-responsive img-thumbnail"  alt=""/>                                                 -->
+<!--                                             </a> -->
+<!--                                         </div> -->
+<!--                                         <div class="back"> -->
+<!--                                             <a href="detail.xhtml"> -->
+<!--                                                  <img  th:src="@{/ecommerce/img/c.jpg}" class="img-responsive"  alt=""/>  >                                                 -->
+<!--                                             </a> -->
+<!--                                         </div> -->
+<!--                                     </div> -->
+<!--                                 </div> -->
+<!--                                 <a href="detail.xhtml" class="invisible"> -->
+<!--                                      <img  th:src="@{/ecommerce/img/b1.jpg}" class="img-responsive"  alt=""/>                                         -->
+<!--                                 </a> -->
+<!--                                 <div class="text"> -->
+<!--                                     <h3><a href="detail.html">Inyector PoE Gigabit de pared para B5-Lite, C5(MC5) y C5c de Mimosa Networks (100-00051)</a></h3> -->
+<!--                                     <p class="price"> <del style="color: black">$280 </del>    $143.00</p> -->
+<!--                                 </div> -->
+<!--                                 /.text                                -->
+<!--                                 <div class="ribbon new"> -->
+<!--                                     <div class="theribbon">Nuevo</div> -->
+<!--                                     <div class="ribbon-background"></div> -->
+<!--                                 </div> -->
+<!--                             </div> -->
+<!--                             /.product -->
+<!--                         </div> -->
 
-                        <div class="item">
-                            <div class="product">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="detail.xhtml">
-                                                 <img  th:src="@{/ecommerce/img/a2.jpg}" class="img-responsive img-thumbnail"  alt=""/>                                                       
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a href="detail.xhtml">
-                                                 <img  th:src="@{/ecommerce/img/a.jpg}" class="img-responsive"  alt=""/>                                                    
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="detail.xhtml" class="invisible">
-                                     <img  th:src="@{/ecommerce/img/a2.jpg}" class="img-responsive"  alt=""/>       
-                                </a>
-                                <div class="text">
-                                    <h3><a href="detail.html">UFiber GPON ONU, Unidad de red óptica con 1 puerto WAN GPON + 1 puerto LAN Gigabit </a></h3>
-                                    <p class="price">$143.00</p>
-                                </div>                                
-                            </div>
-                            <!-- /.product -->
-                        </div>
-
-                        <div class="item">
-                            <div class="product">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="detail.xhtml">
-                                                 <img  th:src="@{/ecommerce/img/d.jpg}" class="img-responsive img-thumbnail"  alt=""/>                                                       
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a href="detail.xhtml">
-                                                 <img  th:src="@{/ecommerce/img/d2.jpg}" class="img-responsive "  alt=""/>                                               
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="detail.xhtml" class="invisible">
-                                     <img  th:src="@{/ecommerce/img/d.jpg}" class="img-responsive "  alt=""/>        
-                                </a>
-                                <div class="text">
-                                    <h3><a href="detail.html">(hEX) RouterBoard, 5 Puertos Gigabit Ethernet, 1 Puerto USB y versión 3</a></h3>
-                                    <p class="price">$143.00</p>
-                                </div>
-                                <!-- /.text -->
-                            </div>
-                            <!-- /.product -->
-                        </div>
-
-                        <div class="item">
-                            <div class="product">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="detail.xhtml">
-                                                 <img  th:src="@{/ecommerce/img/e.jpg}" class="img-responsive img-thumbnail"  alt=""/>                                               
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a href="detail.xhtml">
-                                           <img  th:src="@{/ecommerce/img/e2.jpg}" class="img-responsive"  alt=""/>       
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="detail.xhtml" class="invisible">
-                                    <img  th:src="@{/ecommerce/img/e.jpg}" class="img-responsive"  alt=""/>                                   
-                                </a>
-                                <div class="text">
-                                    <h3><a href="detail.html" class="card-link" >(hEX PoE) Routerboard 5 puertos Gigabit Ethernet PoE 802.3at, 1 Puerto USB</a></h3>
-                                    <p class="price">$143.00</p>
-                                </div>
-                                <!-- /.text -->
-
-                                <div class="ribbon new">
-                                    <div class="theribbon">Nuevo</div>
-                                    <div class="ribbon-background"></div>
-                                </div>
-                                <!-- /.ribbon -->
-                            </div>
-                            <!-- /.product -->
-                        </div>
-
-                        <div class="item">
-                            <div class="product">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="detail.xhtml">
-                                                <img  th:src="@{/ecommerce/img/x.jpg}" class="img-responsive img-thumbnail"  alt=""/>  
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a href="detail.xhtml">
-                                                <img  th:src="@{/ecommerce/img/x2.jpg}" class="img-responsive"  alt=""/>                                              
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="detail.xhtml" class="invisible">
-                                    <img  th:src="@{/ecommerce/img/x.jpg}" class="img-responsive"  alt=""/>     
-                                </a>
-                                <div class="text">
-                                    <h3><a href="detail.html">Cámara Bala TurboHD 720p / Analógica 1200 TVL / Hibrida / Lente 3.6 mm / 20 mts IR Inteligente / Color Gris / IP66 / Interior-Exterior / Metal</a></h3>
-                                    <p class="price">$143.00</p>
-                                </div>
-                                <!-- /.text -->
-
-                                <div class="ribbon new">
-                                    <div class="theribbon">Nuevo</div>
-                                    <div class="ribbon-background"></div>
-                                </div>
-                                <!-- /.ribbon -->
-
-                            </div>
-                            <!-- /.product -->
-                        </div>
-                        <!-- /.col-md-4 -->
-
-                        <div class="item">
-                            <div class="product">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="detail.xhtml">
-                                                <img  th:src="@{/ecommerce/img/producto7.PNG}" class="img-responsive img-thumbnail"  alt=""/>  
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a href="detail.xhtml">
-                                                <img  th:src="@{/ecommerce/img/producto7_2.PNG}" class="img-responsive"  alt=""/>     
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="detail.xhtml" class="invisible">
-                                       <img  th:src="@{/ecommerce/img/producto7.PNG}" class="img-responsive"  alt=""/>  
-                                </a>
-                                <div class="text">
-                               <h3><a href="detail.html">Cámara oculta en sensor de movimiento híbrida TurboHD HD-TVI (720P), AHD, HD-CVI y análogo / Uso en Interior</a></h3>
-                                    <p class="price"> <del style="color: black">$280 </del>    $143.00 </p>
-                                </div>                                
-                                <div class="ribbon new">
-                                    <div class="theribbon">Nuevo</div>
-                                    <div class="ribbon-background"></div>
-                                </div>
-                                <!-- /.ribbon -->                              
-                            </div>
-                            <!-- /.product -->
-                        </div>
-
-                        <div class="item">
-                            <div class="product">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="detail.xhtml">
-                                                   <img  th:src="@{/ecommerce/img/f2.jpg}" class="img-responsive img-thumbnail"  alt=""/> 
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a href="detail.xhtml">
-                                         <img  th:src="@{/ecommerce/img/f.jpg}" class="img-responsive"  alt=""/> 
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="detail.xhtml" class="invisible">
-                                 <img  th:src="@{/ecommerce/img/f2.jpg}" class="img-responsive"  alt=""/> 
-                                </a>
-                                <div class="text">
-                                    <h3><a href="detail.html">Switch administrable via WEB / 250m PoE LARGA DISTANCIA / 24 puertos 802.3af/at (30W) 10/100 Mbps + 2 puertos Gigabit + 2 puertos SFP</a></h3>
-                                    <p class="price">$143.00</p>
-                                </div>
-                                <!-- /.text -->
-                            </div>
-                            <!-- /.product -->
-                        </div>
+                        
 
                     </div>
                     <!-- /.product-slider -->
