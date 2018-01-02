@@ -1,10 +1,5 @@
 package com.mx.mwisp.mwsipfinal.controller;
 
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -17,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.mx.mwisp.mwsipfinal.entity.Categoria;
+
 import com.mx.mwisp.mwsipfinal.model.ProductoModel;
 import com.mx.mwisp.mwsipfinal.service.CategoriaService;
 import com.mx.mwisp.mwsipfinal.service.ProductoService;
@@ -71,21 +66,21 @@ public class ProductosController {
 	 }
 	 
 	 
-	 @ModelAttribute("resultSelect")
-	 public List<String> getResultSelect(){
-		 
-		 List<String> nombreCategorias= new ArrayList<>(); 
-		 List<Categoria> categorias=categoriaServiceImpl.listarCategorias();
-		 Iterator<Categoria> it=categorias.iterator();
-		 if (categorias.size()>0) {
-			 while(it.hasNext()) {
-				 nombreCategorias.add(it.next().getNombreCategoria());
-				 
-			 }
-			 
-		 }
-		 return nombreCategorias;
-	 }
+//	 @ModelAttribute("resultSelect")
+//	 public List<String> getResultSelect(){
+//		 
+//		 List<String> nombreCategorias= new ArrayList<>(); 
+//		 List<Categoria> categorias=categoriaServiceImpl.listarCategorias();
+//		 Iterator<Categoria> it=categorias.iterator();
+//		 if (categorias.size()>0) {
+//			 while(it.hasNext()) {
+//				 nombreCategorias.add(it.next().getNombreCategoria());
+//				 
+//			 }
+//			 
+//		 }
+//		 return nombreCategorias;
+//	 }
 
 //	@GetMapping("/eliminar")
 //	public ModelAndView eliminar(@RequestParam(name = "id", required = true) int id) {
