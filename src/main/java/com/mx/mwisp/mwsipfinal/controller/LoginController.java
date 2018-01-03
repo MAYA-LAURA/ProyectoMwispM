@@ -18,7 +18,7 @@ public class LoginController {
 			@RequestParam(name = "logout", required = false) String logout) {
 		model.addAttribute("logout", logout);
 		model.addAttribute("error", error);
-		return "login";
+		return "/ecommerce/login";
 	}
 
 	@GetMapping({ "/loginsuccess"})

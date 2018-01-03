@@ -22,7 +22,7 @@ import com.mx.mwisp.mwsipfinal.service.ProductoService;
 public class ProductosController {
 
 	
-	private static final String vistaProductoAdmin = "productosAdmin";
+	private static final String vistaProductoAdmin = "/ecommerce/productosAdmin";
 	@Autowired
 	@Qualifier("productoServiceImpl")
 	ProductoService productoServiceImpl;
@@ -40,7 +40,7 @@ public class ProductosController {
 
 	@GetMapping("/formProducto")
 	public ModelAndView formularioProducto(@RequestParam(name="idz",required=false) int id) {
-		ModelAndView mav = new ModelAndView("formularioProducto");
+		ModelAndView mav = new ModelAndView("/ecommerce/formularioProducto");
 		if (id!=0) {
 			
 			mav.addObject("produ", productoServiceImpl.encontrarPorId(id));
