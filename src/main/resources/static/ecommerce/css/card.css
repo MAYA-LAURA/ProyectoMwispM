@@ -193,7 +193,7 @@ a.button.disabled {
     width: 113px;
 }
 .pymnt-cntnt div.sctn-row div.sctn-col.cvv {
-    background-image: url("/img/cvv.png");
+    background-image: url("/ecommerce/img/cvv.png");
     background-position: 156px center;
     background-repeat: no-repeat;
     padding-bottom: 30px;
@@ -208,7 +208,7 @@ a.button.disabled {
     width: 435px;
 }
 .openpay div.logo {
-    background-image: url("/img/openpay.png");
+    background-image: url("/ecommerce/img/openpay.png");
     background-position: left bottom;
     background-repeat: no-repeat;
     border-right: 1px solid #ccc;
@@ -218,7 +218,7 @@ a.button.disabled {
     padding: 15px 20px 0 0;
 }
 .openpay div.shield {
-    background-image: url("./security.png");
+    background-image: url("/ecommerce/img/security.png");
     background-position: left bottom;
     background-repeat: no-repeat;
     font-size: 12px;
@@ -240,12 +240,12 @@ a.button.disabled {
     padding-top: 10px;
 }
 .card-expl div.debit {
-    background-image: url("/img/cards2.png");
+    background-image: url("/ecommerce/img/cards2.png");
     margin-left: 20px;
     width: 540px;
 }
 .card-expl div.credit {
-    background-image: url("/img/cards1.png");
+    background-image: url("/ecommerce/img/cards1.png");
     border-right: 1px solid #ccc;
     margin-left: 30px;
     width: 209px;
