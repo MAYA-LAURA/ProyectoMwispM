@@ -5,11 +5,19 @@
 <title>Insert title here</title>
 <!--   <link  th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/> -->
 <!-- Bootstrap core CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link href="#" th:href="@{/ecommerce/css/bootstrap.css}" rel="stylesheet" />
+<link href="#" th:href="@{/ecommerce/css/bootstrap.min.css}" rel="stylesheet" />
+    <link  th:href="@{/ecommerce/css/font-awesome.css}" rel="stylesheet"/>
+    <link  th:href="@{/ecommerce/css/font-awesome.min.css}" rel="stylesheet"/>
 </head>
 <body>
-	<table class="table table-striped">
+
+<br/>
+<div>
+<div class="col-md-8 hola">
+	<p class="center"> LISTA DE PRODUCTOS </p>
+	<table class="table table-striped box col-md-8">
 		<thead>
 			<tr>
 				<th>Id</th>
@@ -44,10 +52,20 @@
 			</tr>
 		</tbody>
 	</table>
-	<a th:href="@{/Admin/formProducto?idz=0}" class="btn btn-primary">Agregar
-		nuevo Producto</a>
-		<br/>
+	</div>
+	<div class="row col-md-5 center">
+	<br/>
+	
+	<div class="col-md-2">
+	<a th:href="@{/Admin/formProducto?idz=0}" class="btn btn-primary">Agregar nuevo Producto</a>
+	</div>
+    <br/> <br/>
+    
+    <div class="col-md-2 center">
 		<form th:action="@{/logout}" method="post"><button type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-off"></span></button></form>
+	</div>
+	  </div>
+	   </div>
 		
 </body>
 </html>

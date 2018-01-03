@@ -44,14 +44,14 @@ a.button {
     padding: 12px 0;
     width: 100%;
     display: table;
-    background: #E51F04;
-    background: -moz-linear-gradient(top,  #E51F04 0%, #A60000 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#E51F04), color-stop(100%,#A60000));
-    background: -webkit-linear-gradient(top,  #E51F04 0%,#A60000 100%);
-    background: -o-linear-gradient(top,  #E51F04 0%,#A60000 100%);
-    background: -ms-linear-gradient(top,  #E51F04 0%,#A60000 100%);
-    background: linear-gradient(top,  #E51F04 0%,#A60000 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E51F04', endColorstr='#A60000',GradientType=0 );
+    background: #4993e4;
+    background: -moz-linear-gradient(top,  #4993e4 0%, #4993e4 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4993e4), color-stop(100%,#4993e4));
+    background: -webkit-linear-gradient(top,  #4993e4 0%,#4993e4 100%);
+    background: -o-linear-gradient(top,  #4993e4 0%,#4993e4 100%);
+    background: -ms-linear-gradient(top,  #4993e4 0%,#4993e4 100%);
+    background: linear-gradient(top,  #4993e4 0%,#4993e4 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4993e4', endColorstr='#4993e4',GradientType=0 );
 }
 a.button i {
     margin-right: 10px;
@@ -73,14 +73,14 @@ a.button.disabled {
 }
 .bkng-tb-cntnt a.button.o {
     background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
-    color: #e51f04;
-    border: 1px solid #e51f04;
+    color: #4993e4;
+    border: 1px solid #4993e4;
 }
 .bkng-tb-cntnt a.button i {
     color: #fff;
 }
 .bkng-tb-cntnt a.button.o i {
-    color: #e51f04;
+    color: #4993e4;
 }
 .bkng-tb-cntnt a.button.right i {
     float: right;
@@ -152,10 +152,10 @@ a.button.disabled {
     line-height: 24px;
     margin: 0;
     padding: 28px 0 28px 20px;
-    width: 780px;
+    width: 790px;
 }
 .pymnt-itm.active h2 {
-    background-color: #e51f04;
+    background-color: #4993e4;
     color: #fff;
     cursor: default;
 }
@@ -166,7 +166,7 @@ a.button.disabled {
     background-color: #f7f7f7;
     display: block;
     padding: 0 0 30px;
-    width: 100%;
+    width: 790px;
 }
 
 .pymnt-cntnt div.sctn-row {

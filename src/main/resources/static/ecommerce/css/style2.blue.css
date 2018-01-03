@@ -1,3 +1,23 @@
+.hola p{
+	color:red;
+}
+.piedepagina {    
+		  text-align: center;
+		  background: #333;
+		       color: white;
+		   font-size: 1.4rem; 
+		   list-style:none;
+		   
+	
+		     }
+.wizard{
+	margin:150px;
+}	
+
+.piedepag  {
+	margin:200px;
+	
+}  
 a,
 button {
   -webkit-transition: all 0.2s ease-out;
@@ -20,12 +40,12 @@ h1 {
 }
 
 /*
-/*Color de la cinta de opciones: Iniciar sesion, Regístrate, Contacto, Visto recientemente .....que se ha eliminado**
+/*Color de la cinta de opciones: Iniciar sesion, Regï¿½strate, Contacto, Visto recientemente .....que se ha eliminado**
 #top {
   background: #555555;
   padding: 2px 0;
 }
-/*Color de las letras de la cinta de opciones: Iniciar sesion, Regístrate, Contacto, Visto recientemente .....que se ha eliminado**
+/*Color de las letras de la cinta de opciones: Iniciar sesion, Regï¿½strate, Contacto, Visto recientemente .....que se ha eliminado**
 #top .offer {
   color: #fff;
 }
@@ -82,7 +102,7 @@ h1 {
 #top #login-modal .modal-header h4 {
   color: #fff;
 }
-/*Color de letrero "Regístrate ahora"*/
+/*Color de letrero "Regï¿½strate ahora"*/
 #top #login-modal a {
   color: #4993e4;
 }
@@ -120,7 +140,7 @@ h1 {
 }
 
 
-/*Borde inferior de los submenús del encabezado*/
+/*Borde inferior de los submenï¿½s del encabezado*/
 .navbar .yamm-content h5 {
   font-size: 18px;
   font-weight: 400;
@@ -1266,7 +1286,7 @@ margin-bottom: 3px;
     margin-right: 0;
   }
 }
-/*Color de fondo del menú*/
+/*Color de fondo del menï¿½*/
 .navbar-default {
   background-color: #333;
   border-bottom-color: #e6e6e6;
@@ -1274,7 +1294,7 @@ margin-bottom: 3px;
    -webkit-transition: all .5s ease;
   transition: all .5s ease;   
 }
-/*Color del fondo de menú, con la clase navbar-fixed-top*/
+/*Color del fondo de menï¿½, con la clase navbar-fixed-top*/
 .navbar-default.fondo-menu {
   background: #064e4e;
   padding: 1rem 0; }
@@ -1291,13 +1311,13 @@ margin-bottom: 3px;
   color: #777777;
 }
 
-/*Color de las letras del menú*/
+/*Color de las letras del menï¿½*/
 .navbar-default .navbar-nav > li > a {
   color: #4993e4;
 }
 
 
-/*Color de las letras del menú en estado hover y focus*/
+/*Color de las letras del menï¿½ en estado hover y focus*/
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
   color: white;
@@ -1328,7 +1348,7 @@ margin-bottom: 3px;
 .navbar-default .navbar-collapse {
   border-color: #e6e6e6;
 }
-/*Estilos del menú, en estado hover y focus*/
+/*Estilos del menï¿½, en estado hover y focus*/
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {

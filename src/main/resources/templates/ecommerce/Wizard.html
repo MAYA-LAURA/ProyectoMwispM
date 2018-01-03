@@ -4,15 +4,12 @@
 <meta charset="UTF-8" />
 <title>Insert title here</title>
 
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-	 <link  th:href="@{/css/card.css}" rel="stylesheet"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link  th:href="@{/css/card.css}" rel="stylesheet"/>
 <link href="#" th:href="@{/ecommerce/css/wizard.css}" rel="stylesheet" />
 <script th:src="@{/ecommerce/js/jquery-1.11.0.min.js}"></script>
-<script type="text/javascript" 
-        src="https://openpay.s3.amazonaws.com/openpay.v1.min.js"></script>
-<script type='text/javascript' 
-  src="https://openpay.s3.amazonaws.com/openpay-data.v1.min.js"></script>
+<script type="text/javascript"  src="https://openpay.s3.amazonaws.com/openpay.v1.min.js"></script>
+<script type='text/javascript' src="https://openpay.s3.amazonaws.com/openpay-data.v1.min.js"></script>
 <script th:src="@{/ecommerce/js/bootstrap.min.js}"></script>
 <script th:src="@{/ecommerce/js/wizard.js}"></script>
 
@@ -51,8 +48,8 @@
 
 </head>
 <body>
-
-	<div class="container">
+ <th:block th:include="/ecommerce/encabezado"></th:block>
+	<div class="container wizard">
 		<div class="stepwizard">
 			<div class="stepwizard-row setup-panel">
 				<div class="stepwizard-step">
@@ -71,11 +68,14 @@
 				</div>
 			</div>
 		</div>
+		
 		<form id="payment-form" action="#" th:action="@{/ecommerce/pagar}"
 			th:object="${formularioEcommerce}" method="post" role="form">
-			<div class="row setup-content" id="step-1">
+			
+			
+			<div class="row setup-content col-sm-12" id="step-1">
 				<div class="col-xs-12">
-					<div class="col-md-12">
+					<div class="col-md-9 box">
 						<h3>Datos Personales</h3>
 						<div class="form-group">
 							<label class="control-label">Nombre</label> <input
@@ -104,11 +104,48 @@
 						<button class="btn btn-primary nextBtn btn-lg pull-right"
 							type="button">Next</button>
 					</div>
+						
+				<div class="col-md-3">
+                    <div class="box" id="order-summary">
+                        <div class="box-header">
+                            <h3>Resúmen de orden</h3>
+                        </div>
+                        <p class="text-muted">El envío y los costos adicionales se calculan en función de los valores que ingresó.</p>
+
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>Subtotal</td>
+                                        <th>$446.00</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Envío</td>
+                                        <th>$10.00</th>
+                                    </tr>
+                                    <tr>
+                                        <td>I.V.A.</td>
+                                        <th>$0.00</th>
+                                    </tr>
+                                    <tr class="total">
+                                        <td>Total</td>
+                                        <th>$456.00</th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>                    
+                </div>
+					
 				</div>
 			</div>
+			
+			
+			
 			<div class="row setup-content" id="step-2">
 				<div class="col-xs-12">
-					<div class="col-md-12">
+					<div class="col-md-9 box">
 						<h3>Dirección</h3>
 						<div class="form-group">
 							<label class="control-label">Calle</label> <input maxlength="200"
@@ -154,11 +191,47 @@
 						<button class="btn btn-primary nextBtn btn-lg pull-right"
 							type="button">Next</button>
 					</div>
+					<div class="col-md-3">
+                    <div class="box" id="order-summary">
+                        <div class="box-header">
+                            <h3>Resúmen de orden</h3>
+                        </div>
+                        <p class="text-muted">El envío y los costos adicionales se calculan en función de los valores que ingresó.</p>
+
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>Subtotal</td>
+                                        <th>$446.00</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Envío</td>
+                                        <th>$10.00</th>
+                                    </tr>
+                                    <tr>
+                                        <td>I.V.A.</td>
+                                        <th>$0.00</th>
+                                    </tr>
+                                    <tr class="total">
+                                        <td>Total</td>
+                                        <th>$456.00</th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>                    
+                </div>
+					
 				</div>
 			</div>
+			
+			
+			
 			<div class="row setup-content" id="step-3">
 				<div class="col-xs-12">
-					<div class="col-md-12">
+					<div class="col-md-9 box">
 						<h3>Formas de Pago</h3>
 
 						<div class="panel-group" id="accordion">
@@ -175,18 +248,53 @@
 								</div>
 								<div id="collapseOne" class="panel-collapse collapse in">
 									<div class="panel-body">
-										<p>
-											HTML stands for HyperText Markup Language. HTML is the main
-											markup language for describing the structure of Web pages. <a
-												href="http://www.tutorialrepublic.com/html-tutorial/"
-												target="_blank">Learn more.</a>
-										</p>
-									</div>
-								</div>
-
-							</div>
-
-
+										<div class="BANCOS">      
+    <div class="row">  
+      <div class="col-md-1"></div>              
+        <div class="col-md-2">
+            <img  th:src="@{/ecommerce/img/marca1.png}" class="img-responsive"  alt=""/>        
+        </div>
+        </div>
+        <br></br>
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-sm-1 col-xs-2 col-md-2">
+            <img  th:src="@{/ecommerce/img/marca2.png}" class="img-responsive"  alt=""/>        
+        </div>
+        </div>
+        <br></br>
+        <div class="row">
+          <div class="col-md-1"></div>
+        <div class="col-sm-1 col-xs-2 col-md-2">
+        <img  th:src="@{/ecommerce/img/marca3.png}" class="img-responsive"  alt=""/>
+        </div>
+        </div>
+        <br></br>
+        <div class="row">
+          <div class="col-md-1"></div>
+        <div class="col-sm-1 col-xs-2 col-md-2">
+        <img  th:src="@{/ecommerce/img/marca4.png}" class="img-responsive"  alt=""/>
+        </div>   
+        </div>
+        <br></br>
+        <div class="row">
+          <div class="col-md-1"></div>
+        <div class="col-sm-1 col-xs-2 col-md-2">
+        <img  th:src="@{/ecommerce/img/marca5.png}" class="img-responsive"  alt=""/>
+        </div>
+        </div>
+        <br></br>
+        <div class="row">
+          <div class="col-md-1"></div>
+        <div class="col-sm-2 col-xs-2 col-md-2  ">
+        <img  th:src="@{/ecommerce/img/marca6.png}" class="img-responsive"  alt=""/>
+        </div>                  
+    </div>        
+</div> 
+									
+</div>
+</div>
+</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
@@ -199,13 +307,52 @@
 								</div>
 								<div id="collapseTwo" class="panel-collapse collapse">
 									<div class="panel-body">
-										<p>
-											Bootstrap is a powerful front-end framework for faster and
-											easier web development. It is a collection of CSS and HTML
-											conventions. <a
-												href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/"
-												target="_blank">Learn more.</a>
-										</p>
+																								
+<div class="TIENDAS">      
+    <div class="row">  
+      <div class="col-md-1"></div>              
+        <div class="col-md-2">
+            <img  th:src="@{/ecommerce/img/marca1.png}" class="img-responsive"  alt=""/>        
+        </div>
+        </div>
+        <br></br>
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-sm-1 col-xs-2 col-md-2">
+            <img  th:src="@{/ecommerce/img/marca2.png}" class="img-responsive"  alt=""/>        
+        </div>
+        </div>
+        <br></br>
+        <div class="row">
+          <div class="col-md-1"></div>
+        <div class="col-sm-1 col-xs-2 col-md-2">
+        <img  th:src="@{/ecommerce/img/marca3.png}" class="img-responsive"  alt=""/>
+        </div>
+        </div>
+        <br></br>
+        <div class="row">
+          <div class="col-md-1"></div>
+        <div class="col-sm-1 col-xs-2 col-md-2">
+        <img  th:src="@{/ecommerce/img/marca4.png}" class="img-responsive"  alt=""/>
+        </div>   
+        </div>
+        <br></br>
+        <div class="row">
+          <div class="col-md-1"></div>
+        <div class="col-sm-1 col-xs-2 col-md-2">
+        <img  th:src="@{/ecommerce/img/marca5.png}" class="img-responsive"  alt=""/>
+        </div>
+        </div>
+        <br></br>
+        <div class="row">
+          <div class="col-md-1"></div>
+        <div class="col-sm-2 col-xs-2 col-md-2  ">
+        <img  th:src="@{/ecommerce/img/marca6.png}" class="img-responsive"  alt=""/>
+        </div>                  
+    </div>        
+</div>             
+										
+									
 									</div>
 								</div>
 							</div>
@@ -221,7 +368,6 @@
 								</div>
 								<div id="collapseThree" class="panel-collapse collapse">
 									<div class="panel-body">
-								
 	<div class="bkng-tb-cntnt">
         <div class="pymnts">
 <!--             <form action="#"  id="payment-form"   method="post"> -->
@@ -264,19 +410,92 @@
 									</div>
 								</div>
 							</div>
-							
-							
-
-
 						</div>
-
-
 						<button class="btn btn-success btn-lg pull-right" type="submit">Finish!</button>
 					</div>
+					<div class="col-md-3">
+                    <div class="box" id="order-summary">
+                        <div class="box-header">
+                            <h3>Resúmen de orden</h3>
+                        </div>
+                        <p class="text-muted">El envío y los costos adicionales se calculan en función de los valores que ingresó.</p>
+
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>Subtotal</td>
+                                        <th>$446.00</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Envío</td>
+                                        <th>$10.00</th>
+                                    </tr>
+                                    <tr>
+                                        <td>I.V.A.</td>
+                                        <th>$0.00</th>
+                                    </tr>
+                                    <tr class="total">
+                                        <td>Total</td>
+                                        <th>$456.00</th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>                    
+                </div>
+					
+					
 				</div>
 			</div>
 		</form>
+		
+		
+		
+		
 	</div>
+	
+	
 
+	
+	
+	
+	
+	
+	
+	<div class="box marcas">    
+    <div class="row">
+        <div class="col-sm-12">
+                    <p class="font-weight-bold text-center">LAS MEJORES MARCAS</p>            
+        </div>        
+    </div>    
+    <div class="row">                
+        <div class="col-sm-3 "></div>
+        <div class="col-sm-1 col-xs-2">
+            <img  th:src="@{/ecommerce/img/marca1.png}" class="img-responsive"  alt=""/>        
+        </div>
+        <div class="col-sm-1 col-xs-2">
+            <img  th:src="@{/ecommerce/img/marca2.png}" class="img-responsive"  alt=""/>        
+        </div>
+        <div class="col-sm-1 col-xs-2">
+        <img  th:src="@{/ecommerce/img/marca3.png}" class="img-responsive"  alt=""/>
+        </div>
+        <div class="col-sm-1 col-xs-2">
+        <img  th:src="@{/ecommerce/img/marca4.png}" class="img-responsive"  alt=""/>
+        </div>   
+        <div class="col-sm-1 col-xs-2">
+        <img  th:src="@{/ecommerce/img/marca5.png}" class="img-responsive"  alt=""/>
+        </div>
+        <div class="col-sm-2 col-xs-2   ">
+        <img  th:src="@{/ecommerce/img/marca6.png}" class="img-responsive"  alt=""/>
+        </div>                  
+        <div class="col-sm-2"></div>
+    </div>        
+</div>                                    
+	
+	
+	
+<th:block th:include="/ecommerce/piePag"></th:block>
 </body>
 </html>

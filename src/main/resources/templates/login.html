@@ -15,16 +15,19 @@
   </head>
 
   <body>
+ <th:block th:include="/ecommerce/encabezado"></th:block>
 
-    <div class="container">
+    <div class="container piedepag">
 
       <form class="form-signin"  th:action="@{/logincheck}"  method="POST">
       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         <h2 class="form-signin-heading">Iniciar</h2>
+        
         <label for="inputEmail" class="sr-only">Username</label>
-        <input type="text"  class="form-control" placeholder="Username" name="username" id="username"/>
+        <input type="text"  class="form-control" placeholder="Usuario" name="username" id="username"/>
+        <br></br>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password"  class="form-control" placeholder="Password" name="password" id="password"/>
+        <input type="password"  class="form-control" placeholder="contraseña" name="password" id="password"/>
         <div th:if="${error != null}" class="alert alert-danger" role="alert">Usuario o Contraseña incorrecta</div>
                 <div th:if="${logout != null}" class="alert alert-info" role="alert">sision finalizada</div>
         
@@ -34,6 +37,6 @@
       </form>
 
     </div> <!-- /container -->
-
+ <th:block th:include="/ecommerce/piePag"></th:block>
 </body>
 </html>
