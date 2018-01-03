@@ -7,7 +7,7 @@
 <body>
 <form action="#" th:action="@{/Admin/addProducto}" th:object="${produ}"
 		method="post">
-		<input type="hidden" th:field="*{idProdcutos}"/> 
+		<input type="text" th:field="*{idProdcutos}"/> 
 		<p>
 			Nombre:<input type="text" th:field="*{nombreProducto}" />
 		</p>

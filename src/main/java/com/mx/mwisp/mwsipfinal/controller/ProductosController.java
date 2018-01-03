@@ -42,6 +42,7 @@ public class ProductosController {
 	public ModelAndView formularioProducto(@RequestParam(name="idz",required=false) int id) {
 		ModelAndView mav = new ModelAndView("formularioProducto");
 		if (id!=0) {
+			
 			mav.addObject("produ", productoServiceImpl.encontrarPorId(id));
 		}
 		else {
