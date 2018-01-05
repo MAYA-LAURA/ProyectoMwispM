@@ -17,7 +17,6 @@
     <!-- Carga de Galeria de imágenes -->
     <link rel="stylesheet" th:href="@{/principal/css/owl.carousel.min.css}"/>
     
-
     <!-- Carga de archivos css -->    
     <link rel="stylesheet" th:href="@{/principal/css/bootstrap.css}"/>
     <link rel="stylesheet" th:href="@{/principal/css/animate.min.css}" />
@@ -67,7 +66,7 @@
                 <nav id="menu-principal" class="collapse">
                     <ul>
                         <li class="active"><a href="index.html">Inicio</a></li>                       
-                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a th:href="@{/admin/ListaRouter}" >Servicios</a></li>
                         <li><a th:href="@{/ecommerce/principal}">Tienda Online 	<i class="fa fa-shopping-cart"></i></a></li>
                         <li><a href="ecommerce/contact.xhtml">Contacto</a></li>
                     </ul>
@@ -88,8 +87,7 @@
         </div>
 
     </section>
-        
-        
+    
     <section class="agencia p-y-1" id="agencia">
         <div class="container">
             <div class="row">
@@ -131,16 +129,15 @@
 
                 <article class="col-md-4 wow bounceInRight" data-wow-delay="1s">
                     <img th:src="@{/principal/img/servicio-3.svg}" alt="Servicio Marketing y publicidad Movil"/>
-                    <h3><a href="ecommerce/index.xhtml">Venta de equipos de Redes y CCTV</a></h3>
+                    <h3><a href="ecommerce/index.html">Venta de equipos de Redes y CCTV</a></h3>
                     <p class="hidden-sm-down">Manejamos las mejores marcas, el mejor precio y sobretodo: brindamos el mejor servicio.</p>
-                    <a href="ecommerce/index.xhtml" class="btn btn-secondary hidden-sm-down">Ir a tienda</a>
+                    <a th:href="@{/ecommerce/principal}" class="btn btn-secondary hidden-sm-down">Ir a tienda</a>
                 </article>
 
             </div>
         </div>
     </main>               
-    
-    
+   
     <section class="tu-mejor-eleccion p-y-1">
         <div class="container">
 
@@ -175,7 +172,7 @@
                     </li>
                 </ul>
 
-                <div class="hidden-md-down col-lg-4">
+                <div class="hidden-md-down col-lg-4 col-md-4">
                     <img th:src="@{/principal/img/mundo.svg}" alt="Mundo movil"/>
                 </div>
 
@@ -206,22 +203,16 @@
         </div>
     </section>
 
-
     <footer class="piedepagina p-y-2" role="contentinfo">
         <div class="container">
             <p>2016 © NETWORK Todos los derechos reservados</p>
             <ul class="redes-sociales">
-                <li><a href="https://www.facebook.com/groups/1429817027341749/"><i class="fa fa-facebook" aria-hidden="true"> </i>  </a></li>
-                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i> </a></li>
-                <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i> </a></li>
+                <li><a href="https://www.facebook.com/groups/1429817027341749/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"> </i>  </a></li>
+                <li><a href="https://twitter.com/login?lang=es" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> </a></li>
+                <li><a href="https://www.whatsapp.com/?l=es" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i> </a></li>
             </ul>
-
         </div>
-
     </footer>
-
-    
-
     <!-- Carga de archivos  JS -->
 
     <script th:href="@{/principal/js/jquery.min.js}" ></script>
@@ -230,9 +221,5 @@
     <script th:href="@{/principal/js/wow.min.js}"></script>
     <script th:href="@{/principal/js/smooth-scroll.min.js}"></script>
     <script th:href="@{/principal/js/sitio.js}"></script>
-
-
-
 </body>
-
 </html>
