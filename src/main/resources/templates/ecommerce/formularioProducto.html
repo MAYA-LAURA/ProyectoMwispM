@@ -17,10 +17,13 @@
 <hr></hr>
 <div class="col-md-8 center">
 <form action="#" th:action="@{/Admin/addProducto}" th:object="${produ}"
-		method="post">
+	enctype="multipart/form-data" method="POST">
 		<input type="hidden" th:field="*{idProdcutos}"/> 
 		<p>
 			Nombre:<input type="text" th:field="*{nombreProducto}" />
+		</p>
+		<p>
+			Modelo:<input type="text" th:field="*{modelo}"/>
 		</p>
 		<p>
 			Precio:<input type="text" th:field="*{precio}" />
@@ -30,6 +33,24 @@
 		</p>
 		<p>
 			Garantia:<input type="text" th:field="*{tiempoGarantia}" />
+		</p>
+		<p>
+			Categoria: <select th:field="*{categoria.nombreCategoria}">
+											<option th:each="iterador: ${categoriaObj}"
+												th:value="${iterador.nombreCategoria}" th:text="${iterador.nombreCategoria}"></option>
+										</select>
+		</p>
+		<p>
+			Marca: <select th:field="*{marca.marca}">
+											<option th:each="iterador: ${marcaObj}"
+												th:value="${iterador.marca}" th:text="${iterador.marca}"></option>
+										</select>
+		</p>
+		<p>
+		  <img th:src="@{|/ecommerce/productImg?idProdcutos=${produ.idProdcutos}|}" width="100"/>
+		</p>
+		<p>
+			Subir Imagen:<input type="file" th:field="*{fileData}"/> 
 		</p>
 		<p>
 			<input type="submit" value="Guardar"  class="btn btn-primary"/>

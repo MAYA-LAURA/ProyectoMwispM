@@ -15,12 +15,18 @@ public class CategoriaServiceImpl implements CategoriaService {
 
 	@Autowired
 	@Qualifier("categoriaJpaRepository")
-	CategoriaJpaRepository categiriaJpaRepository;
+	CategoriaJpaRepository categoriaJpaRepository;
 	
 	@Override
 	public List<Categoria> listarCategorias() {
 		// TODO Auto-generated method stub
-		return categiriaJpaRepository.findAll();
+		return categoriaJpaRepository.findAll();
+	}
+
+	@Override
+	public Categoria encontrarCategoria(String categoria) {
+		// TODO Auto-generated method stub
+		return categoriaJpaRepository.findByNombreCategoria(categoria);
 	}
 
 }

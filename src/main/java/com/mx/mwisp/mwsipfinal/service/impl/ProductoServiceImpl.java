@@ -11,8 +11,11 @@ import org.springframework.stereotype.Service;
 import com.mx.mwisp.mwsipfinal.converter.ProductoConverter;
 import com.mx.mwisp.mwsipfinal.dao.ProductoJpaRepository;
 import com.mx.mwisp.mwsipfinal.entity.Categoria;
+import com.mx.mwisp.mwsipfinal.entity.Marca;
 import com.mx.mwisp.mwsipfinal.entity.Productos;
 import com.mx.mwisp.mwsipfinal.model.ProductoModel;
+import com.mx.mwisp.mwsipfinal.service.CategoriaService;
+import com.mx.mwisp.mwsipfinal.service.MarcaService;
 import com.mx.mwisp.mwsipfinal.service.ProductoService;
 
 
@@ -27,6 +30,12 @@ public class ProductoServiceImpl implements ProductoService{
 	@Autowired
 	@Qualifier("productoConverter")
 	private ProductoConverter productoConverter;
+	@Autowired
+	@Qualifier("marcaServiceImpl")
+	private MarcaService marcaService;
+	@Autowired
+	@Qualifier("categoriaServiceImpl")
+	private CategoriaService categoriaServiceImpl;
 	
 	@Override
 	public List<Productos> listarProductos() {
@@ -37,10 +46,15 @@ public class ProductoServiceImpl implements ProductoService{
 	@Override
 	public Productos addProducto(ProductoModel productoModel) {
 		// TODO Auto-generated method stub
-		Categoria categoria=new Categoria("Redes", "productos redes");
-		categoria.setIdCategoria(1);
+		
+		log.info(productoModel.getCategoria().getNombreCategoria());
+		log.info(productoModel.getMarca().getMarca());
+		Categoria categoria=categoriaServiceImpl.encontrarCategoria(productoModel.getCategoria().getNombreCategoria());
+		Marca marca=marcaService.encontrarMarca(productoModel.getMarca().getMarca());
+		log.info(marca);
 		Productos productos=  productoConverter.modelEntity(productoModel);
 		productos.setCategoria(categoria);
+		productos.setMarca(marca);
 		
 		return productoJpaRepository.save(productos);
 	}

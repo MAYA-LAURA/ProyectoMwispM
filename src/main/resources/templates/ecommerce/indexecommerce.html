@@ -72,7 +72,7 @@
                                     <div class="flipper">
                                         <div class="front">
                                             <a href="detail.xhtml">
-                                                <img  th:src="@{/ecommerce/img/y.jpg}" class="img-responsive img-thumbnail"  alt=""/>     
+                                                 <img th:src="@{|/ecommerce/productImg?idProdcutos=${objEach.idProdcutos}|}" class="img-responsive img-thumbnail" alt=""/>     
                                             </a>
                                         </div>
                                         <div class="back">
@@ -86,6 +86,7 @@
                                      <img  th:src="@{/ecommerce/img/y.jpg}" class="img-responsive"  alt=""/>                                          
                                 </a>
                                 <div class="text">
+                                	<p><span th:text="${objEach.nombreProducto}"></span></p>
                                     <h3><a href="detail.html"><span  th:text="${objEach.descripcion}"></span></a></h3>
                                     <p class="price">$<span th:text="${objEach.precio}"></span></p> 
                                 </div>

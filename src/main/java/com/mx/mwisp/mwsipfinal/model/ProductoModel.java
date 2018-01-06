@@ -1,17 +1,60 @@
 package com.mx.mwisp.mwsipfinal.model;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import com.mx.mwisp.mwsipfinal.entity.Categoria;
+import com.mx.mwisp.mwsipfinal.entity.Marca;
 
 public class ProductoModel {
 	private int  idProdcutos;
 	private String nombreProducto;
+	private String modelo;
 	private float precio;
 	private String descripcion;
 	private String tiempoGarantia;
 	private Categoria categoria;
+	private Marca marca;
+	//subir imagen
+	private MultipartFile fileData;
+	
+	
+	
+	public String getModelo() {
+		return modelo;
+	}
 
-	
-	
+
+
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+
+
+
+	public Marca getMarca() {
+		return marca;
+	}
+
+
+
+	public void setMarca(Marca marca) {
+		this.marca = marca;
+	}
+
+
+
+	public MultipartFile getFileData() {
+		return fileData;
+	}
+
+
+
+	public void setFileData(MultipartFile fileData) {
+		this.fileData = fileData;
+	}
+
+
+
 	public int getIdProdcutos() {
 		return idProdcutos;
 	}
@@ -83,17 +126,17 @@ public class ProductoModel {
 	}
 
 
-	
 
-	public ProductoModel(int idProdcutos, String nombreProducto, float precio, String descripcion,
-			String tiempoGarantia, Categoria categoria) {
+	public ProductoModel(String nombreProducto, String modelo, float precio, String descripcion, String tiempoGarantia,
+			Categoria categoria, Marca marca) {
 		super();
-		this.idProdcutos = idProdcutos;
 		this.nombreProducto = nombreProducto;
+		this.modelo = modelo;
 		this.precio = precio;
 		this.descripcion = descripcion;
 		this.tiempoGarantia = tiempoGarantia;
 		this.categoria = categoria;
+		this.marca = marca;
 	}
 
 

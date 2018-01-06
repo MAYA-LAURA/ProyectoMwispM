@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.mx.mwisp.mwsipfinal.model.ProductoModel;
 import com.mx.mwisp.mwsipfinal.service.CategoriaService;
+import com.mx.mwisp.mwsipfinal.service.MarcaService;
 import com.mx.mwisp.mwsipfinal.service.ProductoService;
 
 @Controller
@@ -26,8 +27,14 @@ public class ProductosController {
 	@Autowired
 	@Qualifier("productoServiceImpl")
 	ProductoService productoServiceImpl;
+	
+	@Autowired
 	@Qualifier("categoriaServiceImpl")
 	CategoriaService categoriaServiceImpl;
+	
+	@Autowired
+	@Qualifier("marcaServiceImpl")
+	MarcaService marcaServiceImpl;
 
 
 
@@ -42,11 +49,15 @@ public class ProductosController {
 	public ModelAndView formularioProducto(@RequestParam(name="idz",required=false) int id) {
 		ModelAndView mav = new ModelAndView("/ecommerce/formularioProducto");
 		if (id!=0) {
-			
+			mav.addObject("marcaObj", marcaServiceImpl.listaMarcas());
 			mav.addObject("produ", productoServiceImpl.encontrarPorId(id));
+			mav.addObject("categoriaObj", categoriaServiceImpl.listarCategorias());
 		}
 		else {
 			mav.addObject("produ", new ProductoModel());
+			mav.addObject("marcaObj", marcaServiceImpl.listaMarcas());
+			mav.addObject("categoriaObj", categoriaServiceImpl.listarCategorias());
+			
 			
 		}
 		return mav;
