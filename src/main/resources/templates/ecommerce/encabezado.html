@@ -54,7 +54,7 @@
 		role="navigation" id="navbar">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand home" href="index.xhtml"
+				<a class="navbar-brand home" th:href="@{/ecommerce/principal}"
 					data-animate-hover="bounce"> <img
 					th:src="@{/principal/img/logoBlanco.png}" class="hidden-xs img"
 					id="img" alt="MWM" /> <img
@@ -85,7 +85,7 @@
 			<!--/.navbar-header -->
 			<div class="navbar-collapse collapse" id="navigation">
 				<ul class="nav navbar-nav navbar-left">
-					<li class="active"><a href="index.xhtml">Inicio</a></li>
+					<li class="active"><a th:href="@{/ecommerce/principal}">Inicio</a></li>
 					<li class="dropdown yamm-fw"><a href="#"
 						class="dropdown-toggle" data-toggle="dropdown"
 						data-hover="dropdown" data-delay="200">Videovigilancia<b
