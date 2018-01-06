@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/maya
+    url: jdbc:mysql://localhost:3306/mwm_bd2?useSSL=false
     username: root
     password: 123iscdv
   jpa:
