@@ -247,24 +247,26 @@
 
 
 				<div class="navbar-collapse collapse right" id="search-not-mobile">
-					<a th:href="@{/login}" type="button" class="btn navbar-btn btn-primary"
+					<a th:href="@{/login}" type="button" class="btn navbar-btn btn-login"
 						data-toggle="modal" >
 						<span class="sr-only">Login</span> <i class="fa fa-user-circle"></i>
 					</a>
 				</div>
 
 				<div class="navbar-collapse collapse right" id="basket-overview">
-					<a href="basket.xhtml" class="btn btn-primary navbar-btn"><i
+					<a th:href= "@{/ecommerce/carrito}" class="btn btn-login navbar-btn"><i
 						class="fa fa-shopping-cart"></i><span class="hidden-sm">5
 							Productos</span></a>
 				</div>
 				<!--/.nav-collapse -->
 				<!-- Boton de search en menú -->
 				<div class="navbar-collapse collapse right" id="search-not-mobile">
-					<button type="button" class="btn navbar-btn btn-primary"
-						data-toggle="collapse" data-target="#search">
-						<span class="sr-only">Buscar</span> <i class="fa fa-search"></i>
-					</button>
+					<a type="button" class="btn navbar-btn btn-login"
+						data-toggle="collapse" data-target="#search" >
+						<span class="sr-only">Login</span> <i class="fa fa-search"></i>
+					</a>
+					
+					
 				</div>
 
 			</div>

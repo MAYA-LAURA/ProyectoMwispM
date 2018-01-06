@@ -4,7 +4,6 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <h:head>
-
     
     <meta name="robots" content="all,follow"/>
     <meta name="googlebot" content="index,follow,snippet,archive"/>
@@ -35,15 +34,10 @@
 
 
 <link rel="shortcut icon" href="favicon.png" type="image/x-icon"/>
-		
-
-
-
 </h:head>
 
 <h:body>
-
-   <link th:href="@{/ecommerce/encabezado.html}" rel="import" />
+<th:block th:include="/ecommerce/encabezado"></th:block>
     <!-- *** NAVBAR END *** -->
 
     <div id="all">
@@ -54,9 +48,9 @@
                 <div class="col-md-12">
 
                     <ul class="breadcrumb">
-                        <li><a href="index.xhtml">Inicio</a>
+                        <li><a th:href="@{/ecommerce/principal}">Inicio</a>
                         </li>
-                        <li><a href="#">Mis compras</a>
+                        <li><a th:href="@{/ecommerce/ordenes}">Mis compras</a>
                         </li>
                         <li>Orden # 1735</li>
                     </ul>
@@ -75,11 +69,16 @@
                         <div class="panel-body">
 
                             <ul class="nav nav-pills nav-stacked">
-                                <li  class="active">
-                                    <a href="customer-orders.xhtml"><i class="fa fa-list"></i> Mis compras</a>
+                                <li class="">
+                                    <a th:href="@{/ecommerce/ordenes}"><i class="fa fa-list"></i> Mis compras</a>
+                                    <ul>
+                                      <li  class="active">
+                                    <a th:href="@{/ecommerce/orden}"><i class="fa fa-list"></i>Detalles de orden</a>
+                                </li>
+                                    </ul>
                                 </li>
                                 <li>
-                                    <a href="customer-account.xhtml"><i class="fa fa-user"></i> Mi cuenta</a>
+                                    <a th:href="@{/ecommerce/cuenta}"><i class="fa fa-user"></i> Mi cuenta</a>
                                 </li>
                                 <li>
                                     <a href="index.xhtml"><i class="fa fa-sign-out"></i> Cerrar sesión</a>
@@ -98,7 +97,7 @@
                         <h1>Orden #1735</h1>
 
                         <p class="lead">El pedido n.º 1735 se realizó el <strong>07/11/2017</strong> y actualmente se está <strong>preparando</strong>.</p>
-                        <p class="text-muted">Si tiene alguna pregunta, no dude en ponerse en <a href="contact.xhtml">contacto con nosotros</a>, , nuestro centro de servicio al cliente está trabajando para usted las 24 horas del día, los 7 días de la semana.</p>
+                        <p class="text-muted">Si tiene alguna pregunta, no dude en ponerse en <a th:href="@{/ecommerce/contacto}">contacto con nosotros</a>, , nuestro centro de servicio al cliente está trabajando para usted las 24 horas del día, los 7 días de la semana.</p>
 
                         <hr></hr>
 
@@ -225,15 +224,7 @@
         <div class="col-sm-2"></div>
     </div>        
 </div>  
-        <div id="footer" data-animate="fadeInUp">
-            
-                <p class="parrafo">2017 © Mercado Wisp México Todos los derechos reservados</p>            
-                        <p class="social">
-                            <a href="https://www.facebook.com/groups/1429817027341749/" class="facebook external" data-animate-hover="shake"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="twitter external" data-animate-hover="shake"><i class="fa fa-twitter"></i></a> 
-                            <a href="#" class="email external" data-animate-hover="shake"><i class="fa fa-whatsapp" ></i></a>
-                        </p>
-          </div>   
+       <th:block th:include="/ecommerce/piePag"></th:block>  
     </div>      
     <!-- *** SCRIPTS TO INCLUDE ***
  _________________________________________________________ -->

@@ -12,7 +12,7 @@
     <meta name="keywords" content=""/>
 
     <title>
-        Obaju : e-commerce template
+      MWM E-commerce
     </title>
 
     <meta name="keywords" content=""/>
@@ -41,7 +41,7 @@
 </h:head>
 
 <h:body>
-    
+  <th:block th:include="/ecommerce/encabezado"></th:block>  
     <!-- *** NAVBAR END *** -->
 
     <div id="all">
@@ -51,11 +51,11 @@
 
                 <div class="col-md-12">
                     <ul class="breadcrumb">
-                        <li><a href="#">Inicio</a>
+                        <li><a th:href="@{/ecommerce/principal}">Inicio</a>
                         </li>
                         <li><a href="#">Compras</a>
                         </li>
-                        <li><a href="#">Categoría</a>
+                        <li><a th:href="@{/ecommerce/categoria}">Categoría</a>
                         </li>
                         <li>Cámara falsa(fantasma), con Leds que encienden en la noche (No parpadea).</li>
                     </ul>
@@ -100,7 +100,7 @@
 </div>             
 <hr></hr>                                                                                                     
                   <p class="text-center buttons">
-                     <a href="basket.xhtml" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Agregar al carrito</a>                                     
+                     <a th:href="@{/ecommerce/carrito}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Agregar al carrito</a>                                     
                   </p>
                   </div>                          
                             <hr></hr>                            
@@ -171,23 +171,6 @@
                 <!-- /.container -->
 
             </div>                                    
-            <!-- *** GET INSPIRED *** --> 
-
-            <div class="box text-center" data-animate="fadeInUp">
-                <div class="container">
-                    <div class="col-md-12">
-                        <h3 class="text-uppercase">VISITA NUESTRO BLOG</h3>
-
-                        <p class="lead">¡Ingresa  <a href="blog.xhtml">aquí</a>!
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="col-md-12" data-animate="fadeInUp">              
-                    <!-- /#blog-homepage -->
-                </div>
-            </div>  
             </div>
             </div>
             </div>
@@ -223,15 +206,7 @@
     </div>        
 </div>                                    
         
-        <div id="footer" data-animate="fadeInUp">
-            
-                <p class="parrafo">2017 © Mercado Wisp México Todos los derechos reservados</p>            
-                        <p class="social">
-                            <a href="https://www.facebook.com/groups/1429817027341749/" class="facebook external" data-animate-hover="shake"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="twitter external" data-animate-hover="shake"><i class="fa fa-twitter"></i></a>                            
-                            <a href="#" class="email external" data-animate-hover="shake"><i class="fa fa-whatsapp" ></i></a>
-                        </p>
-            </div>                
+     <th:block th:include="/ecommerce/piePag"></th:block>        
         </div>               
     <!-- *** SCRIPTS TO INCLUDE ***
  _________________________________________________________ -->

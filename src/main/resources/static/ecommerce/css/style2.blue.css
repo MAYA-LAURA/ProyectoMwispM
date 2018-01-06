@@ -1,3 +1,37 @@
+.btn-login{
+	background:none;
+	 border: 1px solid #fff;
+	 margin:5px;
+	 opacity:.8;
+}
+.btn-login:hover{
+	opacity:1;
+	color:white;
+}
+
+/*ESTILOS A LA TABLA "LISTA DE PRODUCTOS"*/
+.listaproductp{
+font-size:25px;
+	text-align:center;
+	font-weight:bold 
+}
+.listaproduct {
+   width: 100%;
+   border: 2px solid red;
+}
+.listaproduct .hola{
+	width: 4000px;
+	text-align:center
+}
+.listaproduct th {
+   width: 300px;
+   text-align: left;
+   vertical-align: top;
+   border: 2px solid #272727;
+   border-spacing: 0;  
+	text-align:center
+}
+/*ESTILOS PIE DE PAGINA*/
 .piedepagina {    
 		  text-align: center;
 		  background: #333;
@@ -1217,10 +1251,10 @@ h1 {
 
 /*ESTILOS BOTONES VISTA MOVIL: BUSCAR, MENU, CAR*/
 .navbar-toggle {
-	font-size:25px;
+	font-size:15px;
       padding: 1px 10px !important;	  
   margin-left: -30px;    
-   margin-top: 18px;
+   margin-top: 25px;
 margin-bottom: 3px;
         color:#4993e4;
        border:none;  

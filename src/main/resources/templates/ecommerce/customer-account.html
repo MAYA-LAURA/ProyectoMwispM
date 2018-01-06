@@ -43,8 +43,7 @@
 </h:head>
 
 <h:body>
-
-   <link th:href="@{/ecommerce/encabezado.html}" rel="import" />
+<th:block th:include="/ecommerce/encabezado"></th:block>
     <!-- *** NAVBAR END *** -->
 
     <div id="all">
@@ -55,7 +54,7 @@
                 <div class="col-md-12">
 
                     <ul class="breadcrumb">
-                        <li><a href="#">Inicio</a>
+                        <li><a th:href="@{/ecommerce/principal}">Inicio</a>
                         </li>
                         <li>Mi cuenta</li>
                     </ul>
@@ -75,7 +74,7 @@
 
                             <ul class="nav nav-pills nav-stacked">
                                 <li>
-                                    <a href="customer-orders.xhtml"><i class="fa fa-list"></i> Mis compras</a>
+                                    <a th:href="@{/ecommerce/ordenes}"><i class="fa fa-list"></i> Mis compras</a>
                                 </li>
                                 <li class="active">
                                     <a href="customer-account.xhtml"><i class="fa fa-user"></i> Mi cuenta</a>
@@ -210,7 +209,47 @@
             <!-- /.container -->
         </div>
         <!-- /#content -->
+                    <div id="advantages">
 
+                <div class="container">
+                    <div class="same-height-row">
+                        <div class="col-sm-4">
+                            <div class="box same-height clickable">
+                                <div class="icon"><i class="fa fa-money"></i>
+                                </div>
+
+                                  <h3><a href="#">Los mejores precios</a></h3>
+                                <p>Te ofrecemos los mejores precios y la más alta calidad.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="box same-height clickable">
+                                <div class="icon"><i class="fa fa-heart"></i>
+                                </div>
+
+                             
+                                <h3><a href="#">Amámos a nuestros clientes</a></h3>
+                                <p>Nuestra prioridad eres tú, te ofrecemos el mejor servicio posible.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="box same-height clickable">
+                                <div class="icon"><i class="fa fa-car"></i>
+                                </div>
+
+                                <h3><a href="#">Envío gratis</a></h3>
+                                <p>Envío gratis a partir de $500.00. A todo el país. De 2 a 6 días hábiles</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+
+                </div>
+                <!-- /.container -->
+
+            </div>
 <!-- PIE DE PÁGINA-->
     <div class="box marcas">    
     <div class="row">
@@ -241,15 +280,7 @@
         <div class="col-sm-2"></div>
     </div>        
 </div>  
-        <div id="footer" data-animate="fadeInUp">
-            
-                <p class="parrafo">2017 © Mercado Wisp México Todos los derechos reservados</p>            
-                        <p class="social">
-                            <a href="https://www.facebook.com/groups/1429817027341749/" class="facebook external" data-animate-hover="shake"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="twitter external" data-animate-hover="shake"><i class="fa fa-twitter"></i></a> 
-                            <a href="#" class="email external" data-animate-hover="shake"><i class="fa fa-whatsapp" ></i></a>
-                        </p>
-          </div>   
+  <th:block th:include="/ecommerce/piePag"></th:block>
     </div>      
     <!-- *** SCRIPTS TO INCLUDE ***
  _________________________________________________________ -->

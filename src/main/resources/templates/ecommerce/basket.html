@@ -12,7 +12,7 @@
     <meta name="keywords" content=""/>
 
     <title>
-        Obaju : e-commerce template
+    MWM E-commerce
     </title>
 
     <meta name="keywords" content=""/>
@@ -36,7 +36,7 @@
 </head>
 
 <body>
-<link th:href="@{/ecommerce/encabezado.html}" rel="import" />
+ <th:block th:include="/ecommerce/encabezado"></th:block>
 
     <!-- *** NAVBAR END *** -->
 
@@ -47,9 +47,9 @@
 
                 <div class="col-md-12">
                     <ul class="breadcrumb">
-                        <li><a href="#">Home</a>
+                        <li><a th:href= "@{/ecommerce/principal}">Inicio</a>
                         </li>
-                        <li>Shopping cart</li>
+                        <li>Carrito de Compras</li>
                     </ul>
                 </div>
 
@@ -59,16 +59,16 @@
 
                         <form method="post" action="checkout1.html">
 
-                            <h1>Shopping cart</h1>
-                            <p class="text-muted">You currently have 3 item(s) in your cart.</p>
+                            <h1>Carrito de Compras</h1>
+                            <p class="text-muted">Actualmente tiene 3 artículo(s) en su carrito.</p>
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th colspan="2">Product</th>
-                                            <th>Quantity</th>
-                                            <th>Unit price</th>
-                                            <th>Discount</th>
+                                            <th colspan="2">Producto</th>
+                                            <th>Cantidad</th>
+                                            <th>Precio Unitario</th>
+                                            <th>Descuento</th>
                                             <th colspan="2">Total</th>
                                         </tr>
                                     </thead>
@@ -121,12 +121,11 @@
 
                             <div class="box-footer">
                                 <div class="pull-left">
-                                    <a href="category.html" class="btn btn-default"><i class="fa fa-chevron-left"></i> Continue shopping</a>
+                                    <a th:href= "@{/ecommerce/categoria}" class="btn btn-default"><i class="fa fa-chevron-left"></i> Continuar comprando</a>
                                 </div>
                                 <div class="pull-right">
-                                <a href="category.html" class="btn btn-default fa fa-refresh"><i class="fa fa-chevron-left"></i>Refrescar carrito</a>
-                                    <!-- <button class="btn btn-default"><i class="fa fa-refresh"></i> Update basket</button> -->
-                                    <a href="checkout2.html" class="btn btn-primary">Siguiente<i class="fa fa-chevron-right"></i> </a>                                    
+                                <a href="category.html" class="btn btn-default"><i class="fa fa-refresh"></i>Refrescar carrito</a>
+                                    <a th:href= "@{/ecommerce/wizard}" class="btn btn-primary">Siguiente<i class="fa fa-chevron-right"></i> </a>                                    
                                 </div>
                             </div>
 
@@ -139,7 +138,7 @@
                     <div class="row same-height-row">
                         <div class="col-md-3 col-sm-6">
                             <div class="box same-height">
-                                <h3>You may also like these products</h3>
+                                <h3>También te pueden interesar estos productos</h3>
                             </div>
                         </div>
 
@@ -232,26 +231,26 @@
                 </div>
                 <!-- /.col-md-9 -->
 
-                <div class="col-md-3">
+<div class="col-md-3">
                     <div class="box" id="order-summary">
                         <div class="box-header">
-                            <h3>Order summary</h3>
+                            <h3>Resúmen de orden</h3>
                         </div>
-                        <p class="text-muted">Shipping and additional costs are calculated based on the values you have entered.</p>
+                        <p class="text-muted">El envío y los costos adicionales se calculan en función de los valores que ingresó.</p>
 
                         <div class="table-responsive">
                             <table class="table">
                                 <tbody>
                                     <tr>
-                                        <td>Order subtotal</td>
+                                        <td>Subtotal</td>
                                         <th>$446.00</th>
                                     </tr>
                                     <tr>
-                                        <td>Shipping and handling</td>
+                                        <td>Envío</td>
                                         <th>$10.00</th>
                                     </tr>
                                     <tr>
-                                        <td>Tax</td>
+                                        <td>I.V.A.</td>
                                         <th>$0.00</th>
                                     </tr>
                                     <tr class="total">
@@ -261,31 +260,8 @@
                                 </tbody>
                             </table>
                         </div>
-
-                    </div>
-
-
-                    <div class="box">
-                        <div class="box-header">
-                            <h4>Coupon code</h4>
-                        </div>
-                        <p class="text-muted">If you have a coupon code, please enter it in the box below.</p>
-                        <form>
-                            <div class="input-group">
-
-                                <input type="text" class="form-control"/>
-
-                                <span class="input-group-btn">
-
-					<button class="btn btn-primary" type="button"><i class="fa fa-gift"></i></button>
-
-				    </span>
-                            </div>
-                            <!-- /input-group -->
-                        </form>
-                    </div>
-
-                </div>
+                    </div>                    
+ </div>	
                 <!-- /.col-md-3 -->
 
             </div>
@@ -293,161 +269,78 @@
         </div>
         <!-- /#content -->
 
-        <!-- *** FOOTER ***
- _________________________________________________________ -->
-        <div id="footer" data-animate="fadeInUp">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 col-sm-6">
-                        <h4>Pages</h4>
+                    <div id="advantages">
 
-                        <ul>
-                            <li><a href="text.html">About us</a>
-                            </li>
-                            <li><a href="text.html">Terms and conditions</a>
-                            </li>
-                            <li><a href="faq.html">FAQ</a>
-                            </li>
-                            <li><a href="contact.html">Contact us</a>
-                            </li>
-                        </ul>
+                <div class="container">
+                    <div class="same-height-row">
+                        <div class="col-sm-4">
+                            <div class="box same-height clickable">
+                                <div class="icon"><i class="fa fa-money"></i>
+                                </div>
 
-                        <hr></hr>
-
-                        <h4>User section</h4>
-
-                        <ul>
-                            <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
-                            </li>
-                            <li><a href="register.html">Regiter</a>
-                            </li>
-                        </ul>
-
-                        <hr class="hidden-md hidden-lg hidden-sm"/>
-
-                    </div>
-                    <!-- /.col-md-3 -->
-
-                    <div class="col-md-3 col-sm-6">
-
-                        <h4>Top categories</h4>
-
-                        <h5>Men</h5>
-
-                        <ul>
-                            <li><a href="category.html">T-shirts</a>
-                            </li>
-                            <li><a href="category.html">Shirts</a>
-                            </li>
-                            <li><a href="category.html">Accessories</a>
-                            </li>
-                        </ul>
-
-                        <h5>Ladies</h5>
-                        <ul>
-                            <li><a href="category.html">T-shirts</a>
-                            </li>
-                            <li><a href="category.html">Skirts</a>
-                            </li>
-                            <li><a href="category.html">Pants</a>
-                            </li>
-                            <li><a href="category.html">Accessories</a>
-                            </li>
-                        </ul>
-
-                        <hr class="hidden-md hidden-lg"/>
-
-                    </div>
-                    <!-- /.col-md-3 -->
-
-                    <div class="col-md-3 col-sm-6">
-
-                        <h4>Where to find us</h4>
-
-                        <p><strong>Obaju Ltd.</strong>
-                            <br>13/25 New Avenue</br>
-                            <br>New Heaven</br>
-                            <br>45Y 73J</br>
-                            <br>England</br>
-                            <br></br>
-                            <strong>Great Britain</strong>
-                        </p>
-
-                        <a href="contact.html">Go to contact page</a>
-
-                        <hr class="hidden-md hidden-lg"/>
-
-                    </div>
-                    <!-- /.col-md-3 -->
-
-
-
-                    <div class="col-md-3 col-sm-6">
-
-                        <h4>Get the news</h4>
-
-                        <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-
-                        <form>
-                            <div class="input-group">
-
-                                <input type="text" class="form-control"/>
-
-                                <span class="input-group-btn">
-
-			    <button class="btn btn-default" type="button">Subscribe!</button>
-
-			</span>
-
+                                  <h3><a href="#">Los mejores precios</a></h3>
+                                <p>Te ofrecemos los mejores precios y la más alta calidad.</p>
                             </div>
-                            <!-- /input-group -->
-                        </form>
+                        </div>
 
-                        <hr></hr>
+                        <div class="col-sm-4">
+                            <div class="box same-height clickable">
+                                <div class="icon"><i class="fa fa-heart"></i>
+                                </div>
 
-                        <h4>Stay in touch</h4>
+                             
+                                <h3><a href="#">Amámos a nuestros clientes</a></h3>
+                                <p>Nuestra prioridad eres tú, te ofrecemos el mejor servicio posible.</p>
+                            </div>
+                        </div>
 
-                        <p class="social">
-                            <a href="#" class="facebook external" data-animate-hover="shake"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="twitter external" data-animate-hover="shake"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="instagram external" data-animate-hover="shake"><i class="fa fa-instagram"></i></a>
-                            <a href="#" class="gplus external" data-animate-hover="shake"><i class="fa fa-google-plus"></i></a>
-                            <a href="#" class="email external" data-animate-hover="shake"><i class="fa fa-envelope"></i></a>
-                        </p>
+                        <div class="col-sm-4">
+                            <div class="box same-height clickable">
+                                <div class="icon"><i class="fa fa-car"></i>
+                                </div>
 
-
+                                <h3><a href="#">Envío gratis</a></h3>
+                                <p>Envío gratis a partir de $500.00. A todo el país. De 2 a 6 días hábiles</p>
+                            </div>
+                        </div>
                     </div>
-                    <!-- /.col-md-3 -->
+                    <!-- /.row -->
 
                 </div>
-                <!-- /.row -->
+                <!-- /.container -->
 
-            </div>
-            <!-- /.container -->
+            </div>   
+
+	<div class="box marcas">    
+    <div class="row">
+        <div class="col-sm-12">
+                    <p class="font-weight-bold text-center">LAS MEJORES MARCAS</p>            
+        </div>        
+    </div>    
+    <div class="row">                
+        <div class="col-sm-3 "></div>
+        <div class="col-sm-1 col-xs-2">
+            <img  th:src="@{/ecommerce/img/marca1.png}" class="img-responsive"  alt=""/>        
         </div>
-        <!-- /#footer -->
-
-        <!-- *** FOOTER END *** -->
-
-
-
-
-        <!-- *** COPYRIGHT ***
- _________________________________________________________ -->
-        <div id="copyright">
-            <div class="container">
-                <div class="col-md-6">
-                    <p class="pull-left">© 2015 Your name goes here.</p>
-
-                </div>
-                <div class="col-md-6">
-                    <p class="pull-right">Template by <a href="https://bootstrapious.com/e-commerce-templates">Bootstrapious</a> x <a href="https://fity.cz">Fity</a>
-                         <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
-                    </p>
-                </div>
-            </div>
+        <div class="col-sm-1 col-xs-2">
+            <img  th:src="@{/ecommerce/img/marca2.png}" class="img-responsive"  alt=""/>        
         </div>
-        <!-- *** COPYRIGHT END *** -->
+        <div class="col-sm-1 col-xs-2">
+        <img  th:src="@{/ecommerce/img/marca3.png}" class="img-responsive"  alt=""/>
+        </div>
+        <div class="col-sm-1 col-xs-2">
+        <img  th:src="@{/ecommerce/img/marca4.png}" class="img-responsive"  alt=""/>
+        </div>   
+        <div class="col-sm-1 col-xs-2">
+        <img  th:src="@{/ecommerce/img/marca5.png}" class="img-responsive"  alt=""/>
+        </div>
+        <div class="col-sm-2 col-xs-2   ">
+        <img  th:src="@{/ecommerce/img/marca6.png}" class="img-responsive"  alt=""/>
+        </div>                  
+        <div class="col-sm-2"></div>
+    </div>        
+</div>    
+         <th:block th:include="/ecommerce/piePag"></th:block>
 
 
 
