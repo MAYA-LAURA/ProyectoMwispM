@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/mwm_bd2?useSSL=false
+    url: jdbc:mysql://localhost:3306/mwm_bd3?useSSL=false
     username: root
     password: 123iscdv
   jpa:
@@ -14,5 +14,9 @@ spring:
         dialect: org.hibernate.dialect.MySQL5Dialect
   thymeleaf:
     cache: false      
-  
+    #esta parte es para configurar el tamaño maximo de la imagen que se va subir.
+  http:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
      
