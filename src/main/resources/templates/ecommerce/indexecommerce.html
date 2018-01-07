@@ -72,18 +72,18 @@
                                     <div class="flipper">
                                         <div class="front">
                                             <a href="detail.xhtml">
-                                                 <img th:src="@{|/ecommerce/productImg?idProdcutos=${objEach.idProdcutos}|}" class="img-responsive img-thumbnail" alt=""/>     
+                                                 <img th:src="@{'/uploads/' + ${objEach.imagen1}}"  class="img-responsive img-thumbnail" alt=""/>     
                                             </a>
                                         </div>
                                         <div class="back">
                                             <a href="detail.xhtml">
-                                                 <img  th:src="@{/ecommerce/img/y2.jpg}" class="img-responsive"  alt=""/>     
+                                                  <img th:src="@{'/uploads/' + ${objEach.imagen2}}" class="img-responsive img-thumbnail" alt=""/>    
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                                 <a href="detail.xhtml" class="invisible">
-                                     <img  th:src="@{/ecommerce/img/y.jpg}" class="img-responsive"  alt=""/>                                          
+                                     <img th:src="@{'/uploads/' + ${objEach.imagen1}}"  class="img-responsive img-thumbnail" alt=""/>                                          
                                 </a>
                                 <div class="text">
                                 	<p><span th:text="${objEach.nombreProducto}"></span></p>

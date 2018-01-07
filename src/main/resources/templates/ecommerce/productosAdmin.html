@@ -6,8 +6,6 @@
 <!--   <link  th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/> -->
 <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-<link href="#" th:href="@{/ecommerce/css/bootstrap.css}" rel="stylesheet" />
-<link href="#" th:href="@{/ecommerce/css/bootstrap.min.css}" rel="stylesheet" />
     <link  th:href="@{/ecommerce/css/font-awesome.css}" rel="stylesheet"/>
     <link  th:href="@{/ecommerce/css/font-awesome.min.css}" rel="stylesheet"/>
         <link  th:href="@{/ecommerce/css/style2.blue.css}" rel="stylesheet"/>
@@ -30,6 +28,7 @@
 				<th>Marca</th>
 				<th>Editar</th>
 				<th>Eliminar</th>
+				<th>Ver</th>
 			</tr>
 		</thead>
 
@@ -52,6 +51,11 @@
 					th:href="${'/Admin/eliminar/'+objIterar.idProdcutos}">
 						<button type="button" class="btn btn-danger">
 							<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+						</button>
+				</a></th>
+					<th><a th:href="@{/Admin/verProducto/}+ ${objIterar.idProdcutos}">
+						<button type="button" class="btn btn-info">
+							<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
 						</button>
 				</a></th>
 			</tr>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1"/>
 <title>Insert title here</title>
@@ -20,40 +20,46 @@
 	enctype="multipart/form-data" method="POST">
 		<input type="hidden" th:field="*{idProdcutos}"/> 
 		<p>
-			Nombre:<input type="text" th:field="*{nombreProducto}" />
+			Nombre:<input type="text" class="form-control" th:field="*{nombreProducto}" />
 		</p>
 		<p>
-			Modelo:<input type="text" th:field="*{modelo}"/>
+			Modelo:<input type="text" class="form-control" th:field="*{modelo}"/>
 		</p>
 		<p>
-			Precio:<input type="text" th:field="*{precio}" />
+			Precio:<input type="text" class="form-control" th:field="*{precio}" />
 		</p>
 		<p>
-			Descripcion:<input type="text" th:field="*{descripcion}" />
+			Descripcion:<input type="text" class="form-control" th:field="*{descripcion}" />
 		</p>
 		<p>
-			Garantia:<input type="text" th:field="*{tiempoGarantia}" />
+			Garantia:<input type="text" class="form-control" th:field="*{tiempoGarantia}" />
 		</p>
 		<p>
-			Categoria: <select th:field="*{categoria.nombreCategoria}">
+			Categoria: <select class="form-control" th:field="*{categoria.nombreCategoria}">
 											<option th:each="iterador: ${categoriaObj}"
 												th:value="${iterador.nombreCategoria}" th:text="${iterador.nombreCategoria}"></option>
 										</select>
 		</p>
 		<p>
-			Marca: <select th:field="*{marca.marca}">
+			Marca: <select class="form-control"	 th:field="*{marca.marca}">
 											<option th:each="iterador: ${marcaObj}"
 												th:value="${iterador.marca}" th:text="${iterador.marca}"></option>
 										</select>
 		</p>
 		<p>
-		  <img th:src="@{|/ecommerce/productImg?idProdcutos=${produ.idProdcutos}|}" width="100"/>
+			<input type="hidden" th:field="*{imagen1}"/> 
 		</p>
 		<p>
-			Subir Imagen:<input type="file" th:field="*{fileData}"/> 
+			<input type="hidden" th:field="*{imagen2}"/> 
 		</p>
 		<p>
-			<input type="submit" value="Guardar"  class="btn btn-primary"/>
+			Subir Imagen 1:<input class="form-control" type="file" name="file"/> 
+		</p>
+		<p>
+			Subir Imagen 2:<input class="form-control" type="file" name="file2"/> 
+		</p>
+		<p>
+			<input  type="submit" value="Guardar"  class="btn btn-primary"/>
 		</p>
 
 	</form>

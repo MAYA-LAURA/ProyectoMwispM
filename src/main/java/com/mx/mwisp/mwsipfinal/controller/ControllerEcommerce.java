@@ -1,25 +1,18 @@
 package com.mx.mwisp.mwsipfinal.controller;
 
-import java.io.IOException;
-
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.mx.mwisp.mwsipfinal.entity.Productos;
 import com.mx.mwisp.mwsipfinal.model.PagoModeloForm;
 import com.mx.mwisp.mwsipfinal.openpay.CargoBanco;
 import com.mx.mwisp.mwsipfinal.openpay.CargoTarjeta;
@@ -93,22 +86,26 @@ public String pagar(HttpServletRequest request,@ModelAttribute("formularioEcomme
 	return "redirect:" + urlPdf; 
 }
 
-@RequestMapping(value = { "/productImg" }, method = RequestMethod.GET)
-public void productImg(HttpServletRequest request, HttpServletResponse response, Model model,
-		@RequestParam("idProdcutos") int id) throws IOException {
-	LOG.info("llamando al metodo que muestra la imagen====================================================");
-	Productos producto = null;
-	if (id != 0) {
-		LOG.info("el valor del id es=====:" + id);
-		producto = productoServiceImpl.encontrarPorId(id);
-	}
-	if (producto != null && producto.getFileData() != null) {
-		response.setContentType("image/jpeg, image/jpg, image/png, image/gif");
-		response.getOutputStream().write(producto.getFileData());
-	}
-	response.getOutputStream().close();
-}
-	
+////esta peticion get muestra la imagen de los productos
+//@GetMapping(value="/uploads/{filename:.+}")
+//public ResponseEntity<Resource> verImagen(@PathVariable String filename){
+//	
+//	//Path pathImagen=Paths.get("uploads").resolve(filename).toAbsolutePath();
+//	Path directorioRecursos=Paths.get("c://imagenes/uploads").resolve(filename).toAbsolutePath();
+//	LOG.info("ruta======="+directorioRecursos);
+//	Resource recurso=null;
+//	try {
+//		recurso= new UrlResource(directorioRecursos.toUri());
+//		if(!recurso.exists() || !recurso.isReadable()) {
+//			throw new RuntimeException("error no se puede cargar la imagen");
+//		}
+//	} catch (MalformedURLException e) {
+//		// TODO Auto-generated catch block
+//		e.printStackTrace();
+//	}
+//	return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=\""+recurso.getFilename()+"\"")
+//			.body(recurso);
+//}
 
 @GetMapping ("/404")
 public ModelAndView vistaError() {

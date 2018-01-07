@@ -1,6 +1,6 @@
 package com.mx.mwisp.mwsipfinal.entity;
 
-import java.util.Arrays;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,7 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -27,7 +26,7 @@ public class Productos {
 	private String modelo;
 	
 	@Column(name="Precio")
-	private float precio;
+	private double precio;
 	
 	@Column(name="Descripcion")
 	private String descripcion;
@@ -35,9 +34,12 @@ public class Productos {
 	@Column(name="Tiempo_Garantia")
 	private String tiempoGarantia;
 	
-	@Lob
-	@Column(name="Imagen")
-	private byte[] fileData;
+	@Column(name="Imagen1")
+	private String imagen1;
+	
+	@Column(name="Imagen2")
+	private String imagen2;
+	
 
 	@ManyToOne
 	@JoinColumn(name="Fk_Categoria")
@@ -92,11 +94,11 @@ public class Productos {
 		this.nombreProducto = nombreProducto;
 	}
 
-	public float getPrecio() {
+	public double getPrecio() {
 		return precio;
 	}
 
-	public void setPrecio(float precio) {
+	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
 
@@ -124,13 +126,6 @@ public class Productos {
 		this.categoria = categoria;
 	}
 	
-	public byte[] getFileData() {
-		return fileData;
-	}
-
-	public void setFileData(byte[] fileData) {
-		this.fileData = fileData;
-	}
 
 	public Marca getMarca() {
 		return marca;
@@ -140,13 +135,33 @@ public class Productos {
 		this.marca = marca;
 	}
 
-	@Override
-	public String toString() {
-		return "Productos [idProdcutos=" + idProdcutos + ", nombreProducto=" + nombreProducto + ", precio=" + precio
-				+ ", descripcion=" + descripcion + ", tiempoGarantia=" + tiempoGarantia + ", fileData="
-				+ Arrays.toString(fileData) + ", categoria=" + categoria + ", marca=" + marca + "]";
+
+
+	public String getImagen1() {
+		return imagen1;
 	}
 
+
+
+	public void setImagen1(String imagen1) {
+		this.imagen1 = imagen1;
+	}
+
+
+
+	public String getImagen2() {
+		return imagen2;
+	}
+
+
+
+	public void setImagen2(String imagen2) {
+		this.imagen2 = imagen2;
+	}
+
+	
+
+	
 	
 	
 	

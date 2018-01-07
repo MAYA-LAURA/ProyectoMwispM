@@ -1,6 +1,6 @@
 package com.mx.mwisp.mwsipfinal.model;
 
-import org.springframework.web.multipart.MultipartFile;
+
 
 import com.mx.mwisp.mwsipfinal.entity.Categoria;
 import com.mx.mwisp.mwsipfinal.entity.Marca;
@@ -9,16 +9,44 @@ public class ProductoModel {
 	private int  idProdcutos;
 	private String nombreProducto;
 	private String modelo;
-	private float precio;
+	private double precio;
 	private String descripcion;
 	private String tiempoGarantia;
 	private Categoria categoria;
 	private Marca marca;
-	//subir imagen
-	private MultipartFile fileData;
+	
+	private String imagen1;
+	private String imagen2;
+	
+	//variable para pasar el valor en pesos mexicanos
+	private double precioMxm;
 	
 	
 	
+	public String getImagen1() {
+		return imagen1;
+	}
+
+
+
+	public void setImagen1(String imagen1) {
+		this.imagen1 = imagen1;
+	}
+
+
+
+	public String getImagen2() {
+		return imagen2;
+	}
+
+
+
+	public void setImagen2(String imagen2) {
+		this.imagen2 = imagen2;
+	}
+
+
+
 	public String getModelo() {
 		return modelo;
 	}
@@ -40,19 +68,6 @@ public class ProductoModel {
 	public void setMarca(Marca marca) {
 		this.marca = marca;
 	}
-
-
-
-	public MultipartFile getFileData() {
-		return fileData;
-	}
-
-
-
-	public void setFileData(MultipartFile fileData) {
-		this.fileData = fileData;
-	}
-
 
 
 	public int getIdProdcutos() {
@@ -79,13 +94,13 @@ public class ProductoModel {
 
 
 
-	public float getPrecio() {
+	public double getPrecio() {
 		return precio;
 	}
 
 
 
-	public void setPrecio(float precio) {
+	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
 
@@ -123,6 +138,19 @@ public class ProductoModel {
 
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
+	}
+	
+
+
+
+	public double getPrecioMxm() {
+		return precioMxm;
+	}
+
+
+
+	public void setPrecioMxm(double precioMxm) {
+		this.precioMxm = precioMxm;
 	}
 
 

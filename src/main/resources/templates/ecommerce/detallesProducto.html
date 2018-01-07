@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container py-4">
+		<div class="card bg-light">
+			<div class="card-header" th:text="${titulo}"></div>
+			<div class="card-body">
+				<img class="img-thumbnail rounded float-left"
+					style="max-width: 25%;" th:alt="${producto.imagen1}"
+					th:src="@{'/uploads/'+${producto.imagen1}}" /> <img
+					class="img-thumbnail rounded float-left" style="max-width: 25%;"
+					th:alt="${producto.imagen2}"
+					th:src="@{'/uploads/'+${producto.imagen2}}" />
+				<ul class="list-group">
+					<li class="list-group-item" th:text="${producto.idProdcutos}"></li>
+					<li class="list-group-item" th:text="${producto.nombreProducto}"></li>
+					<li class="list-group-item" th:text="${producto.modelo}"></li>
+					<li class="list-group-item" th:text="${producto.precio}"></li>
+					<li class="list-group-item" th:text="${producto.descripcion}"></li>
+					<li class="list-group-item" th:text="${producto.tiempoGarantia}"></li>
+				</ul>
+				<a th:href="@{/Admin/listaProductosAdmin}" class="btn btn-primary">Ok</a>	
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

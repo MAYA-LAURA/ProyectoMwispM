@@ -1,6 +1,6 @@
 package com.mx.mwisp.mwsipfinal.converter;
 
-import java.io.IOException;
+
 
 import org.springframework.stereotype.Component;
 
@@ -23,7 +23,8 @@ public class ProductoConverter {
 		productoModel.setTiempoGarantia(producto.getTiempoGarantia());
 		productoModel.setCategoria(producto.getCategoria());
 		productoModel.setMarca(producto.getMarca());
-		
+		//pasa el valor de precio a moneda nacional mexicana
+		productoModel.setPrecioMxm(producto.getPrecio()*19.1791);
 		return productoModel;
 		
 	}
@@ -39,17 +40,8 @@ public class ProductoConverter {
 		producto.setDescripcion(productoModel.getDescripcion());
 		producto.setPrecio(productoModel.getPrecio());
 		producto.setTiempoGarantia(productoModel.getTiempoGarantia());
-		if(productoModel.getFileData()!=null) {
-			byte[] imagen=null;
-			try {
-				imagen=productoModel.getFileData().getBytes();
-			}
-			catch(IOException e) {
-			}
-			if(imagen!=null&&imagen.length>0) {
-				producto.setFileData(imagen);
-			}
-		}
+		producto.setImagen1(productoModel.getImagen1());
+		producto.setImagen2(productoModel.getImagen2());
 		producto.setCategoria(productoModel.getCategoria());
 		producto.setMarca(productoModel.getMarca());
 		
