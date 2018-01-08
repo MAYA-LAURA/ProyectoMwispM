@@ -20,7 +20,7 @@ public class ProductoConverter {
 		ProductoModel productoModel= new ProductoModel();
 		productoModel.setIdProdcutos(producto.getIdProdcutos());
 		productoModel.setNombreProducto(producto.getNombreProducto());
-		productoModel.setMarca(producto.getMarca());
+		productoModel.setModelo(producto.getModelo());
 		productoModel.setDescripcion(producto.getDescripcion());
 		productoModel.setPrecio(producto.getPrecio());
 		productoModel.setTiempoGarantia(producto.getTiempoGarantia());
