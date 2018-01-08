@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mx.mwisp.mwsipfinal.entity.Productos;
 import com.mx.mwisp.mwsipfinal.model.ProductoModel;
@@ -85,7 +86,7 @@ public class ProductosController {
 	}
 
 	@PostMapping("/addProducto")
-	public String agregarProductos(@ModelAttribute("prod") ProductoModel productoModel,
+	public String agregarProductos(@ModelAttribute("prod") ProductoModel productoModel,	RedirectAttributes flass,
 			@RequestParam("file") MultipartFile imagen,@RequestParam("file2") MultipartFile imagen2) {
 		///si la imagen1 existe entonces guarda la imagen en el directorio c:/imagenes/uploads
 		if(!imagen.isEmpty()) {
@@ -133,9 +134,17 @@ public class ProductosController {
 				e.printStackTrace();
 			}
 		}
-		productoServiceImpl.addProducto(productoModel);
+		if (productoServiceImpl.addProducto(productoModel)!=null) {
+			if(productoModel.getIdProdcutos()!=0) {
+			flass.addFlashAttribute("success", "Producto Editado Correctamente!");
+			}else {
+				flass.addFlashAttribute("success", "Producto Agregado Correctamente!");
+			}
+		}else {
+			
+		}
+		
 		return "redirect:/Admin/listaProductosAdmin";
-
 	}
 	
 	

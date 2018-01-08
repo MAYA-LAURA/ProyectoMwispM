@@ -14,7 +14,10 @@
 <br/>
 <div>
 <div class="col-md-8 hola">
+	
 	<p class="center listaproductp"> LISTA DE PRODUCTOS </p>
+	<div class="alert alert-success" role="alert" th:if="${success!= null}" th:text="${success}"></div>
+	<div th:if="${result==0}" class="alert alert-danger" role="alert">Error al agregar Producto</div>
 	<table class="table table-striped box col-md-8 listaproduct">
 		<thead>
 			<tr>
