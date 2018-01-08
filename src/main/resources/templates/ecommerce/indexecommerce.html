@@ -71,18 +71,18 @@
                                 <div class="flip-container">
                                     <div class="flipper">
                                         <div class="front">
-                                            <a href="detail.xhtml">
+                                            <a th:href="@{/ecommerce/detalles}">
                                                  <img th:src="@{'/uploads/' + ${objEach.imagen1}}"  class="img-responsive img-thumbnail" alt=""/>     
                                             </a>
                                         </div>
                                         <div class="back">
-                                            <a href="detail.xhtml">
+                                            <a th:href="@{/ecommerce/detalles}">
                                                   <img th:src="@{'/uploads/' + ${objEach.imagen2}}" class="img-responsive img-thumbnail" alt=""/>    
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                                <a href="detail.xhtml" class="invisible">
+                                <a th:href="@{/ecommerce/detalles}" class="invisible">
                                      <img th:src="@{'/uploads/' + ${objEach.imagen1}}"  class="img-responsive img-thumbnail" alt=""/>                                          
                                 </a>
                                 <div class="text">
@@ -92,7 +92,7 @@
                                     <p class="price">$<span th:text="${objEach.precioMxm}"></span>MXM</p> 
                                     
                                 </div>
-                                <a href="basket.xhtml" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Agregar al carrito</a>
+                                <a th:href="@{/ecommerce/carrito}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Agregar al carrito</a>
                                 <!-- /.text -->
                                 
                             </div>

@@ -1,3 +1,19 @@
+/*ESTILOS PARA LA LISTA DE DETALLES DE LA PAGINA DETALLES DE PRODUCTOS*/
+.detalles{
+	font-size:15px;
+	font-weight:bold !important;
+}
+.detalles .span{
+	font-weight:initial !important;
+}
+
+/*ESTILO DE IMAGES DE PÁGINA DETALLES DE PRODUCTOS*/
+.imagenes .img_detall{
+	width:250px; 
+	height:250px;
+	margin:20px;
+}
+/*ESTILOS PARA BTNS LOGIN, CAR, SEARCH*/
 .btn-login{
 	background:none;
 	 border: 1px solid #fff;

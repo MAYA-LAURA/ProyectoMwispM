@@ -35,6 +35,8 @@ import com.mx.mwisp.mwsipfinal.service.ProductoService;
 public class ProductosController {
 	private static final Log LOG=LogFactory.getLog(ProductosController.class);
 	
+	//private static final String ruta="c://imagenes/uploads";
+	private static final String ruta="/Users/maya/Desktop/uploads";
 	private static final String vistaProductoAdmin = "/ecommerce/productosAdmin";
 	@Autowired
 	@Qualifier("productoServiceImpl")
@@ -92,7 +94,7 @@ public class ProductosController {
 		if(!imagen.isEmpty()) {
 			//si ya existe una imagen la elimina
 			if(productoModel.getImagen1()!=null) {
-				Path rootPath1=Paths.get("c:/imagenes/uploads").resolve(productoModel.getImagen1()).toAbsolutePath();
+				Path rootPath1=Paths.get(ruta).resolve(productoModel.getImagen1()).toAbsolutePath();
 				File archivo1=rootPath1.toFile();
 				if (archivo1.exists() && archivo1.canRead()) {
 					archivo1.delete();
@@ -101,7 +103,7 @@ public class ProductosController {
 //			String rootPatch="c://imagenes//uploads";  * esta es la ruta que se usa para agregar la configuracion en el paquete configuration
 			//en esta parte se genera un nombre unico para la imagen que se guarda en el sistema
 			String unicoNombre=UUID.randomUUID().toString()+"_"+imagen.getOriginalFilename();
-			Path rootPatch=Paths.get("c://imagenes/uploads").resolve(unicoNombre);
+			Path rootPatch=Paths.get(ruta).resolve(unicoNombre);
 			Path rootAbsolutPath=rootPatch.toAbsolutePath();
 			LOG.info("rootPatch"+rootPatch);
 			LOG.info("rootAbsolutPath"+rootAbsolutPath);
@@ -116,14 +118,14 @@ public class ProductosController {
 		if(!imagen2.isEmpty()) {
 			//si ya existe una imagen2 la elimina
 			if(productoModel.getImagen2()!=null) {
-				Path rootPath2=Paths.get("c:/imagenes/uploads").resolve(productoModel.getImagen2()).toAbsolutePath();
+				Path rootPath2=Paths.get(ruta).resolve(productoModel.getImagen2()).toAbsolutePath();
 				File archivo2=rootPath2.toFile();
 				if (archivo2.exists() && archivo2.canRead()) {
 					archivo2.delete();
 				 }
 			}
 			String unicoNombre2=UUID.randomUUID().toString()+"_"+imagen2.getOriginalFilename();
-			Path rootPatch=Paths.get("c://imagenes/uploads").resolve(unicoNombre2);
+			Path rootPatch=Paths.get(ruta).resolve(unicoNombre2);
 			Path rootAbsolutPath=rootPatch.toAbsolutePath();
 			LOG.info("rootPatch"+rootPatch);
 			LOG.info("rootAbsolutPath"+rootAbsolutPath);
@@ -156,8 +158,8 @@ public class ProductosController {
 		 
 		 //aqui encuntra al cliente por su id para despues recuperar la foto y eliminarla
 		 //falta cambiar la entity por un modelo 
-		 Path rootPath1=Paths.get("c:/imagenes/uploads").resolve(producto.getImagen1()).toAbsolutePath();
-		 Path rootPath2=Paths.get("c:/imagenes/uploads").resolve(producto.getImagen2()).toAbsolutePath();
+		 Path rootPath1=Paths.get(ruta).resolve(producto.getImagen1()).toAbsolutePath();
+		 Path rootPath2=Paths.get(ruta).resolve(producto.getImagen2()).toAbsolutePath();
 		 File archivo1=rootPath1.toFile();
 		 File archivo2=rootPath2.toFile();
 		 if (archivo1.exists() && archivo1.canRead()) {
