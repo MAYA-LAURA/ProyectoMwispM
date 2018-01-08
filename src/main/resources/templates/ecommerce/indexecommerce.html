@@ -88,7 +88,9 @@
                                 <div class="text">
                                 	<p><span th:text="${objEach.nombreProducto}"></span></p>
                                     <h3><a href="detail.html"><span  th:text="${objEach.descripcion}"></span></a></h3>
-                                    <p class="price">$<span th:text="${objEach.precio}"></span></p> 
+                                    <p class="price">$<span th:text="${objEach.precio}"></span>USD</p> 
+                                    <p class="price">$<span th:text="${objEach.precioMxm}"></span>MXM</p> 
+                                    
                                 </div>
                                 <a href="basket.xhtml" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Agregar al carrito</a>
                                 <!-- /.text -->

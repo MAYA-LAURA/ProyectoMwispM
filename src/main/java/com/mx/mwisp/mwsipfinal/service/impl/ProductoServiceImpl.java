@@ -1,5 +1,6 @@
 package com.mx.mwisp.mwsipfinal.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -38,13 +39,18 @@ public class ProductoServiceImpl implements ProductoService{
 	private CategoriaService categoriaServiceImpl;
 	
 	@Override
-	public List<Productos> listarProductos() {
+	public List<ProductoModel> listarProductos() {
+		List<Productos> productos = productoJpaRepository.findAll();
+		List<ProductoModel> productoModels= new ArrayList<ProductoModel>();
+		for(Productos producto: productos){
+			productoModels.add(productoConverter.entityModel(producto));
+		}
 		log.info("lamando:"+"ListarProductos");
-		return productoJpaRepository.findAll();
+		return productoModels;
 	}
 
 	@Override
-	public Productos addProducto(ProductoModel productoModel) {
+	public ProductoModel addProducto(ProductoModel productoModel) {
 		// TODO Auto-generated method stub
 		
 		log.info(productoModel.getCategoria().getNombreCategoria());
@@ -56,7 +62,7 @@ public class ProductoServiceImpl implements ProductoService{
 		productos.setCategoria(categoria);
 		productos.setMarca(marca);
 		
-		return productoJpaRepository.save(productos);
+		return productoConverter.entityModel(productoJpaRepository.save(productos));
 	}
 
 	@Override

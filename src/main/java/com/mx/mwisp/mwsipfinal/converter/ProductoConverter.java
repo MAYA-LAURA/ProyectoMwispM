@@ -2,6 +2,9 @@ package com.mx.mwisp.mwsipfinal.converter;
 
 
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 import org.springframework.stereotype.Component;
 
 import com.mx.mwisp.mwsipfinal.entity.Productos;
@@ -21,10 +24,14 @@ public class ProductoConverter {
 		productoModel.setDescripcion(producto.getDescripcion());
 		productoModel.setPrecio(producto.getPrecio());
 		productoModel.setTiempoGarantia(producto.getTiempoGarantia());
+		productoModel.setImagen1(producto.getImagen1());
+		productoModel.setImagen2(producto.getImagen2());
 		productoModel.setCategoria(producto.getCategoria());
 		productoModel.setMarca(producto.getMarca());
 		//pasa el valor de precio a moneda nacional mexicana
-		productoModel.setPrecioMxm(producto.getPrecio()*19.1791);
+		BigDecimal bd=new BigDecimal(producto.getPrecio()*19.1791);
+		bd=bd.setScale(4, RoundingMode.HALF_UP);
+		productoModel.setPrecioMxm(bd.doubleValue());
 		return productoModel;
 		
 	}

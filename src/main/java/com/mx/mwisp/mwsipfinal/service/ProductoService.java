@@ -6,8 +6,8 @@ import com.mx.mwisp.mwsipfinal.entity.Productos;
 import com.mx.mwisp.mwsipfinal.model.ProductoModel;
 
 public interface ProductoService {
-	public abstract List<Productos> listarProductos();
-	public abstract Productos addProducto(ProductoModel productoModel);
+	public abstract List<ProductoModel> listarProductos();
+	public abstract ProductoModel addProducto(ProductoModel productoModel);
 	public abstract int eliminarPorId(int id);
 	public abstract Productos actualizarProducto(Productos producto);
 	public abstract Productos encontrarPorId(int id);

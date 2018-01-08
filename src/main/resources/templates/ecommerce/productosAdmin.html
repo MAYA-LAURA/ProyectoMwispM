@@ -21,7 +21,8 @@
 				<th>Id</th>
 				<th class="hola">Nombre</th>
 				<th>Modelo</th>
-				<th>Precio</th>
+				<th>Precio USD</th>
+				<th>Precio MXM</th>
 				<th class="hola">Descripcion</th>
 				<th>Garantia</th>
 				<th>Categoria</th>
@@ -38,6 +39,7 @@
 				<th th:text="${objIterar.nombreProducto}"></th>
 				<th th:text="${objIterar.modelo}"></th>
 				<th th:text="${objIterar.precio}"></th>
+				<th th:text="${objIterar.precioMxm}"></th>
 				<th th:text="${objIterar.descripcion}">></th>
 				<th th:text="${objIterar.tiempoGarantia}"></th>
 				<th th:text="${objIterar.categoria.nombreCategoria}"></th>
