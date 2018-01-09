@@ -16,8 +16,8 @@ public class UploadConfig extends WebMvcConfigurerAdapter{
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		// TODO Auto-generated method stub
 		super.addResourceHandlers(registry);
-		//String resourcePath=Paths.get("c:/imagenes/uploads").toAbsolutePath().toUri().toString();	
-				String resourcePath=Paths.get("/Users/maya/Desktop/uploads").toAbsolutePath().toUri().toString();
+		String resourcePath=Paths.get("uploads").toAbsolutePath().toUri().toString();	
+				//String resourcePath=Paths.get("/Users/maya/Desktop/uploads").toAbsolutePath().toUri().toString();
 				//LOG.info(resourcePath);
 				LOG.info("resourcePath========================================================="+resourcePath);
 		registry.addResourceHandler("/uploads/**")

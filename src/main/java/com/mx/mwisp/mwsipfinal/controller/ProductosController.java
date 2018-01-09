@@ -35,8 +35,8 @@ import com.mx.mwisp.mwsipfinal.service.ProductoService;
 public class ProductosController {
 	private static final Log LOG=LogFactory.getLog(ProductosController.class);
 	
-	//private static final String ruta="c://imagenes/uploads";
-	private static final String ruta="/Users/maya/Desktop/uploads";
+	private static final String ruta="uploads";
+	//private static final String ruta="/Users/maya/Desktop/uploads";
 	private static final String vistaProductoAdmin = "/ecommerce/productosAdmin";
 	@Autowired
 	@Qualifier("productoServiceImpl")
