@@ -1,11 +1,6 @@
 <!DOCTYPE html  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" >
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" 
-	xmlns:h="http://java.sun.com/jsf/html" 
-	xmlns:f="http://xmlns.jcp.org/jsf/core">
-
-<h:head>
-
-    
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
     <meta name="robots" content="all,follow"/>
     <meta name="googlebot" content="index,follow,snippet,archive"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -34,13 +29,10 @@
     <script th:src="@{/ecommerce/js/respond.min.js}"></script>                           
 
 <link rel="shortcut icon" href="favicon.png" type="image/x-icon"/>
-</h:head>
-
-<h:body>
-
+</head>
+<body>
 <th:block th:include="/ecommerce/encabezado"></th:block>
     <!-- *** NAVBAR END *** -->
-
     <div id="all">
 
         <div id="content">
@@ -191,8 +183,7 @@
         </div>                  
         <div class="col-sm-2"></div>
     </div>        
-</div>                                    
-        
+</div>                                       
        <th:block th:include="/ecommerce/piePag"></th:block>           
         </div>               
     <!-- *** SCRIPTS TO INCLUDE ***
@@ -206,6 +197,6 @@
     <script th:src="@{/ecommerce/js/owl.carousel.min.js}"></script>     
     <script th:src="@{/ecommerce/js/front.js}"></script>
 
-</h:body>
+</body>
 
 </html>

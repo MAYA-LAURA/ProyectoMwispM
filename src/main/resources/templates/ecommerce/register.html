@@ -1,26 +1,18 @@
 <!DOCTYPE html  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" >
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" 
-	xmlns:h="http://java.sun.com/jsf/html" 
-	xmlns:f="http://xmlns.jcp.org/jsf/core">
-
-<h:head>
-
-    
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
     <meta name="robots" content="all,follow"/>
     <meta name="googlebot" content="index,follow,snippet,archive"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="description" content="Obaju e-commerce template"/>
     <meta name="author" content="Ondrej Svestka | ondrejsvestka.cz"/>
     <meta name="keywords" content=""/>
-
    <title>
-        Obaju : e-commerce template
+       MWM E-commerce
     </title>
-
     <meta name="keywords" content=""/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'/>
-
 <!-- Estilos -->    
     <link  th:href="@{/ecommerce/css/font-awesome.css}" rel="stylesheet"/>
     <link  th:href="@{/ecommerce/css/font-awesome.min.css}" rel="stylesheet"/>
@@ -28,55 +20,33 @@
     <link th:href="@{/ecommerce/css/animate.min.css}" rel="stylesheet"/>     
     <link th:href="@{/ecommerce/css/owl.carousel.css}" rel="stylesheet"/>     
     <link th:href="@{/ecommerce/css/owl.theme.css}" rel="stylesheet"/>        
-
 <!-- CHECAR ESTA PARTE -->
     <link  th:href="@{/ecommerce/css/style2.blue.css}" rel="stylesheet" id="theme-stylesheet"/>          
-    
-    <!-- your stylesheet with modifications -->     
-    <link th:href="@{/ecommerce/css/custom.css}" rel="stylesheet"/>      
-    <script th:src="@{/ecommerce/js/respond.min.js}"></script>
-    
-	<h:link value="shortcut icon" outcome="favicon.png"/>    
-
-
-
-</h:head>
-
-<h:body>
-
-    
+</head>
+<body>
+<th:block th:include="/ecommerce/encabezado"></th:block>
     <!-- *** NAVBAR END *** -->
-
     <div id="all">
-
         <div id="content">
             <div class="container">
-
                 <div class="col-md-12">
-
                     <ul class="breadcrumb">
                         <li><a href="#">Inicio</a>
                         </li>
                         <li>Registar / Iniciar sesión</li>
                     </ul>
-
                 </div>
-
                 <div class="col-md-6">
                     <div class="box">
                         <h1>Nueva cuenta</h1>
-
                         <p class="lead">¿No es nuestro cliente registrado todavía?</p>
                         <p>¡Con el registro con nosotros, nuevo mundo de la moda, descuentos fantásticos y mucho más se abren para usted! ¡Todo el proceso no te llevará más de un minuto!</p>
                         <p class="text-muted">Si tiene alguna pregunta, no dude en ponerse en <a href="contact.xhtml">contacto con nosotros</a>, nuestro centro de servicio al cliente está trabajando para usted las 24 horas del día, los 7 días de la semana.</p>
-
                         <hr></hr>
-
-                        <h:form action="customer-orders.xhtml" method="post" class="">
-                        
+                        <form action="customer-orders.xhtml" method="post" class="">      
                             <div class="form-group has-feedback">
                                 <label for="name">Nombre(s)</label>
-                                <h:inputText class="form-control" id="name" />
+                                <input type="text" class="form-control" id="name" />
                                 <span class="fa fa-user-md form-control-feedback"></span>
                             </div>
                             <div class="form-group">
@@ -88,99 +58,48 @@
                                 <input type="password" class="form-control" id="password"/>
                             </div>
                             <div class="text-center has-feedback" id="preba">                                                           
-                                <h:commandButton  value="Registrar" class="btn btn-primary text-left" id="prueba"  />                                  
+                                <input type="button" value="Registrar" class="btn btn-primary text-left" id="prueba"  />                                  
                                 <span class="fa fa-user-md form-control-feedback"></span>
                             </div>                                                       
-                        </h:form>
+                        </form>
                     </div>
                 </div>
-
                 <div class="col-md-6">
                     <div class="box">
                         <h1>Iniciar sesión</h1>
-
                         <p class="lead">¿Ya es nuestro cliente?</p>
                         <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies
                             mi vitae est. Mauris placerat eleifend leo.</p>
-
                         <hr></hr>
-
-                        <h:form action="customer-orders.xhtml" method="post">
+                        <form action="customer-orders.xhtml" method="post">
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="text" class="form-control" id="email"/>
                             </div>
                             <div class="form-group">
-                                <label for="password">contraseña</label>
+                                <label for="password">Contraseña</label>
                                 <input type="password" class="form-control" id="password"/>
                             </div>
                             <div class="text-center">
-                            <h:commandButton  value="Iniciar sesión" class="search btn-primary" />                                  
+                            <input type="button"  value="Iniciar sesión" class="search btn-primary" />                                  
                                 <span class="fa fa-sign-in form-control-sesion"></span>                            
                             </div>
-                        </h:form>
+                        </form>
                     </div>
                 </div>
-
-
             </div>
             <!-- /.container -->
         </div>
         <!-- /#content -->
-
-<!-- PIE DE PÁGINA-->
-<div class="box marcas">    
-    <div class="row">
-        <div class="col-sm-12">
-                    <p class="font-weight-bold text-center">LAS MEJORES MARCAS</p>            
-        </div>        
-    </div>    
-    <div class="row">                
-        <div class="col-sm-3 "></div>
-        <div class="col-sm-1 col-xs-2">
-            <img  th:src="@{/ecommerce/img/marca1.png}" class="img-responsive"  alt=""/>        
-        </div>
-        <div class="col-sm-1 col-xs-2">
-            <img  th:src="@{/ecommerce/img/marca2.png}" class="img-responsive"  alt=""/>        
-        </div>
-        <div class="col-sm-1 col-xs-2">
-        <img  th:src="@{/ecommerce/img/marca3.png}" class="img-responsive"  alt=""/>
-        </div>
-        <div class="col-sm-1 col-xs-2">
-        <img  th:src="@{/ecommerce/img/marca4.png}" class="img-responsive"  alt=""/>
-        </div>   
-        <div class="col-sm-1 col-xs-2">
-        <img  th:src="@{/ecommerce/img/marca5.png}" class="img-responsive"  alt=""/>
-        </div>
-        <div class="col-sm-2 col-xs-2   ">
-        <img  th:src="@{/ecommerce/img/marca6.png}" class="img-responsive"  alt=""/>
-        </div>                  
-        <div class="col-sm-2"></div>
-    </div>        
-</div>                                    
-        
-        <div id="footer" data-animate="fadeInUp">
-            
-                <p class="parrafo">2017 © Mercado Wisp México Todos los derechos reservados</p>            
-                        <p class="social">
-                            <a href="https://www.facebook.com/groups/1429817027341749/" class="facebook external" data-animate-hover="shake"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="twitter external" data-animate-hover="shake"><i class="fa fa-twitter"></i></a>                            
-                            <a href="#" class="email external" data-animate-hover="shake"><i class="fa fa-whatsapp" ></i></a>
-                        </p>
-            </div>                
+<th:block th:include="/ecommerce/piePag"></th:block>             
         </div>               
     <!-- *** SCRIPTS TO INCLUDE ***
  _________________________________________________________ -->
 <script th:src="@{/ecommerce/js/jquery-1.11.0.min.js}"></script>     
     <script th:src="@{/ecommerce/js/bootstrap.min.js}"></script>     
-    <script th:src="@{/ecommerce/js/jquery.cookie.js}"></script>     
-    <script th:src="@{/ecommerce/js/waypoints.min.js}"></script>     
-    <script th:src="@{/ecommerce/js/modernizr.js}"></script>     
+    <script th:src="@{/ecommerce/js/jquery.cookie.js}"></script>   
     <script th:src="@{/ecommerce/js/bootstrap-hover-dropdown.js}"></script>     
     <script th:src="@{/ecommerce/js/owl.carousel.min.js}"></script>     
     <script th:src="@{/ecommerce/js/front.js}"></script>
- 
-
-</h:body>
-
+</body>
 </html>

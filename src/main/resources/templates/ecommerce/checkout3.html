@@ -1,16 +1,6 @@
 <!DOCTYPE html  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" >
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" 
-	xmlns:h="http://java.sun.com/jsf/html" 
-	xmlns:f="http://xmlns.jcp.org/jsf/core"
-	xmlns:p="http://primefaces.org/ui"
-	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
-<h:head>
-    <meta name="robots" content="all,follow"/>
-    <meta name="googlebot" content="index,follow,snippet,archive"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="Obaju e-commerce template"/>
-    <meta name="author" content="Ondrej Svestka | ondrejsvestka.cz"/>
-    <meta name="keywords" content=""/>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
 <title>MWM E-commerce</title>
 <meta name="keywords" content=""/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
@@ -23,15 +13,8 @@
     <link th:href="@{/ecommerce/css/owl.carousel.css}" rel="stylesheet"/>     
     <link th:href="@{/ecommerce/css/owl.theme.css}" rel="stylesheet"/> 
   <link  th:href="@{/ecommerce/css/estilos.css}" rel="stylesheet"/>
-   
-	<h:outputScript  name="ecommerce/js/jquery.min.js"></h:outputScript>	
-    
-    <!-- CHECAR ESTA PARTE -->
-    <link  th:href="@{/ecommerce/css/style2.blue.css}" rel="stylesheet" id="theme-stylesheet"/>
-    <!-- your stylesheet with modifications -->
-    <link th:href="@{/ecommerce/css/custom.css}" rel="stylesheet"/>      
-    <script th:src="@{/ecommerce/js/respond.min.js}"></script>                           
-
+  <script th:src="@{/ecommerce/js/jquery.min.js}"></script>     
+    <link  th:href="@{/ecommerce/css/style2.blue.css}" rel="stylesheet" id="theme-stylesheet"/> 
 <script type="text/javascript">
 function tarjetas() {
 	document.getElementById('tarjetas').style.display = 'block';
@@ -48,21 +31,13 @@ function transferencias() {
 	document.getElementById('tarjetas').style.display = 'none';
 	document.getElementById('tiendas').style.display = 'none';
 	}
-</script>
-
-		
-</h:head>
-<h:body>
-
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon"/>
-   
+</script>	
+</head>
+<body>
     <!-- *** NAVBAR END *** -->
-
     <div id="all">
-
         <div id="content">
             <div class="container">
-
                 <div class="col-md-12">
                     <ul class="breadcrumb">
                         <li><a href="#">Inicio</a>
@@ -70,11 +45,9 @@ function transferencias() {
                         <li>Método de pago</li>
                     </ul>
                 </div>
-
                 <div class="col-md-9" id="checkout">
-
                     <div class="box">
-                        <h:form method="post" action="checkout4.xhtml">
+                        <form method="post" action="checkout4.xhtml">
                             <h1>Método de pago</h1>
                             <ul class="nav nav-pills nav-justified">                            
                                 <li><a href="checkout2.xhtml"><i class="fa fa-truck"></i><br></br>Método de entrega</a>
@@ -85,52 +58,35 @@ function transferencias() {
                                 </li>
         <li class="disabled"><a href="#"><i class="fa fa-eye"></i><br></br>Revisar compra</a></li>
                             </ul>
-
   <div class="content">
-
          <div class="row">
                                     <div class="col-sm-6">
                                         <div class="box payment-method">
-
                                             <h4>Paypal</h4>
-
                                             <p>We like it all.</p>
-
                                             <div class="box-footer text-center">
-
                                                 <input type="radio" name="payment" value="payment1"/>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="box payment-method">
-
                                             <h4>Payment gateway</h4>
-
                                             <p>VISA and Mastercard only.</p>
-
                                             <div class="box-footer text-center">
-
                                                 <input type="radio" name="payment" value="payment2"/>
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="col-sm-6">
                                         <div class="box payment-method">
-
                                             <h4>Cash on delivery</h4>
-
                                             <p>You pay when you get it.</p>
-
                                             <div class="box-footer text-center">
-
                                                 <input type="radio" name="payment" value="payment3"/>
                                             </div>
                                         </div>
                                     </div>
-
-
     </div>
     <!-- /.row -->
     </div>
@@ -142,21 +98,17 @@ function transferencias() {
 		   <a href="checkout4.xhtml" class="btn btn-primary" type="submit">Revisar compra<i class="fa fa-chevron-right"></i></a>		   		     
 		</div>
 		</div>
-</h:form>
+</form>
         </div>
                     <!-- /.box -->
-
                 </div>
                 <!-- /.col-md-9 -->
-
                 <div class="col-md-3">
-
        <div class="box" id="order-summary">
                         <div class="box-header">
                             <h3>Resúmen de orden</h3>
                         </div>
                         <p class="text-muted">El envío y los costos adicionales se calculan en función de los valores que ingresó.</p>
-
                         <div class="table-responsive">
                             <table class="table">
                                 <tbody>
@@ -179,18 +131,12 @@ function transferencias() {
                                 </tbody>
                             </table>
                         </div>
-
                     </div>  
-
                 </div>
                 <!-- /.col-md-3 -->
-
             </div>
             <!-- /.container -->
         </div>
-
-
-
 <!-- PIE DE PÁGINA-->
     <div class="box marcas">    
     <div class="row">
@@ -241,6 +187,6 @@ function transferencias() {
     <script th:src="@{/ecommerce/js/bootstrap-hover-dropdown.js}"></script>     
     <script th:src="@{/ecommerce/js/owl.carousel.min.js}"></script>     
     <script th:src="@{/ecommerce/js/front.js}"></script>
-</h:body>
+</body>
 
 </html>

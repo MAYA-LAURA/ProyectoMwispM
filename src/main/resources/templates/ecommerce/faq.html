@@ -1,21 +1,13 @@
 <!DOCTYPE html  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" >
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" 
-	xmlns:h="http://java.sun.com/jsf/html" 
-	xmlns:f="http://xmlns.jcp.org/jsf/core">
-
-<h:head>
-
-    
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
     <meta name="robots" content="all,follow"/>
     <meta name="googlebot" content="index,follow,snippet,archive"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="description" content="Obaju e-commerce template"/>
     <meta name="author" content="Ondrej Svestka | ondrejsvestka.cz"/>
     <meta name="keywords" content=""/>
-
-    <title>
-        Obaju : e-commerce template
-    </title>
+    <title> MWM E-commerce</title>
 
     <meta name="keywords" content=""/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
@@ -30,21 +22,10 @@
     <link th:href="@{/ecommerce/css/owl.theme.css}" rel="stylesheet"/>        
 
 <!-- CHECAR ESTA PARTE -->
-    <link  th:href="@{/ecommerce/css/style2.blue.css}" rel="stylesheet" id="theme-stylesheet"/>          
-    
-    <!-- your stylesheet with modifications -->     
-    <link th:href="@{/ecommerce/css/custom.css}" rel="stylesheet"/>      
-    <script th:src="@{/ecommerce/js/respond.min.js}"></script>
-    
-	<h:link value="shortcut icon" outcome="favicon.png"/>    
-
-
-
-</h:head>
-
-<h:body>
-
-    
+    <link  th:href="@{/ecommerce/css/style2.blue.css}" rel="stylesheet" id="theme-stylesheet"/>         
+</head>
+<body>
+ <th:block th:include="/ecommerce/encabezado"></th:block>
     <!-- *** NAVBAR END *** -->
 
     <div id="all">
@@ -88,8 +69,6 @@
                     </div>
 
                     <!-- *** PAGES MENU END *** -->
-
-
                     <div class="banner">
                         <a href="#">
                             <img  th:src="@{/ecommerce/img/banner.png}" class="img-responsive"  alt=""/>                            
@@ -98,8 +77,6 @@
                 </div>
 
                 <div class="col-md-9">
-
-
                     <div class="box" id="contact">
                         <h1>Preguntas frecuentes</h1>
 
@@ -183,11 +160,7 @@
 
                         </div>
                         <!-- /.panel-group -->
-
-
                     </div>
-
-
                 </div>
                 <!-- /.col-md-9 -->
             </div>
@@ -226,15 +199,8 @@
     </div>        
 </div>                                    
         
-        <div id="footer" data-animate="fadeInUp">
-            
-                <p class="parrafo">2017 © Mercado Wisp México Todos los derechos reservados</p>            
-                        <p class="social">
-                            <a href="https://www.facebook.com/groups/1429817027341749/" class="facebook external" data-animate-hover="shake"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="twitter external" data-animate-hover="shake"><i class="fa fa-twitter"></i></a>                            
-                            <a href="#" class="email external" data-animate-hover="shake"><i class="fa fa-whatsapp" ></i></a>
-                        </p>
-            </div>                
+
+ <th:block th:include="/ecommerce/piePag"></th:block>            
         </div>               
     <!-- *** SCRIPTS TO INCLUDE ***
  _________________________________________________________ -->
@@ -247,6 +213,6 @@
     <script th:src="@{/ecommerce/js/owl.carousel.min.js}"></script>     
     <script th:src="@{/ecommerce/js/front.js}"></script>
 
-</h:body>
+</body>
 
 </html>

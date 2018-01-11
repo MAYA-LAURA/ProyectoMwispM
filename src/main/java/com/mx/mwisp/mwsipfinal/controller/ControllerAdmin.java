@@ -45,5 +45,10 @@ public class ControllerAdmin {
 		clienteServiceImpl.prueba(clienteModelo);
 		return "redirect:/AdminControl/clientes";
 	}
+	@GetMapping("/encabezado")
+	public ModelAndView encabezado() {
+		ModelAndView mav=new ModelAndView("/admin/encabezado");
+		return mav;
+	}
 	
 }

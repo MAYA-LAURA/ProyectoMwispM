@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8"/>
 
-    <title>Backend Ninja - Signin</title>
+    <title>Inicia Sesión</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
@@ -11,9 +11,7 @@
     <!-- Custom styles for this template -->
     <link href="#" th:href="@{ecommerce/css/login.css}" rel="stylesheet" />
     <link href="#" th:href="@{ecommerce/css/style.css}" rel="stylesheet" />
-
   </head>
-
   <body>
  <th:block th:include="/ecommerce/encabezado"></th:block>
 
@@ -30,7 +28,6 @@
         <input type="password"  class="form-control" placeholder="contraseña" name="password" id="password"/>
         <div th:if="${error != null}" class="alert alert-danger" role="alert">Usuario o Contraseña incorrecta</div>
                 <div th:if="${logout != null}" class="alert alert-info" role="alert">sision finalizada</div>
-        
         <button class="btn btn-lg btn-primary btn-block" type="submit">
         	<span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Iniciar Sesion
         </button>

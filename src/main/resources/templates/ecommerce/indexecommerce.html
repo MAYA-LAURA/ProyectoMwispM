@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8" />
     <meta name="robots" content="all,follow"/>
@@ -9,11 +8,8 @@
     <meta name="description" content="Obaju e-commerce template"/>
     <meta name="author" content="Ondrej Svestka | ondrejsvestka.cz"/>
     <meta name="keywords" content=""/>
-
     <title>MWM E-commerce</title>
-
     <meta name="keywords" content=""/>
-    
     <!-- Estilos -->
     <link  th:href="@{/ecommerce/css/font-awesome.css}" rel="stylesheet"/>
     <link  th:href="@{/ecommerce/css/font-awesome.min.css}" rel="stylesheet"/>
@@ -21,18 +17,13 @@
     <link th:href="@{/ecommerce/css/animate.min.css}" rel="stylesheet"/>     
     <link th:href="@{/ecommerce/css/owl.carousel.css}" rel="stylesheet"/>     
     <link th:href="@{/ecommerce/css/owl.theme.css}" rel="stylesheet"/>        
-
     <link  th:href="@{/ecommerce/css/style2.blue.css}" rel="stylesheet" id="theme-stylesheet"/>
-      
-    
 </head>
-
 <body>
  <th:block th:include="/ecommerce/encabezado"></th:block>
     <div id="all">
 <p></p>
         <div id="content">
-
             <div class="container">
                 <div class="col-md-12">
                     <div id="main-slider">
@@ -52,9 +43,7 @@
                     <!-- /#main-slider -->
                 </div>
             </div>
-
             <div id="hot">
-
                 <div class="box">
                     <div class="container">
                         <div class="col-md-12">
@@ -62,7 +51,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="container">
                     <div class="product-slider">
                     
@@ -89,12 +77,10 @@
                                 	<p><span th:text="${objEach.nombreProducto}"></span></p>
                                     <h3><a href="detail.html"><span  th:text="${objEach.descripcion}"></span></a></h3>
                                     <p class="price">$<span th:text="${objEach.precio}"></span>USD</p> 
-                                    <p class="price">$<span th:text="${objEach.precioMxm}"></span>MXM</p> 
-                                    
+                                    <p class="price">$<span th:text="${objEach.precioMxm}"></span>MXM</p>   
                                 </div>
                                 <a th:href="@{/ecommerce/carrito}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Agregar al carrito</a>
-                                <!-- /.text -->
-                                
+                                <!-- /.text -->        
                             </div>
                             <!-- /.product -->
                         </div>                       
@@ -102,53 +88,9 @@
                     <!-- /.product-slider -->
                 </div>
                 <!-- /.container -->
-
             </div>
             <!-- /#hot -->
-
-            <!-- * HOT END * -->
-            
- <div id="advantages">
-
-                <div class="container">
-                    <div class="same-height-row">
-                        <div class="col-sm-4">
-                            <div class="box same-height clickable">
-                                <div class="icon"><i class="fa fa-money"></i>
-                                </div>
-
-                                  <h3><a href="#">Los mejores precios</a></h3>
-                                <p>Te ofrecemos los mejores precios y la más alta calidad.</p>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <div class="box same-height clickable">
-                                <div class="icon"><i class="fa fa-heart"></i>
-                                </div>
-                                <h3><a href="#">Amámos a nuestros clientes</a></h3>
-                                <p>Nuestra prioridad eres tú, te ofrecemos el mejor servicio posible.</p>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <div class="box same-height clickable">
-                                <div class="icon"><i class="fa fa-car"></i>
-                                </div>
-
-                                <h3><a href="#">Envío gratis</a></h3>
-                                <p>Envío gratis a partir de $500.00. A todo el país. De 2 a 6 días hábiles</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.row -->
-
-                </div>
-                <!-- /.container -->
-
-            </div>                                    
-            <!-- * GET INSPIRED * --> 
-<!-- 
+<!-- DIV PARA EL ENLACE AL BLOG
             <div class="box text-center">
                 <div class="container">
                     <div class="col-md-12">
@@ -159,40 +101,8 @@
                     </div>
                 </div>
             </div>
-               -->
-               
-     <!-- PIE DE PAGINA -->
-     <div class="box marcas">    
-    <div class="row">
-        <div class="col-sm-12">
-                    <p class="font-weight-bold text-center">LAS MEJORES MARCAS</p>            
-        </div>        
-    </div>    
-    <div class="row">                
-        <div class="col-sm-3 "></div>
-        <div class="col-sm-1 col-xs-2">
-        <img  th:src="@{/ecommerce/img/marca1.png}" class="img-responsive"  alt="Ubiquiti"/>                       
-        </div>
-        <div class="col-sm-1 col-xs-2">
-            <img  th:src="@{/ecommerce/img/marca2.png}" class="img-responsive"  alt="Mimosa"/>                       
-        </div>
-        <div class="col-sm-1 col-xs-2">
-            <img  th:src="@{/ecommerce/img/marca3.png}" class="img-responsive"  alt="Epcom"/>                       
-        </div>
-        <div class="col-sm-1 col-xs-2">
-            <img  th:src="@{/ecommerce/img/marca4.png}" class="img-responsive"  alt="Hikvision"/>                       
-        </div>   
-        <div class="col-sm-1 col-xs-2">
-            <img  th:src="@{/ecommerce/img/marca5.png}" class="img-responsive"  alt="Honeywell"/>                       
-        </div>
-        <div class="col-sm-2 col-xs-2   ">
-            <img  th:src="@{/ecommerce/img/marca6.png}" class="img-responsive"  alt="Cambium Networks"/>                       
-        </div>                  
-        <div class="col-sm-2"></div>
-    </div>        
-</div>             
+               -->         
      <th:block th:include="/ecommerce/piePag"></th:block>
-            
         </div> 
         </div>               
 
@@ -206,7 +116,5 @@
     <script th:src="@{/ecommerce/js/bootstrap-hover-dropdown.js}"></script>     
     <script th:src="@{/ecommerce/js/owl.carousel.min.js}"></script>     
     <script th:src="@{/ecommerce/js/front.js}"></script>
-
 </body>
-
 </html>

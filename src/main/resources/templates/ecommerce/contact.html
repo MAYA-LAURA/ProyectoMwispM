@@ -1,9 +1,6 @@
 <!DOCTYPE html  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" >
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" 
-	xmlns:h="http://java.sun.com/jsf/html" 
-	xmlns:f="http://xmlns.jcp.org/jsf/core"
-    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-<h:head>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
     <meta name="robots" content="all,follow"/>
     <meta name="googlebot" content="index,follow,snippet,archive"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -24,20 +21,11 @@
     <link th:href="@{/ecommerce/css/animate.min.css}" rel="stylesheet"/>     
     <link th:href="@{/ecommerce/css/owl.carousel.css}" rel="stylesheet"/>     
     <link th:href="@{/ecommerce/css/owl.theme.css}" rel="stylesheet"/>      
-    
-    <!-- theme stylesheet -->     
-    <link  th:href="@{/ecommerce/css/style.default.css}" rel="stylesheet" id="theme-stylesheet"/>      
-    
-    <!-- your stylesheet with modifications -->     
-    <link th:href="@{/ecommerce/css/custom.css}" rel="stylesheet"/>      
-    <script th:src="@{/ecommerce/js/respond.min.js}"></script>                           
-
 
 <link rel="shortcut icon" href="favicon.png" type="image/x-icon"/>
 
-</h:head>
-
-<h:body>
+</head>
+<body>
 <th:block th:include="/ecommerce/encabezado"></th:block>
        
     <div id="all">
@@ -317,6 +305,6 @@
        
     </script> 
 
-</h:body>
+</body>
 
 </html>

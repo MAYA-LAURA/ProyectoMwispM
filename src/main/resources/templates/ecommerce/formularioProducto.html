@@ -1,68 +1,92 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1"/>
-<title>Insert title here</title>
-<link href="#" th:href="@{/ecommerce/css/bootstrap.css}" rel="stylesheet" />
-<link href="#" th:href="@{/ecommerce/css/bootstrap.min.css}" rel="stylesheet" />
-<link th:href="@{/ecommerce/css/style2.blue.css}" rel="stylesheet" />
+<meta charset="ISO-8859-1" />
+	<link th:href="@{/ecommerce/css/style2.blue.css}" rel="stylesheet" />
+	<link th:href="@{/ecommerce/css/bootstrap.min.css}" rel="stylesheet" />
+
+<title>Admin-Agredar Producto</title>
 </head>
 <body>
-<br></br>
+<th:block th:include="/admin/encabezado"></th:block>
 
-<div class="col-md-12 center">
-<p>EDITAR PRODUCTO </p>
-</div>
+<div class="content-wrapper">
 
-<hr></hr>
-<div class="col-md-8 center">
+<section class="content"> <!-- /.row -->
+	
+				<div class="col-xs-12">
+					<div class="box">
+						<div class="box-header">
+							<h2>Editar Producto</h2>
+
+							<div class="box-tools">
+								<div class="input-group input-group-sm" style="width: 150px;">
+									<input type="text" name="table_search"
+										class="form-control pull-right" placeholder="Search" />
+
+									<div class="input-group-btn">
+										<button type="submit" class="btn btn-default">
+											<i class="fa fa-search"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+<div class="col-md-8 ">
 <form action="#" th:action="@{/Admin/addProducto}" th:object="${produ}"
-	enctype="multipart/form-data" method="POST">
+	enctype="multipart/form-data" method="POST" class="box">
 		<input type="hidden" th:field="*{idProdcutos}"/> 
-		<p>
+		<p class="h4" style="font-weight:bold;">
 			Nombre:<input type="text" class="form-control" th:field="*{nombreProducto}" />
 		</p>
-		<p>
+		<p class="h4" style="font-weight:bold;">
 			Modelo:<input type="text" class="form-control" th:field="*{modelo}"/>
 		</p>
-		<p>
+		<p class="h4" style="font-weight:bold;">
 			Precio en Dolares:<input type="text" class="form-control" th:field="*{precio}" />
 		</p>
-		<p>
+		<p class="h4" style="font-weight:bold;">
 			Descripcion:<input type="text" class="form-control" th:field="*{descripcion}" />
 		</p>
-		<p>
+		<p class="h4" style="font-weight:bold;">
 			Garantia:<input type="text" class="form-control" th:field="*{tiempoGarantia}" />
 		</p>
-		<p>
+		<p class="h4" style="font-weight:bold;">
 			Categoria: <select class="form-control" th:field="*{categoria.nombreCategoria}">
 											<option th:each="iterador: ${categoriaObj}"
 												th:value="${iterador.nombreCategoria}" th:text="${iterador.nombreCategoria}"></option>
 										</select>
 		</p>
-		<p>
+		<p class="h4" style="font-weight:bold;">
 			Marca: <select class="form-control"	 th:field="*{marca.marca}">
 											<option th:each="iterador: ${marcaObj}"
 												th:value="${iterador.marca}" th:text="${iterador.marca}"></option>
 										</select>
 		</p>
-		<p>
+		<p class="h4" style="font-weight:bold;">
 			<input type="hidden" th:field="*{imagen1}"/> 
 		</p>
-		<p>
+		<p class="h4" style="font-weight:bold;">
 			<input type="hidden" th:field="*{imagen2}"/> 
 		</p>
-		<p>
+		<p class="h4" style="font-weight:bold;">
 			Subir Imagen 1:<input class="form-control" type="file" name="file"/> 
 		</p>
-		<p>
+		<p class="h4" style="font-weight:bold;">
 			Subir Imagen 2:<input class="form-control" type="file" name="file2"/> 
 		</p>
-		<p>
+		<p >
 			<input  type="submit" value="Guardar"  class="btn btn-primary"/>
 		</p>
 
 	</form>
-</div>
+</div>	
+	   </div>
+	</div>
+	<!-- /.box-header -->
+	<!-- /.box -->
+	</div>
+	</section>
+	</div>
+	<th:block th:include="/admin/piePag"></th:block>
 </body>
 </html>
