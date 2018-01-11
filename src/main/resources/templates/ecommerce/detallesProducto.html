@@ -41,13 +41,13 @@
 			 <div class="row col-md-6">
 			 <p class="listaproductp">IMAGEN 2</p> 
 			 </div>
-			<div class="row imagenes col-md-6">
-				<img class="img-thumbnail rounded float-left img_detall"
+			<div  class="row imagenes col-md-6">
+				<img th:if="${#strings.length(producto.imagen1)>0}" class="img-thumbnail rounded float-left img_detall"
 				     th:alt="${producto.imagen1}" 
 				     th:src="@{'/uploads/'+${producto.imagen1}} " /> 
 			 </div>
-			 <div class="row imagenes col-md-6">
-			 <img	 class="img-thumbnail rounded float-left img_detall "
+			 <div  class="row imagenes col-md-6">
+			 <img  th:if="${#strings.length(producto.imagen2)>0}" class="img-thumbnail rounded float-left img_detall "
 					th:alt="${producto.imagen2}"
 					th:src="@{'/uploads/'+${producto.imagen2}}  "/>	
 			 </div>
