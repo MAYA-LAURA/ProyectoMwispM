@@ -83,4 +83,10 @@ public class ProductoServiceImpl implements ProductoService{
 		return productoJpaRepository.findOne(id);
 	}
 
+	@Override
+	public Productos encontraPorModelo(String modelo) {
+		// TODO Auto-generated method stub
+		return productoJpaRepository.findByModelo(modelo);
+	}
+
 }

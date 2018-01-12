@@ -9,10 +9,12 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.mx.mwisp.mwsipfinal.entity.Productos;
 import com.mx.mwisp.mwsipfinal.model.PagoModeloForm;
 import com.mx.mwisp.mwsipfinal.openpay.CargoBanco;
 import com.mx.mwisp.mwsipfinal.openpay.CargoTarjeta;
@@ -37,6 +39,7 @@ public ModelAndView vistaPrincipal() {
 	mav.addObject("listProduc", productoServiceImpl.listarProductos());
 	return mav;
 }
+
 
 @GetMapping("/wizard")
 public ModelAndView wizard() {
@@ -175,9 +178,12 @@ public ModelAndView vistaOrdenes() {
 	ModelAndView mav=new ModelAndView ("/ecommerce/customer-orders");
 	return mav;
 			}
-@GetMapping ("/detalles")
-public ModelAndView vistaDetail() {
+//este metodo muestra los detalles de cada producto
+@GetMapping ("/{modelo}/detalles")
+public ModelAndView vistaDetail(@PathVariable(value="modelo")String modelo) {
 	ModelAndView mav=new ModelAndView ("/ecommerce/detail");
+	Productos producto=productoServiceImpl.encontraPorModelo(modelo);
+	mav.addObject("productoFind", producto);
 	return mav;
 			}
 @GetMapping ("/pregfrec")

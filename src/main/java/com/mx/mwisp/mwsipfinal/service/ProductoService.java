@@ -11,5 +11,6 @@ public interface ProductoService {
 	public abstract int eliminarPorId(int id);
 	public abstract Productos actualizarProducto(Productos producto);
 	public abstract Productos encontrarPorId(int id);
+	public abstract Productos encontraPorModelo(String modelo);
 	
 }

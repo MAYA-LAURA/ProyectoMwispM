@@ -59,23 +59,23 @@
                                 <div class="flip-container">
                                     <div class="flipper">
                                         <div class="front">
-                                            <a th:href="@{/ecommerce/detalles}">
+                                            <a th:href="@{/ecommerce/}+${objEach.modelo}+@{/detalles}">
                                                  <img th:src="@{'/uploads/' + ${objEach.imagen1}}"  class="img-responsive img-thumbnail" alt=""/>     
                                             </a>
                                         </div>
                                         <div class="back">
-                                            <a th:href="@{/ecommerce/detalles}">
+                                            <a th:href="@{/ecommerce/}+${objEach.modelo}+@{/detalles}">
                                                   <img th:src="@{'/uploads/' + ${objEach.imagen2}}" class="img-responsive img-thumbnail" alt=""/>    
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                                <a th:href="@{/ecommerce/detalles}" class="invisible">
+                                <a th:href="@{/ecommerce/}+${objEach.modelo}+@{/detalles}" class="invisible">
                                      <img th:src="@{'/uploads/' + ${objEach.imagen1}}"  class="img-responsive img-thumbnail" alt=""/>                                          
                                 </a>
                                 <div class="text">
                                 	<p><span th:text="${objEach.nombreProducto}"></span></p>
-                                    <h3><a href="detail.html"><span  th:text="${objEach.descripcion}"></span></a></h3>
+                                    <h3><a th:href="@{/ecommerce/}+${objEach.modelo}+@{/detalles}" ><span  th:text="${objEach.descripcion}"></span></a></h3>
                                     <p class="price">$<span th:text="${objEach.precio}"></span>USD</p> 
                                     <p class="price">$<span th:text="${objEach.precioMxm}"></span>MXM</p>   
                                 </div>

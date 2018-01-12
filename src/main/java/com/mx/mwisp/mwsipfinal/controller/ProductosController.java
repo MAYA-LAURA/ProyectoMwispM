@@ -53,10 +53,19 @@ public class ProductosController {
 	// este metodo muestra los detalles de un producto
 	@GetMapping(value="/verProducto/{id}")
 	public String ver(@PathVariable(value="id")int id,Model model ) {
+		String redirect=null;
 		Productos producto=productoServiceImpl.encontrarPorId(id);
+		if(producto!=null) {
 		model.addAttribute("producto",producto );
 		model.addAttribute("titulo","Detalle Producto:"+producto.getNombreProducto());
-		return "/ecommerce/detallesProducto";
+		redirect= "/ecommerce/detallesProducto";
+		}
+		else
+		{
+			redirect="redirect:/Admin/listaProductosAdmin";
+		}
+		return redirect;
+		
 	}
 	
 

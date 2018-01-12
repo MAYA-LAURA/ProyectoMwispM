@@ -11,6 +11,8 @@ import com.mx.mwisp.mwsipfinal.entity.Productos;
 @Repository("productoJpaRepository")
 public interface ProductoJpaRepository extends JpaRepository<Productos, Serializable>{
 
-	public abstract Productos findByPrecio(float precio);
+	public abstract Productos findByPrecio(double precio);
+
+	public abstract Productos findByModelo(String modelo);
 
 }

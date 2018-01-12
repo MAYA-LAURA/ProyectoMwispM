@@ -40,14 +40,17 @@
                         </li>
                         <li><a th:href="@{/ecommerce/categoria}">Categoría</a>
                         </li>
-                        <li>Cámara falsa(fantasma), con Leds que encienden en la noche (No parpadea).</li>
+                        <li><span th:text="${productoFind.nombreProducto}"></span></li>
                     </ul>
                 </div>                                                    
                 <div class="col-md-12">
                     <div class="row" id="productMain">
                         <div class="col-sm-6">
                             <div id="mainImage">
-                                <img  th:src="@{/ecommerce/img/detailbig1.jpg}" class="img-responsive"  alt=""/>
+                                <img  th:src="@{'/uploads/'+${productoFind.imagen1}}" class="img-responsive"  alt=""/>
+                            </div>
+                             <div id="mainImage">
+                                <img  th:src="@{'/uploads/'+${productoFind.imagen2}}" class="img-responsive"  alt=""/>
                             </div>
                             <div class="ribbon new">
                                 <div class="theribbon">Nuevo</div>
@@ -57,8 +60,9 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="box">
-                                <h3 class="text-center">Cámara falsa(fantasma), con Leds que encienden en la noche (No parpadea) baterías no incluidas</h3>                                
-                                <p class="price">$124.00</p>
+                                <h3 class="text-center"><span th:text="${productoFind.descripcion}"></span></h3>   
+                                <h4 class="text-center">Modelo: <span  th:text="${productoFind.modelo}"></span></h4>                             
+                                <p class="price">$ <span th:text="${productoFind.precio}"></span > USD</p>
                                 
 <div class="formas-pago">        
     <div class="row">                
