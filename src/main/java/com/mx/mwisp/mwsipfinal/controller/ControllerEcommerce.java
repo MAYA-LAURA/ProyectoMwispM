@@ -140,26 +140,6 @@ public String pagar(HttpServletRequest request,@ModelAttribute("formularioEcomme
 	return "redirect:" + urlPdf; 
 }
 
-////esta peticion get muestra la imagen de los productos
-//@GetMapping(value="/uploads/{filename:.+}")
-//public ResponseEntity<Resource> verImagen(@PathVariable String filename){
-//	
-//	//Path pathImagen=Paths.get("uploads").resolve(filename).toAbsolutePath();
-//	Path directorioRecursos=Paths.get("c://imagenes/uploads").resolve(filename).toAbsolutePath();
-//	LOG.info("ruta======="+directorioRecursos);
-//	Resource recurso=null;
-//	try {
-//		recurso= new UrlResource(directorioRecursos.toUri());
-//		if(!recurso.exists() || !recurso.isReadable()) {
-//			throw new RuntimeException("error no se puede cargar la imagen");
-//		}
-//	} catch (MalformedURLException e) {
-//		// TODO Auto-generated catch block
-//		e.printStackTrace();
-//	}
-//	return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=\""+recurso.getFilename()+"\"")
-//			.body(recurso);
-//}
 
 @GetMapping ("/404")
 public ModelAndView vistaError() {

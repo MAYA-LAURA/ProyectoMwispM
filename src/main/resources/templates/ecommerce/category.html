@@ -3,7 +3,7 @@
 
 
 <head>
-    
+    <meta charset="utf-8" />
     <meta name="robots" content="all,follow"/>
     <meta name="googlebot" content="index,follow,snippet,archive"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -71,7 +71,7 @@
                                         </li>
                                         <li><a href="category.xhtml">Audio</a>
                                         </li>
-                                        <li><a href="category.xhtml">Cámaras HD-SDI/Grabación</a>
+                                        <li><a href="category.xhtml">CÃ¡maras HD-SDI/GrabaciÃ³n</a>
                                         </li>
                                         <li><a href="category.xhtml">Cables</a>
                                         </li>
@@ -84,9 +84,9 @@
                                     <ul>
                                         <li><a href="category.xhtml">Accesorios para torres arriostradas</a>
                                         </li>
-                                        <li><a href="category.xhtml">Mástiles</a>
+                                        <li><a href="category.xhtml">MÃ¡stiles</a>
                                         </li>
-                                        <li><a href="category.xhtml">Ánclas temporales</a>
+                                        <li><a href="category.xhtml">Ã�nclas temporales</a>
                                         </li>
                                         <li><a href="category.xhtml">Torres serie G</a>
                                         </li>
@@ -99,7 +99,7 @@
                                         </li>
                                         <li><a href="category.xhtml">Racks y gabinetes</a>
                                         </li>
-                                        <li><a href="category.xhtml">Protección contra descargas</a>
+                                        <li><a href="category.xhtml">ProtecciÃ³n contra descargas</a>
                                         </li>
                                         <li><a href="category.xhtml">Redes</a>
                                         </li>
@@ -201,26 +201,27 @@
                                 <div class="flip-container">
                                     <div class="flipper">
                                         <div class="front">
-                                            <a href="detail.xhtml">
-                                                <img  th:src="@{/ecommerce/img/y.jpg}" class="img-responsive"  alt=""/>
+                                            <a th:href="@{/ecommerce/}+${objEach.modelo}+@{/detalles}">
+                                                <img  th:src="@{'/uploads/' + ${objEach.imagen1}}"  class="img-responsive"  alt=""/>
                                             </a>
                                         </div>
                                         <div class="back">
-                                            <a href="detail.xhtml">
-                                                <img  th:src="@{/ecommerce/img/y2.jpg}" class="img-responsive"  alt=""/>
+                                            <a th:href="@{/ecommerce/}+${objEach.modelo}+@{/detalles}">
+                                                <img  th:src="@{'/uploads/' + ${objEach.imagen2}}"  class="img-responsive"  alt=""/>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                                <a href="detail.xhtml" class="invisible">
-                                    <img  th:src="@{/ecommerce/img/y.jpg}" class="img-responsive"  alt=""/>
+                                <a th:href="@{/ecommerce/}+${objEach.modelo}+@{/detalles}" class="invisible">
+                                    <img  th:src="@{'/uploads/' + ${objEach.imagen2}}" class="img-responsive"  alt=""/>
                                 </a>
                                 <div class="text">
-                                    <h3><a href="detail.xhtml"><span  th:text="${objEach.descripcion}"></span></a></h3>
-                                    <p class="price"><span th:text="${objEach.precio}"></span></p>
+                                    <h3><a th:href="@{/ecommerce/}+${objEach.modelo}+@{/detalles}"><span  th:text="${objEach.nombreProducto}"></span></a></h3>
+                                    <h3><a th:href="@{/ecommerce/}+${objEach.modelo}+@{/detalles}" >Modelo: <span  th:text="${objEach.modelo}"></span></a></h3>
+                                    <p class="price">$ <span th:text="${objEach.precioMxm}"></span> MXM</p>
                                     <p class="buttons">
-                                        <a th:href="@{/ecommerce/detalles}" class="btn btn-default">Ver detalles</a>
-                                        <a th:href="@{/ecommerce/carrito}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Agregar al carrito</a>
+                                        <a th:href="@{/ecommerce/}+${objEach.modelo}+@{/detalles}" class="btn btn-default">Ver detalles</a>
+                                        <a th:href="@{|/ecommerce/comprarProducto?id=${objEach.idProdcutos}|}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Agregar al carrito</a>
                                     </p>
                                 </div>
                                 <!-- /.text -->
@@ -235,7 +236,7 @@
                     <div class="pages">
 
                         <p class="loadMore">
-                            <a href="#" class="btn btn-primary btn-lg"><i class="fa fa-chevron-down"></i> Ver más</a>
+                            <a href="#" class="btn btn-primary btn-lg"><i class="fa fa-chevron-down"></i> Ver mÃ¡s</a>
                         </p>
 
                         <ul class="pagination">
@@ -273,7 +274,7 @@
                                 </div>
 
                                   <h3><a href="#">Los mejores precios</a></h3>
-                                <p>Te ofrecemos los mejores precios y la más alta calidad.</p>
+                                <p>Te ofrecemos los mejores precios y la mÃ¡s alta calidad.</p>
                             </div>
                         </div>
 
@@ -283,8 +284,8 @@
                                 </div>
 
                              
-                                <h3><a href="#">Amámos a nuestros clientes</a></h3>
-                                <p>Nuestra prioridad eres tú, te ofrecemos el mejor servicio posible.</p>
+                                <h3><a href="#">AmÃ¡mos a nuestros clientes</a></h3>
+                                <p>Nuestra prioridad eres tÃº, te ofrecemos el mejor servicio posible.</p>
                             </div>
                         </div>
 
@@ -293,8 +294,8 @@
                                 <div class="icon"><i class="fa fa-car"></i>
                                 </div>
 
-                                <h3><a href="#">Envío gratis</a></h3>
-                                <p>Envío gratis a partir de $500.00. A todo el país. De 2 a 6 días hábiles</p>
+                                <h3><a href="#">EnvÃ­o gratis</a></h3>
+                                <p>EnvÃ­o gratis a partir de $500.00. A todo el paÃ­s. De 2 a 6 dÃ­as hÃ¡biles</p>
                             </div>
                         </div>
                     </div>
