@@ -63,6 +63,26 @@ public class CarritoInfo {
 		}
 		
 	}
+	public void updateProduct(int id,int cantidad) {
+		CarritoOnlineInfo line=this.encontrarPorId(id);
+		if (line!=null) {
+			if(cantidad<=0) {
+				
+			}else {
+				line.setCantidad(cantidad);
+			}
+			
+		}
+	}
+	
+	public void actualizarCantidad(CarritoInfo carritoForm) {
+		if(carritoForm!=null) {
+			List<CarritoOnlineInfo> lines=carritoForm.getCartOnline();
+			for(CarritoOnlineInfo line: lines) {
+				this.updateProduct(line.getProductoModel().getIdProdcutos(),line.getCantidad());
+			}
+		}
+	}
 	
 	public double getMontoTotal() {
 		double total=0;

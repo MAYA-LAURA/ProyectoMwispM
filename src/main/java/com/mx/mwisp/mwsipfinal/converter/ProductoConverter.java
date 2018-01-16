@@ -31,7 +31,7 @@ public class ProductoConverter {
 		productoModel.setMarca(producto.getMarca());
 		//pasa el valor de precio a moneda nacional mexicana
 		BigDecimal bd=new BigDecimal(producto.getPrecio()*19.1791);
-		bd=bd.setScale(4, RoundingMode.HALF_UP);
+		bd=bd.setScale(2, RoundingMode.HALF_UP);
 		productoModel.setPrecioMxm(bd.doubleValue());
 		return productoModel;
 		

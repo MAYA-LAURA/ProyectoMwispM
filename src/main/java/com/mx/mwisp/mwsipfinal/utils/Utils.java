@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import com.mx.mwisp.mwsipfinal.model.CarritoInfo;
 
 public class Utils {
-	public static CarritoInfo obtenerCarroSession(HttpServletRequest request) {
+	public static CarritoInfo getCarroSession(HttpServletRequest request) {
 		CarritoInfo carroInfo=(CarritoInfo)request.getSession().getAttribute("miCarro");
 		if(carroInfo==null) {
 			carroInfo=new CarritoInfo();

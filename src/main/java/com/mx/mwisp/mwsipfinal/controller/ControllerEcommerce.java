@@ -59,7 +59,7 @@ public String  listaCarrito(HttpServletRequest request,Model model,
 		producto=productoServiceImpl.encontrarPorId(id);
 	}
 	if (producto!=null) {
-		CarritoInfo carroInfo=Utils.obtenerCarroSession(request);
+		CarritoInfo carroInfo=Utils.getCarroSession(request);
 		ProductoModel productoModel=productoConverter.entityModel(producto);
 		carroInfo.agregarProducto(productoModel, 1);
 	}
@@ -70,11 +70,24 @@ public String  listaCarrito(HttpServletRequest request,Model model,
 @RequestMapping(value= {"/carrito"},method=RequestMethod.GET)
 public String shoppingCartHandler(HttpServletRequest request,Model model) {
 	LOG.info("Metodo==============ShoppingCart");
-	CarritoInfo miCarrito=Utils.obtenerCarroSession(request);
+	CarritoInfo miCarrito=Utils.getCarroSession(request);
 	model.addAttribute("carritoForm", miCarrito);
 	LOG.info(miCarrito);
 	return "/ecommerce/basket";
 }
+
+//POST: actualiza cantidad de productos en el carrito
+@RequestMapping(value= {"/carritoCompras"}, method=RequestMethod.POST)
+public String actualizarCarrito(HttpServletRequest request,Model model,
+		@ModelAttribute("carritoForm") CarritoInfo carritoForm) {
+	LOG.info("Entrado al metodo POST");
+	LOG.info(carritoForm);
+	CarritoInfo carritoInfo=Utils.getCarroSession(request);
+	carritoInfo.actualizarCantidad(carritoForm);
+	return "redirect:/ecommerce/carrito";
+}
+
+
 
 @RequestMapping({"/eliminarProductoCarrito"})
 public String eliminarProductoCart(HttpServletRequest request,Model model,
@@ -84,7 +97,7 @@ public String eliminarProductoCart(HttpServletRequest request,Model model,
 		producto=productoServiceImpl.encontrarPorId(id);
 	}
 	if (producto!=null) {
-		CarritoInfo carroInfo=Utils.obtenerCarroSession(request);
+		CarritoInfo carroInfo=Utils.getCarroSession(request);
 		ProductoModel productoModel=productoConverter.entityModel(producto);
 		carroInfo.eliminarProducto(productoModel);
 	}

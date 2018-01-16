@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="UTF-8"/>
     <meta name="robots" content="all,follow"/>
     <meta name="googlebot" content="index,follow,snippet,archive"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -26,6 +26,8 @@
 <body>
  <th:block th:include="/ecommerce/encabezado"></th:block>
     <!-- *** NAVBAR END *** -->
+    
+    
     <div id="all">
         <div id="content">
             <div class="container">
@@ -38,10 +40,15 @@
                 </div>
                 <div class="col-md-9" id="basket">
                     <div class="box">
-                        <form method="post" action="checkout1.html">
+                    	<th:block th:if="${carritoForm.cartOnline.empty}" >
+                    	<h2>No hay productos en el carrito</h2>
+                    	<a th:href= "@{/ecommerce/categoria}" class="btn btn-default"><i class="fa fa-chevron-left"></i>Comprar</a>
+                    	</th:block>
+                    
+                    	 <th:block th:if="${!carritoForm.cartOnline.empty}">
+                        <form method="POST" th:object="${carritoForm}" th:action="@{/ecommerce/carritoCompras}">
                             <h1>Carrito de Compras</h1>
-                            <p class="text-muted">Actualmente tiene 3 artículo(s) en su carrito.</p>
-                            <div class="table-responsive">
+                                <div class="table-responsive">
                                 <table class="table">
                                     <thead>
                                         <tr>
@@ -52,20 +59,28 @@
                                             <th colspan="2">Total</th>
                                         </tr>
                                     </thead>
-                                    <tbody th:each="objeto: ${carritoForm.cartOnline}">
+                                    <tbody th:each="objeto, varStatus: ${carritoForm.cartOnline}">
                                         <tr>
+                                        	
                                             <td>
                                             <img th:src="@{'/uploads/'+${objeto.productoModel.imagen1}}" alt="White Blouse Armani"/>
-                                                
+                                         
+                                            <input type="hidden" th:name="|cartOnline[${varStatus.index}].productoModel.idProdcutos|"
+                                            th:value="${objeto.productoModel.idProdcutos}" />
                                             </td>
-                                            <td th:text="${objeto.productoModel.nombreProducto}">
+                                            <td th:utext="${objeto.productoModel.nombreProducto}">                                           	                                        
                                             </td>
                                             <td>
-                                                 <input type="number" th:value="${objeto.cantidad}" class="form-control"/> 
+                                                 <input type="number" th:name="|cartOnline[${varStatus.index}].cantidad|" th:value="${objeto.cantidad}" class="form-control"/> 
                                             </td>
-                                            <td >$ <span th:text="${objeto.productoModel.precioMxm}"></span></td>
+                                            <td >$ <span th:utext="${objeto.productoModel.precioMxm}"></span>
+                                            <input type="hidden" th:name="|cartOnline[${varStatus.index}].productoModel.precioMxm|"
+                                            th:value="${objeto.productoModel.precioMxm}" />
+                                            <input type="hidden" th:name="|cartOnline[${varStatus.index}].productoModel.precio|"
+                                            th:value="${objeto.productoModel.precio}" />
+                                            </td>
                                             
-                                            <td >$ <span th:text="${objeto.monto}"></span></td>
+                                            <td >$ <span th:utext="${objeto.monto}"></span></td>
                                             <td><a th:href="@{|/ecommerce/eliminarProductoCarrito?id=${objeto.productoModel.idProdcutos}|}"><i class="fa fa-trash-o"></i></a>
                                             </td>
                                         </tr>
@@ -86,12 +101,15 @@
                                     <a th:href= "@{/ecommerce/categoria}" class="btn btn-default"><i class="fa fa-chevron-left"></i> Continuar comprando</a>
                                 </div>
                                 <div class="pull-right">
-                                <a href="category.html" class="btn btn-default"><i class="fa fa-refresh"></i>Refrescar carrito</a>
-                                    <a th:href= "@{/ecommerce/wizard}" class="btn btn-primary">Siguiente<i class="fa fa-chevron-right"></i> </a>                                    
+                                <button type="submit" class="btn btn-default">
+                                	<i class="fa fa-refresh"></i>Refrescar Carrito
+                                </button>
+                                <a th:href= "@{/ecommerce/wizard}" class="btn btn-primary">Siguiente<i class="fa fa-chevron-right"></i> </a>                                    
                                 </div>
                                                            </div>
 
                         </form>
+                        </th:block>
                     </div>
                     <!-- /.box -->
                    
