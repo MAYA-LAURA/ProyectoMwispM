@@ -34,6 +34,9 @@ public class Productos {
 	@Column(name="Tiempo_Garantia")
 	private String tiempoGarantia;
 	
+	@Column(name="Pdf")
+	private String pdf;
+	
 	@Column(name="Imagen1")
 	private String imagen1;
 	
@@ -157,6 +160,18 @@ public class Productos {
 
 	public void setImagen2(String imagen2) {
 		this.imagen2 = imagen2;
+	}
+
+
+
+	public String getPdf() {
+		return pdf;
+	}
+
+
+
+	public void setPdf(String pdf) {
+		this.pdf = pdf;
 	}
 
 	

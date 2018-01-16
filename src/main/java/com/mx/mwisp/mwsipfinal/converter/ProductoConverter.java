@@ -24,6 +24,7 @@ public class ProductoConverter {
 		productoModel.setDescripcion(producto.getDescripcion());
 		productoModel.setPrecio(producto.getPrecio());
 		productoModel.setTiempoGarantia(producto.getTiempoGarantia());
+		productoModel.setPdf(producto.getPdf());
 		productoModel.setImagen1(producto.getImagen1());
 		productoModel.setImagen2(producto.getImagen2());
 		productoModel.setCategoria(producto.getCategoria());
@@ -47,6 +48,7 @@ public class ProductoConverter {
 		producto.setDescripcion(productoModel.getDescripcion());
 		producto.setPrecio(productoModel.getPrecio());
 		producto.setTiempoGarantia(productoModel.getTiempoGarantia());
+		producto.setPdf(productoModel.getPdf());
 		producto.setImagen1(productoModel.getImagen1());
 		producto.setImagen2(productoModel.getImagen2());
 		producto.setCategoria(productoModel.getCategoria());

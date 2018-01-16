@@ -7,15 +7,21 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.mx.mwisp.mwsipfinal.converter.ProductoConverter;
 import com.mx.mwisp.mwsipfinal.entity.Productos;
+import com.mx.mwisp.mwsipfinal.model.CarritoInfo;
 import com.mx.mwisp.mwsipfinal.model.PagoModeloForm;
+import com.mx.mwisp.mwsipfinal.model.ProductoModel;
 import com.mx.mwisp.mwsipfinal.openpay.CargoBanco;
 import com.mx.mwisp.mwsipfinal.openpay.CargoTarjeta;
 import com.mx.mwisp.mwsipfinal.openpay.CargoTienda;
@@ -24,6 +30,7 @@ import com.mx.mwisp.mwsipfinal.openpay.ObjPeticion;
 import com.mx.mwisp.mwsipfinal.openpay.ObjetoPeticionCard;
 import com.mx.mwisp.mwsipfinal.openpay.RespuestaPeticion;
 import com.mx.mwisp.mwsipfinal.service.ProductoService;
+import com.mx.mwisp.mwsipfinal.utils.Utils;
 
 @Controller
 @RequestMapping("/ecommerce")
@@ -32,12 +39,56 @@ public class ControllerEcommerce {
 @Autowired
 @Qualifier("productoServiceImpl")
 ProductoService productoServiceImpl;
+@Autowired
+@Qualifier("productoConverter")
+ProductoConverter productoConverter;
+
 	
 @GetMapping("/principal")
 public ModelAndView vistaPrincipal() {
 	ModelAndView mav=new ModelAndView("/ecommerce/indexecommerce");
 	mav.addObject("listProduc", productoServiceImpl.listarProductos());
 	return mav;
+}
+
+@RequestMapping({"/comprarProducto"})
+public String  listaCarrito(HttpServletRequest request,Model model,
+		@RequestParam(value="id",defaultValue="")int id) {
+	Productos producto=null;
+	if(id!=0) {
+		producto=productoServiceImpl.encontrarPorId(id);
+	}
+	if (producto!=null) {
+		CarritoInfo carroInfo=Utils.obtenerCarroSession(request);
+		ProductoModel productoModel=productoConverter.entityModel(producto);
+		carroInfo.agregarProducto(productoModel, 1);
+	}
+	LOG.info("metodo===============ComprarProducto");
+	return "redirect:/ecommerce/carrito";
+}
+
+@RequestMapping(value= {"/carrito"},method=RequestMethod.GET)
+public String shoppingCartHandler(HttpServletRequest request,Model model) {
+	LOG.info("Metodo==============ShoppingCart");
+	CarritoInfo miCarrito=Utils.obtenerCarroSession(request);
+	model.addAttribute("carritoForm", miCarrito);
+	LOG.info(miCarrito);
+	return "/ecommerce/basket";
+}
+
+@RequestMapping({"/eliminarProductoCarrito"})
+public String eliminarProductoCart(HttpServletRequest request,Model model,
+		@RequestParam(value="id",defaultValue="") int id) {
+	Productos producto=null;
+	if (id!=0) {
+		producto=productoServiceImpl.encontrarPorId(id);
+	}
+	if (producto!=null) {
+		CarritoInfo carroInfo=Utils.obtenerCarroSession(request);
+		ProductoModel productoModel=productoConverter.entityModel(producto);
+		carroInfo.eliminarProducto(productoModel);
+	}
+	return "redirect:/ecommerce/carrito";
 }
 
 
@@ -115,11 +166,7 @@ public ModelAndView vistaError() {
 	ModelAndView mav=new ModelAndView ("/ecommerce/404");
 	return mav;
 			}
-@GetMapping ("/carrito")
-public ModelAndView vistaCar() {
-	ModelAndView mav=new ModelAndView ("/ecommerce/basket");
-	return mav;
-			}
+
 @GetMapping ("/encabezado")
 public ModelAndView vistaEncabezado() {
 	ModelAndView mav=new ModelAndView ("/ecommerce/encabezado");

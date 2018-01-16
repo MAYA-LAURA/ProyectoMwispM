@@ -14,7 +14,7 @@ public class ProductoModel {
 	private String tiempoGarantia;
 	private Categoria categoria;
 	private Marca marca;
-	
+	private String pdf;
 	private String imagen1;
 	private String imagen2;
 	
@@ -23,6 +23,19 @@ public class ProductoModel {
 	
 	
 	
+	
+	public String getPdf() {
+		return pdf;
+	}
+
+
+
+	public void setPdf(String pdf) {
+		this.pdf = pdf;
+	}
+
+
+
 	public String getImagen1() {
 		return imagen1;
 	}
@@ -173,4 +186,15 @@ public class ProductoModel {
 		// TODO Auto-generated constructor stub
 	}
 
+
+
+	@Override
+	public String toString() {
+		return "ProductoModel [idProdcutos=" + idProdcutos + ", nombreProducto=" + nombreProducto + ", modelo=" + modelo
+				+ ", precio=" + precio + ", descripcion=" + descripcion + ", tiempoGarantia=" + tiempoGarantia
+				+ ", categoria=" + categoria + ", marca=" + marca + ", pdf=" + pdf + ", imagen1=" + imagen1
+				+ ", imagen2=" + imagen2 + ", precioMxm=" + precioMxm + "]";
+	}
+
+	
 }
