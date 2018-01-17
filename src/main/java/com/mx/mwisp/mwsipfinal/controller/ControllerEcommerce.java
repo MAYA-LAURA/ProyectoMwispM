@@ -124,7 +124,7 @@ public ModelAndView wizard(HttpServletRequest request) {
 @PostMapping("/pagar")
 public String pagar(HttpServletRequest request,@ModelAttribute("formularioEcommerce") PagoModeloForm pagoModelForm) {
 	ClienteOpenpay clienteOpenpay = new ClienteOpenpay(pagoModelForm.getName(), pagoModelForm.getApellidoPaterno(),
-			pagoModelForm.getNumeroTelefono(), "coco_dava@gmail.com");
+			pagoModelForm.getNumeroTelefono(),pagoModelForm.getEmail());
 	
 	String urlPdf = null;
 	String radiobtnb24=request.getParameter ("pago");
@@ -141,7 +141,7 @@ public String pagar(HttpServletRequest request,@ModelAttribute("formularioEcomme
 		LOG.info(urlPdf);
 	}
 	if (radiobtnb24.equals("1")) {
-		ObjPeticion objPeticion = new ObjPeticion("store", pagoModelForm.getTotalCompra(), "MXN", "mac pro", clienteOpenpay);
+		ObjPeticion objPeticion = new ObjPeticion("store", pagoModelForm.getTotalCompra(), "MXN", "pago en tienda", clienteOpenpay);
 		CargoTienda cargoTienda = new CargoTienda();
 		RespuestaPeticion respuestPeticionTienda = cargoTienda.cargoStore(objPeticion);
 		urlPdf = "https://sandbox-dashboard.openpay.mx/paynet-pdf/mexcviwsqt2snzeylcy5" + "/"

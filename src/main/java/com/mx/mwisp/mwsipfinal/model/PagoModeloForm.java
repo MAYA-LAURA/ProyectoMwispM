@@ -6,7 +6,7 @@ public class PagoModeloForm {
 	private String apellidoMaterno;
 	private String apellidoPaterno;
 	private String numeroTelefono;
-
+	private String email;
 	// datos de direccion
 	private String calle;
 	private String numeroExterior;
@@ -68,6 +68,15 @@ public class PagoModeloForm {
 	}
 	public void setNumeroTelefono(String numeroTelefono) {
 		this.numeroTelefono = numeroTelefono;
+	}
+	
+	
+	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getCalle() {
 		return calle;
