@@ -3,14 +3,14 @@ package com.mx.mwisp.mwsipfinal.openpay;
 public class ObjetoPeticionCard {
 	private String source_id;
 	private String method;
-	private float amount;
+	private double amount;
 	private String currency;
 	private String description;
 	private String device_session_id;
 	private ClienteOpenpay customer;
 	
 	
-	public ObjetoPeticionCard(String source_id, String method, float amount, String currency, String description,
+	public ObjetoPeticionCard(String source_id, String method, double amount, String currency, String description,
 			String device_session_id, ClienteOpenpay customer) {
 		super();
 		this.source_id = source_id;
@@ -39,10 +39,10 @@ public class ObjetoPeticionCard {
 	public void setMethod(String method) {
 		this.method = method;
 	}
-	public float getAmount() {
+	public double getAmount() {
 		return amount;
 	}
-	public void setAmount(float amount) {
+	public void setAmount(double amount) {
 		this.amount = amount;
 	}
 	public String getCurrency() {

@@ -106,9 +106,18 @@ public String eliminarProductoCart(HttpServletRequest request,Model model,
 
 
 @GetMapping("/wizard")
-public ModelAndView wizard() {
+public ModelAndView wizard(HttpServletRequest request) {
+	LOG.info("metodo wizard");
+	CarritoInfo carritoInfo=Utils.getCarroSession(request);
+	if (carritoInfo.isEmpty()) {
+		ModelAndView mav=new ModelAndView("redirect:/ecommerce/carrito");
+		return mav;
+	}
+	PagoModeloForm pagoModel=new PagoModeloForm();
+	pagoModel.setTotalCompra(carritoInfo.getMontoTotal());
 	ModelAndView mav = new ModelAndView("/ecommerce/Wizard");
-	mav.addObject("formularioEcommerce", new PagoModeloForm());
+	mav.addObject("miCarrito", carritoInfo);
+	mav.addObject("formularioEcommerce", pagoModel);
 	return mav;
 }
 
@@ -124,7 +133,7 @@ public String pagar(HttpServletRequest request,@ModelAttribute("formularioEcomme
 	LOG.info(radiobtnb24);
 	LOG.info(pagoModelForm.getFormaPago());
 	if(radiobtnb24.equals("0")) {
-		ObjPeticion peticionBanco= new ObjPeticion("bank_account",200,"MXN","Pago en Banco", clienteOpenpay);
+		ObjPeticion peticionBanco= new ObjPeticion("bank_account",pagoModelForm.getTotalCompra(),"MXN","Pago en Banco", clienteOpenpay);
 		CargoBanco cargoBanco=new CargoBanco();
 		RespuestaPeticion respuestaPeticionBanco =cargoBanco.cargoB(peticionBanco);
 		urlPdf="https://sandbox-dashboard.openpay.mx/spei-pdf/mexcviwsqt2snzeylcy5"+"/"
@@ -132,7 +141,7 @@ public String pagar(HttpServletRequest request,@ModelAttribute("formularioEcomme
 		LOG.info(urlPdf);
 	}
 	if (radiobtnb24.equals("1")) {
-		ObjPeticion objPeticion = new ObjPeticion("store", 100, "MXN", "mac pro", clienteOpenpay);
+		ObjPeticion objPeticion = new ObjPeticion("store", pagoModelForm.getTotalCompra(), "MXN", "mac pro", clienteOpenpay);
 		CargoTienda cargoTienda = new CargoTienda();
 		RespuestaPeticion respuestPeticionTienda = cargoTienda.cargoStore(objPeticion);
 		urlPdf = "https://sandbox-dashboard.openpay.mx/paynet-pdf/mexcviwsqt2snzeylcy5" + "/"
@@ -145,7 +154,7 @@ public String pagar(HttpServletRequest request,@ModelAttribute("formularioEcomme
 	if (radiobtnb24.equals("2")) {
 		LOG.info("entrando al metodo de la tarjeta");
 		LOG.info("token:=============="+pagoModelForm.getToken());
-		ObjetoPeticionCard objetoPeticionCard=new ObjetoPeticionCard(pagoModelForm.getToken(),"card",150,"MXN","pago tarjeta","1rvGhOGaFgPwNbrtefA4IwPZbMRjsQpe", clienteOpenpay);
+		ObjetoPeticionCard objetoPeticionCard=new ObjetoPeticionCard(pagoModelForm.getToken(),"card",pagoModelForm.getTotalCompra(),"MXN","pago tarjeta","1rvGhOGaFgPwNbrtefA4IwPZbMRjsQpe", clienteOpenpay);
 		CargoTarjeta cargoTarjeta=new CargoTarjeta();
 		cargoTarjeta.cargoT(objetoPeticionCard);
 		urlPdf="/index";

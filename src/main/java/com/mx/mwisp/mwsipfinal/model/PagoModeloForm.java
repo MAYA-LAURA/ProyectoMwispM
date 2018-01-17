@@ -18,12 +18,19 @@ public class PagoModeloForm {
 	//valores para el radio button
 	private String formaPago;
 	
+	//cantidad
+	private double totalCompra;
+	
 	//valores para la tarjeta
 	private String token;
 	
 	
-	
-	
+	public double getTotalCompra() {
+		return totalCompra;
+	}
+	public void setTotalCompra(double totalCompra) {
+		this.totalCompra = totalCompra;
+	}
 	public String getToken() {
 		return token;
 	}

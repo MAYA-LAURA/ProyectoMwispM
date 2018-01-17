@@ -79,6 +79,11 @@
 								placeholder="Ingrese su nombre(s)" />
 						</div>
 						<div class="form-group">
+						<input	maxlength="100" type="hidden" 
+							th:field="*{totalCompra}" class="form-control"/>
+						</div>
+						
+						<div class="form-group">
 							<label class="control-label">Apellido Paterno</label> <input
 								maxlength="100" type="text" required="required"
 								th:field="*{apellidoPaterno}" class="form-control"
@@ -112,7 +117,7 @@
                                 <tbody>
                                     <tr>
                                         <td>Subtotal</td>
-                                        <th>$446.00</th>
+                                        <th>$ <span th:text="${miCarrito.montoTotal}"></span> MXM</th>
                                     </tr>
                                     <tr>
                                         <td>Envío</td>
@@ -124,7 +129,7 @@
                                     </tr>
                                     <tr class="total">
                                         <td>Total</td>
-                                        <th>$456.00</th>
+                                        <th>$ <span th:text="${miCarrito.montoTotal}"></span> MXM</th>
                                     </tr>
                                 </tbody>
                             </table>
@@ -196,7 +201,7 @@
                                 <tbody>
                                     <tr>
                                         <td>Subtotal</td>
-                                        <th>$446.00</th>
+                                        <th>$ <span th:text="${miCarrito.montoTotal}"></span> MXM</th>
                                     </tr>
                                     <tr>
                                         <td>Envío</td>
@@ -208,7 +213,7 @@
                                     </tr>
                                     <tr class="total">
                                         <td>Total</td>
-                                        <th>$456.00</th>
+                                        <th>$ <span th:text="${miCarrito.montoTotal}"></span> MXM</th>
                                     </tr>
                                 </tbody>
                             </table>
@@ -459,7 +464,7 @@
                                 <tbody>
                                     <tr>
                                         <td>Subtotal</td>
-                                        <th>$446.00</th>
+                                        <th> $<span th:text="${miCarrito.montoTotal}"></span> MXM</th>
                                     </tr>
                                     <tr>
                                         <td>Envío</td>
@@ -471,7 +476,7 @@
                                     </tr>
                                     <tr class="total">
                                         <td>Total</td>
-                                        <th>$456.00</th>
+                                        <th>$ <span th:text="${miCarrito.montoTotal}"></span> MXM</th>
                                     </tr>
                                 </tbody>
                             </table>

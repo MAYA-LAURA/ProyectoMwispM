@@ -5,13 +5,13 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties
 public class ObjPeticion {
 	private String method;
-	private int amount;
+	private double amount;
 	private String currency;
 	private String description;
 	private ClienteOpenpay customer;
 	
 	
-	public ObjPeticion(String method, int amount, String currency, String description, ClienteOpenpay customer) {
+	public ObjPeticion(String method, double amount, String currency, String description, ClienteOpenpay customer) {
 		super();
 		this.method = method;
 		this.amount = amount;
@@ -26,10 +26,10 @@ public class ObjPeticion {
 	public void setMethod(String method) {
 		this.method = method;
 	}
-	public int getAmount() {
+	public double getAmount() {
 		return amount;
 	}
-	public void setAmount(int amount) {
+	public void setAmount(double amount) {
 		this.amount = amount;
 	}
 	public String getCurrency() {

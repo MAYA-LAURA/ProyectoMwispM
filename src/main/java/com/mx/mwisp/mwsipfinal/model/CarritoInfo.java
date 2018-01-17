@@ -84,6 +84,10 @@ public class CarritoInfo {
 		}
 	}
 	
+	public boolean isEmpty() {
+		return this.cartOnline.isEmpty();
+	}
+	
 	public double getMontoTotal() {
 		double total=0;
 		for(CarritoOnlineInfo line:this.cartOnline) {
