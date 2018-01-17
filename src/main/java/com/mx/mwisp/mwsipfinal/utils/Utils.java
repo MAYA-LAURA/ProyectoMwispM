@@ -14,5 +14,11 @@ public class Utils {
 		
 		return carroInfo;
 	}
+	
+	//eliminar carrito de la sesion
+	public static void removerCarroSesion(HttpServletRequest request)
+	{
+		request.getSession().removeAttribute("miCarro");
+	}
 
 }

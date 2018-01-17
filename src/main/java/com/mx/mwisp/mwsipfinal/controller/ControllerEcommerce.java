@@ -159,6 +159,8 @@ public String pagar(HttpServletRequest request,@ModelAttribute("formularioEcomme
 		cargoTarjeta.cargoT(objetoPeticionCard);
 		urlPdf="/index";
 	}
+	//elimina el carrito de la sesion
+	Utils.removerCarroSesion(request);
 	return "redirect:" + urlPdf; 
 }
 
