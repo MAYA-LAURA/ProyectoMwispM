@@ -41,8 +41,14 @@
                 <div class="col-md-9" id="basket">
                     <div class="box">
                     	<th:block th:if="${carritoForm.cartOnline.empty}" >
-                    	<h2>No hay productos en el carrito</h2>
-                    	<a th:href= "@{/ecommerce/categoria}" class="btn btn-default"><i class="fa fa-chevron-left"></i>Comprar</a>
+                    	<h2 class="text">No hay productos en el carrito</h2>
+                    	<div class="row imagen">
+                    	<img th:src="@{/ecommerce/img/car-vacio.png}" class="img img-responsive" alt="" />
+                   </div>
+                  <hr/>
+                   <div class="row hola">
+                    	<a th:href= "@{/ecommerce/categoria}" class="btn btn-primary comprar"><i class="fa fa-chevron-left"></i>Comprar</a>
+                    	</div>
                     	</th:block>
                     
                     	 <th:block th:if="${!carritoForm.cartOnline.empty}">
