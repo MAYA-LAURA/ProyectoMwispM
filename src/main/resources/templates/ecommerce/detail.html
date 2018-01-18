@@ -45,12 +45,13 @@
                 </div>                                                    
                 <div class="col-md-12">
                     <div class="row" id="productMain">
-                        <div class="col-sm-6">
-                            <div id="mainImage">
-                                <img  th:src="@{'/uploads/'+${productoFind.imagen1}}" class="img-responsive"  alt=""/>
+                        <div class="col-sm-7 imag-detalles">
+                            <div id="mainImage" class="col-sm-5 img-thumbnail">
+                                <img  th:src="@{'/uploads/'+${productoFind.imagen1}}" class="img-responsive img-thumbnail img-detalles"  alt=""/>
                             </div>
-                             <div id="mainImage">
-                                <img  th:src="@{'/uploads/'+${productoFind.imagen2}}" class="img-responsive"  alt=""/>
+                     		 <div class="col-sm-1"></div>
+                             <div id="mainImage" class="col-sm-5 img-thumbnail">
+                                <img  th:src="@{'/uploads/'+${productoFind.imagen2}}" class="img-responsive img-thumbnail img-detalles"  alt=""/>
                             </div>
                             <div class="ribbon new">
                                 <div class="theribbon">Nuevo</div>
@@ -58,7 +59,7 @@
                             </div>
                             <!-- /.ribbon -->
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-5">
                             <div class="box">
                                 <h3 class="text-center"><span th:text="${productoFind.descripcion}"></span></h3>   
                                 <h4 class="text-center">Modelo: <span  th:text="${productoFind.modelo}"></span></h4>                             
@@ -82,7 +83,7 @@
         <div class="col-sm-2"></div>
     </div>        
 </div>             
-<hr></hr>                                                                                                     
+<hr/>                                                                                                    
                   <p class="text-center buttons">
                      <a th:href="@{|/ecommerce/comprarProducto?id=${productoFind.idProdcutos}|}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Agregar al carrito</a>                                     
                   </p>

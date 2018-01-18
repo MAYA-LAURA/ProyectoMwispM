@@ -1,4 +1,11 @@
-
+/*ESTILOS IMAGENES, PAGINA DETALLES*/
+img.img-detalles{
+	width:250px;
+	height:250px;
+}
+#productMain .imag-detalles{
+	margin-top:50px
+}
 /*ESTILOS IMAGENES, PAGINA PRINCIPAL*/
 img.img-categoria{
 	width:253px;
