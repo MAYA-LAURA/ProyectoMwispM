@@ -29,6 +29,7 @@ import com.mx.mwisp.mwsipfinal.model.ProductoModel;
 import com.mx.mwisp.mwsipfinal.service.CategoriaService;
 import com.mx.mwisp.mwsipfinal.service.MarcaService;
 import com.mx.mwisp.mwsipfinal.service.ProductoService;
+import com.mx.mwisp.mwsipfinal.service.VentasService;
 
 @Controller
 @RequestMapping("/Admin")
@@ -49,6 +50,17 @@ public class ProductosController {
 	@Autowired
 	@Qualifier("marcaServiceImpl")
 	MarcaService marcaServiceImpl;
+	
+	@Autowired
+	@Qualifier("ventasServiceImpl")
+	VentasService ventasServiceImpl;
+	
+	//este metodo es paver la lista de ordenes
+	@GetMapping("/ordenes")
+	public String ordenes(Model model) {
+		model.addAttribute("ordenes", ventasServiceImpl.listarVentas());
+		return "/ecommerce/vistaOrdenes";
+	}
 
 	// este metodo muestra los detalles de un producto
 	@GetMapping(value="/verProducto/{id}")

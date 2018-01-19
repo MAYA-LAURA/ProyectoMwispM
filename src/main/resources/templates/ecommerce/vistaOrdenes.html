@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+<link th:href="@{/ecommerce/css/bootstrap.min.css}" rel="stylesheet" />
+</head>
+<body>
+	<table class="table table-striped table-bordered tableUpdated">
+		<thead>
+			<tr>
+				<th>N° Orden</th>
+				<th>Monto MXM</th>
+				<th>Fecha</th>
+				<th>Forma de pago</th>
+				<th>Nombre</th>
+				<th>Apellido</th>
+				<th>Telefono</th>
+				<th>Correo</th>
+				<th>Detalles</th>
+			</tr>
+		</thead>
+
+		<tbody th:each="objIterar : ${ordenes}">
+			<tr>
+				<td th:text="${objIterar.idVenta}"></td>
+				<td th:text="${objIterar.montoVenta}"></td>
+				<td th:text="${objIterar.fechaVenta}"></td>
+				<td th:text="${objIterar.formaPago}"></td>
+				<td th:text="${objIterar.persona.nombre}"></td>
+				<td th:text="${objIterar.persona.ap_Paterno}"></td>
+				<td th:text="${objIterar.persona.telefono}"></td>
+				<td th:text="${objIterar.persona.correo}"></td>
+				<td><a href="#"><button class="btn btn-info">ver</button></a></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

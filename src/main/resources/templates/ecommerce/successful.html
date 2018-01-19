@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1"/>
+<title>Insert title here</title>
+<link  th:href="@{/ecommerce/css/bootstrap.min.css}" rel="stylesheet"/>   
+</head>
+<body>
+<th:block th:include="/ecommerce/encabezado"></th:block>
+<div class="container piedepag">
+<h3>Gracias por su compra!</h3><br/>
+
+El numero de la orden es: <span th:text="${orden}"></span>
+<br/><br/>
+descargue la orden de Pago: <a th:href="${pdf}"><button type="button" class="btn btn-info" style="float-vertical:middle">
+							<span class="fa fa-eye" aria-hidden="true"></span>
+						</button></a>
+
+</div>
+<th:block th:include="/ecommerce/piePag"></th:block>
+</body>
+</html>
