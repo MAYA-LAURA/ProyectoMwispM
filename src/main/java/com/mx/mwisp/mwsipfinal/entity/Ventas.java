@@ -19,6 +19,9 @@ public class Ventas {
 	@Column(name = "Id_Venta")
 	private int idVenta;
 
+	@Column(name = "Folio")
+	private String folio;
+
 	@Column(name = "Monto_venta")
 	private double montoVenta;
 
@@ -49,6 +52,14 @@ public class Ventas {
 
 	public void setIdVenta(int idVenta) {
 		this.idVenta = idVenta;
+	}
+
+	public String getFolio() {
+		return folio;
+	}
+
+	public void setFolio(String folio) {
+		this.folio = folio;
 	}
 
 	public Persona getPersona() {

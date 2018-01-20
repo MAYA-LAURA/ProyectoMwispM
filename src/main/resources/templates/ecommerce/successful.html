@@ -1,25 +1,35 @@
 <!DOCTYPE html>
-<html  xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="utf-8"/>
-<meta charset="ISO-8859-1"/>
+<meta charset="utf-8" />
+<meta charset="ISO-8859-1" />
 <title>Insert title here</title>
-<link  th:href="@{/ecommerce/css/bootstrap.min.css}" rel="stylesheet"/>   
+<link th:href="@{/ecommerce/css/bootstrap.min.css}" rel="stylesheet" />
 </head>
 <body>
-<th:block th:include="/ecommerce/encabezado"></th:block>
-<div class="container letrerogracias">
-<div class="box">
-<h1>Gracias por su compra!</h1>
-<i class="fa fa-thumbs-up like" aria-hidden="true" ></i>
-<h4>El número de la Orden es: <span th:text="${orden}"></span></h4>
-<h4>Descargue su Orden de Pago:
-<a th:href="${pdf}">
-<button type="button" class="btn btn-danger" style="float-vertical:middle">
-		<span class="fa fa-eye" aria-hidden="true"></span>
-</button></a></h4> 
-</div>
-</div>
-<th:block th:include="/ecommerce/piePag"></th:block>
+	<th:block th:include="/ecommerce/encabezado"></th:block>
+	<div class="container letrerogracias">
+		<div class="box">
+			<h1>Gracias por su compra!</h1>
+			<i class="fa fa-thumbs-up like" aria-hidden="true"></i>
+			<h4>
+				El número de la Orden es: <span th:text="${orden}"></span>
+			</h4>
+			<h4>
+				Folio de la compra: <span th:text="${folio}"></span>
+			</h4>
+			<th:block th:if="${pdf!=null}">
+			<h4>
+				Descargue su Orden de Pago: <a th:href="${pdf}">
+					<button type="button" class="btn btn-danger"
+						style="float-vertical: middle">
+						<span class="fa fa-eye" aria-hidden="true"></span>
+					</button>
+				</a>
+			</h4>
+			</th:block>
+		</div>
+	</div>
+	<th:block th:include="/ecommerce/piePag"></th:block>
 </body>
 </html>

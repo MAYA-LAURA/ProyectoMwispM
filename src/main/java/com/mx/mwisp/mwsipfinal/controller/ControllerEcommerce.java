@@ -32,6 +32,7 @@ import com.mx.mwisp.mwsipfinal.openpay.ObjetoPeticionCard;
 import com.mx.mwisp.mwsipfinal.openpay.RespuestaPeticion;
 import com.mx.mwisp.mwsipfinal.service.PersonaService;
 import com.mx.mwisp.mwsipfinal.service.ProductoService;
+import com.mx.mwisp.mwsipfinal.service.VentasService;
 import com.mx.mwisp.mwsipfinal.service.impl.PagoServiceImpl;
 import com.mx.mwisp.mwsipfinal.utils.Utils;
 
@@ -51,7 +52,11 @@ public class ControllerEcommerce {
 	@Autowired
 	@Qualifier("pagoServiceImpl")
 	PagoServiceImpl pagoServiceImpl;
-
+	@Autowired
+	@Qualifier("ventasServiceImpl")
+	VentasService ventaServiceImpl;
+	
+	
 	@GetMapping("/principal")
 	public ModelAndView vistaPrincipal() {
 		ModelAndView mav = new ModelAndView("/ecommerce/indexecommerce");
@@ -172,12 +177,15 @@ public class ControllerEcommerce {
 					clienteOpenpay);
 			CargoTarjeta cargoTarjeta = new CargoTarjeta();
 			cargoTarjeta.cargoT(objetoPeticionCard);
-			urlPdf = "/index";
+			//urlPdf = "/index";
 		}
 		CarritoInfo carritoInfo = Utils.getCarroSession(request);
-
+		String folio=null;
 		int ordernum = pagoServiceImpl.guardarFormularioPago(pagoModelForm, carritoInfo, formaPago);
+		folio=ventaServiceImpl.encontrarPordId(ordernum).getFolio();
+		LOG.info("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"+folio);
 		flash.addFlashAttribute("orden", ordernum);
+		flash.addFlashAttribute("folio",folio);
 		flash.addFlashAttribute("pdf",urlPdf);
 		// elimina el carrito de la sesion
 		Utils.removerCarroSesion(request);

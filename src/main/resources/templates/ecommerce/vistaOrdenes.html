@@ -23,6 +23,7 @@
 		<thead>
 			<tr>
 				<th>N° Orden</th>
+				<th>Folio</th>
 				<th>Monto MXM</th>
 				<th>Fecha</th>
 				<th>Forma de pago</th>
@@ -37,6 +38,7 @@
 		<tbody th:each="objIterar : ${ordenes}">
 			<tr>
 				<td th:text="${objIterar.idVenta}"></td>
+				<td th:text="${objIterar.folio}"></td>
 				<td th:text="${objIterar.montoVenta}"></td>
 				<td th:text="${objIterar.fechaVenta}"></td>
 				<td th:text="${objIterar.formaPago}"></td>
