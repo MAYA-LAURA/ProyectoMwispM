@@ -18,13 +18,28 @@
 					<div class="box">
 						<div class="box-header">
 							<h3 class="box-title">Detalles de Orden</h3>
-							
-							
+							<h2>Datos de la persona</h2>
+							Nombre: <span th:text="${venta.persona.nombre}"></span>
+							<br/>
+							Ap. Paterno:<span th:text="${venta.persona.ap_Paterno}"></span>
+							<br/>
+							Ap. Materno:<span th:text="${venta.persona.ap_Materno}"></span>	
+							<br/>
+							Tel.:<span th:text="${venta.persona.telefono}"></span>		
+							<br/>
+							Correo:<span th:text="${venta.persona.correo}"></span>
+							<br/>
+							Precio: $<span th:text="${venta.montoVenta}"></span> MXM
+							<br/>																					
+							Fecha: <span  th:text="${venta.fechaVenta}"></span>
 							
 	<table class="table table-striped table-bordered tableUpdated">
 		<thead>
 			<tr>
 				<th>Id Producto</th>
+				<th>Imagen</th>
+				<th>Nombre Producto</th>
+				<th>Modelo</th>
 				<th>Cantidad</th>
 				<th>Precio Unitario</th>
 				<th>Monto</th>
@@ -35,6 +50,9 @@
 		<tbody th:each="objIterar : ${detalles}">
 			<tr>
 				<td th:text="${objIterar.idProducto.idProdcutos}"></td>
+				<td><img class="col-sm-6 col-md-3" th:src="@{'/uploads/'+${objIterar.idProducto.imagen1}}" /></td>
+				<td th:text="${objIterar.idProducto.nombreProducto}"></td>
+				<td th:text="${objIterar.idProducto.modelo}"></td>
 				<td th:text="${objIterar.cantidad}"></td>
 				<td th:text="${objIterar.precioUnitario}"></td>
 				<td th:text="${objIterar.monto}"></td>

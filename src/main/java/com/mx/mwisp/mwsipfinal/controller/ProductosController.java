@@ -75,6 +75,7 @@ public class ProductosController {
 		Ventas venta=ventasServiceImpl.encontrarPordId(id);
 		List<DetalleVenta> detalles=detallesVentasServiceImpl.encontrarPorIdVenta(venta);
 		LOG.info(detalles);
+		model.addAttribute("venta", venta);
 		model.addAttribute("detalles", detalles);
 		return "/ecommerce/ordenDetalles";
 		
