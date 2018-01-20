@@ -442,16 +442,20 @@
                                 </thead>
                                 <tbody th:each="it : ${listaRouter}">
                                     <tr>
-                                        <td th:text="${it.id}"></td>
-                                         <td th:text="${it.nombre}"></td>
-                                         <td th:text="${it.ipDns}"></td>
-                                         <td th:text="${it.nombreUser}"></td>
-                                         <td th:text="${it.ubicacion}"></td>
-                                         <td>eliminar o actu</td>
-                                    
+                                        <td th:text="${it.idRouter}"></td>
+                                         <td th:text="${it.nombreRouter}"></td>
+                                         <td th:text="${it.ipODnsRouter}"></td>
+                                         <td th:text="${it.UserRouter}"></td>
+                                         <td th:text="${it.ubicacionRouter}"></td>
+                                         <td>
+                                         	<button type="button" class="btn btn-default btn-xs"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
+                                         	<span></span>
+                                         	<a href="#" class="btn btn-default btn-xs">
+                                         		<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                         	</a>
+                                         </td>
                                     </tr>
                                 </tbody>
-                            
                             </table>
                             
 							
