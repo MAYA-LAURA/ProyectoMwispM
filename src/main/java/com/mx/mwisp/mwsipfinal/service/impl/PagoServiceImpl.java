@@ -73,7 +73,7 @@ public class PagoServiceImpl {
 			detalle.setIdVenta(venta);
 			detalle.setCantidad(line.getCantidad());
 			detalle.setMonto(line.getMonto());
-			detalle.setPrecioUnitario(line.getProductoModel().getPrecio());
+			detalle.setPrecioUnitario(line.getProductoModel().getPrecioMxm());
 			
 			int id=line.getProductoModel().getIdProdcutos();
 			Productos producto=productoServiceImpl.encontrarPorId(id);
