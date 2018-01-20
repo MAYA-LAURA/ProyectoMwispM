@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.mx.mwisp.mwsipfinal.model.ClienteModelo;
+import com.mx.mwisp.mwsipfinal.model.helper.FormRouter;
 import com.mx.mwisp.mwsipfinal.service.ClientesService;
 import com.mx.mwisp.mwsipfinal.service.RouterService;
 
@@ -23,12 +24,13 @@ public class ControllerAdmin {
 	@Qualifier("clienteServiceImpl")
 	ClientesService clienteServiceImpl;
 	
-	
+	FormRouter formRouter=new FormRouter();
 	
 	@GetMapping("/routers")
 	public ModelAndView vistaRouters() {
 		ModelAndView mav=new ModelAndView("/admin/ListaRouter");
-		mav.addObject("listaRouter", routerServiceImpl.routerList());
+		formRouter.setListRouter(routerServiceImpl.routerList());
+		mav.addObject("listaRouter", formRouter.getListRouter());
 		return mav;
 	}
 	

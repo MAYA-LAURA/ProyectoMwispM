@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.mx.mwisp.mwsipfinal.converter.ProductoConverter;
+import com.mx.mwisp.mwsipfinal.converter.impl.ProductoConverter;
 import com.mx.mwisp.mwsipfinal.entity.Productos;
 import com.mx.mwisp.mwsipfinal.model.CarritoInfo;
 import com.mx.mwisp.mwsipfinal.model.PagoModeloForm;

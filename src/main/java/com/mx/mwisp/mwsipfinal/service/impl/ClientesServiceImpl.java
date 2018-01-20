@@ -71,6 +71,12 @@ public class ClientesServiceImpl implements ClientesService {
 
 	@Override
 	public void prueba(ClienteModelo prueba) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	/*@Override
+	public void prueba(ClienteModelo prueba) {
 		Router router=new Router();
 		int id=Integer.parseInt(prueba.getOpcionActual());
 		router=routerServiceImpl.buscarRouterPorId(id);
@@ -81,6 +87,6 @@ public class ClientesServiceImpl implements ClientesService {
 		
 		
 		
-	}
+	}*/
 
 }

@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import com.mx.mwisp.mwsipfinal.converter.ProductoConverter;
+import com.mx.mwisp.mwsipfinal.converter.impl.ProductoConverter;
 import com.mx.mwisp.mwsipfinal.dao.ProductoJpaRepository;
 import com.mx.mwisp.mwsipfinal.entity.Categoria;
 import com.mx.mwisp.mwsipfinal.entity.Marca;
