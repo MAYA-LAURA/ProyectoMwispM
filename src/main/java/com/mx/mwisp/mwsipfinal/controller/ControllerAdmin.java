@@ -32,6 +32,18 @@ public class ControllerAdmin {
 		return mav;
 	}
 	
+	@GetMapping("/dashboard")
+	public ModelAndView dashboard() {
+		ModelAndView mav=new ModelAndView("/admin/index");
+		return mav;
+	}
+	
+	@GetMapping("/nuevoRouter")
+	public ModelAndView agregarRouter() {
+		ModelAndView mav=new ModelAndView("/admin/addRouter");
+		return mav;
+	}
+	
 	@GetMapping("/clientes")
 	public ModelAndView vistaClientes() {
 		ModelAndView mav=new ModelAndView("/admin/ListaClientes");

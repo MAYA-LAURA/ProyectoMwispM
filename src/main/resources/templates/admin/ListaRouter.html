@@ -10,7 +10,7 @@
 	<meta name="author" content="     " />
 	<meta name="keywords" content="" />
 
-	<title>AdminLTE 2 | Simple Tables</title>
+	<title>AdminMWM | Routers</title>
 	<!-- Bootstrap 3.3.7 -->
     <link href="#" th:href="@{/admin/css/bootstrap.min.css}" rel="stylesheet" />
 	<!-- Font Awesome -->
@@ -28,11 +28,11 @@
 		rel='stylesheet' type='text/css' />
 </head>
     
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-purple sidebar-mini">
 	<div class="wrapper">
 
 		<header class="main-header"> <!-- Logo --> <a
-			href="index.xhtml" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
+			th:href="@{dashboard}" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
 			<span class="logo-mini"><b>A</b>MWM</span> <!-- logo for regular state and mobile devices -->
 			<span class="logo-lg"><b>Admin</b>MWM</span>
 		</a> <!-- Header Navbar: style can be found in header.less --> <nav
@@ -219,9 +219,9 @@
 					</ul></li>
 				<!-- User Account: style can be found in dropdown.less -->
 				<li class="dropdown user user-menu"><a href="#"
-					class="dropdown-toggle" data-toggle="dropdown"> <h:graphicImage
-							value="/resources/admin/img/user2-160x160.jpg" class="user-image"
-							alt="User Image" /> <span class="hidden-xs">Admin MWM</span>
+					class="dropdown-toggle" data-toggle="dropdown"> 
+					<img th:src="@{/admin/img/user2-160x160.jpg}" class="user-image" alt="User Image"></img>
+              		<span class="hidden-xs">Admin MWM</span>
 				</a>
 					<ul class="dropdown-menu">
 						<!-- User image -->
@@ -276,7 +276,7 @@
 			</div>
 		</div>
 		<!-- search form -->
-		<form action="#" method="get" class="sidebar-form">
+		<!-- <form action="#" method="get" class="sidebar-form">
 			<div class="input-group">
 				<input type="text" name="q" class="form-control"
 					placeholder="Search..." /> <span class="input-group-btn">
@@ -286,17 +286,17 @@
 					</button>
 				</span>
 			</div>
-		</form>
+		</form> -->
 		<!-- /.search form --> <!-- sidebar menu: : style can be found in sidebar.less -->
 		<ul class="sidebar-menu" data-widget="tree">
-			<li class="header">MAIN NAVIGATION</li>
+			<li class="header">MENÚ DE NAVEGACION</li>
 			<li class="treeview"><a href="#"> <i class="fa fa-dashboard"></i>
 					<span>Dashboard</span> <span class="pull-right-container"> <i
 						class="fa fa-angle-left pull-right"></i>
 				</span>
 			</a>
 				<ul class="treeview-menu">
-					<li><a href="index.xhtml"><i class="fa fa-circle-o"></i>
+					<li><a th:href="@{/AdminControl/dashboard}"><i class="fa fa-circle-o"></i>
 							Dashboard</a></li>
 				</ul></li>
 			<li class="treeview"><a href="#"> <i class="fa fa-user-o"></i>
@@ -321,7 +321,7 @@
 				</span>
 			</a>
 				<ul class="treeview-menu">
-					<li class="active"><a href="ListaRouter.xhtml"><i
+					<li class="active"><a th:href="@{/AdminControl/routers}"><i
 							class="fa fa-circle-o"></i> Routers</a></li>
 					<li><a href="ListaPlanes.xhtml"><i class="fa fa-circle-o"></i>
 							Planes de Internet</a></li>
@@ -436,18 +436,18 @@
                                          <th>Nombre</th>
                                          <th>Ip o DNS</th>
                                          <th>Usuario</th>
-                                         <th>Ubicaion</th>
+                                         <th>Ubicación</th>
                                          <th>Accion</th>
                                     </tr>
                                 </thead>
                                 <tbody th:each="it : ${listaRouter}">
                                     <tr>
-                                        <th th:text="${it.id}"></th>
-                                         <th th:text="${it.nombre}"></th>
-                                         <th th:text="${it.ipDns}"></th>
-                                         <th th:text="${it.nombreUser}"></th>
-                                         <th th:text="${it.ubicacion}"></th>
-                                         <th>eliminar o actu</th>
+                                        <td th:text="${it.id}"></td>
+                                         <td th:text="${it.nombre}"></td>
+                                         <td th:text="${it.ipDns}"></td>
+                                         <td th:text="${it.nombreUser}"></td>
+                                         <td th:text="${it.ubicacion}"></td>
+                                         <td>eliminar o actu</td>
                                     
                                     </tr>
                                 </tbody>
@@ -460,6 +460,11 @@
 					</div>
 					<!-- /.box -->
 				</div>
+			</div>
+			<div>
+				<a th:href="@{/AdminControl/nuevoRouter}" class="btn btn-primary pull-right">Agregar Nuevo Router</a>
+				<!-- <h:link outcome="addRouter" value="Agregar Router"
+					class="btn btn-primary pull-right" /> -->
 			</div>
 			<div>
 				<!--<h:link outcome="addRouter" value="Agregar Router"
@@ -666,6 +671,6 @@
 	<!-- AdminLTE App -->
     <script th:src="@{/admin/js/adminlte.min.js}"></script>
 	<!-- AdminLTE for demo purposes -->
-	<!-- <script src="/resources/admin/js/demo.js"></script> -->
+	<script th:src="@{/admin/js/demo.js}"></script>
 </body>
 </html>
