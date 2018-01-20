@@ -60,7 +60,7 @@
 <div class="col-md-8 hola box p-y-1">
 	<div class="alert alert-success" role="alert" th:if="${success!= null}" th:text="${success}"></div>
 	<div th:if="${result==0}" class="alert alert-danger" role="alert">Error al agregar Producto</div>
-	<table class=" table-striped box col-md-8 listaproduct">
+	<table class=" table-striped box col-md-8  table table-striped table-bordered tableUpdated ">
 		<thead>
 			<tr>
 				<th>Id</th>
@@ -80,15 +80,15 @@
 
 		<tbody th:each="objIterar : ${objProductoAdmin}">
 			<tr>
-				<th th:text="${objIterar.idProdcutos}">></th>
-				<th th:text="${objIterar.nombreProducto}"></th>
-				<th th:text="${objIterar.modelo}"></th>
-				<th th:text="${objIterar.precio}"></th>
-				<th th:text="${objIterar.precioMxm}"></th>
-				<th th:text="${objIterar.descripcion}">></th>
-				<th th:text="${objIterar.tiempoGarantia}"></th>
-				<th th:text="${objIterar.categoria.nombreCategoria}"></th>
-				<th th:text="${objIterar.marca.marca}"></th>
+				<td th:text="${objIterar.idProdcutos}">></td>
+				<td th:text="${objIterar.nombreProducto}"></td>
+				<td th:text="${objIterar.modelo}"></td>
+				<td th:text="${objIterar.precio}"></td>
+				<td th:text="${objIterar.precioMxm}"></td>
+				<td th:text="${objIterar.descripcion}">></td>
+				<td th:text="${objIterar.tiempoGarantia}"></td>
+				<td th:text="${objIterar.categoria.nombreCategoria}"></td>
+				<td th:text="${objIterar.marca.marca}"></td>
 				
 				<th><a href="#"
 					th:href="@{/Admin/formProducto?idz=__${objIterar.idProdcutos}__}"><button type="button" class="btn btn-default">

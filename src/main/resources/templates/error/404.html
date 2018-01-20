@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
 
@@ -34,10 +34,6 @@
 
     <script th:src="@{/ecommerce/js/respond.min.js}"></script>
 
-    <link rel="shortcut icon" href="favicon.png"/> 
-
-
-
 </head>
 
 <body>
@@ -62,15 +58,14 @@
                     <div  class="row" id="error-page">
                         <div class="col-sm-6 col-sm-offset-3">
                             <div  class="box">
-
                                 <p class="text-center">
-                                    <img th:src="@{/principal/img/logoBlanco.png}" class="visible-xs imagen" alt="Obaju template"/>
+                                    <img th:src="@{/principal/img/logo.jpg}" class="visible-md-down imagen" alt="Mercado Wisp México"  style="width:200px"/>
                                 </p>
 
                                 <h3>Lo sentimos - esta página aun no esta disponible</h3>
                                 <h4 class="text-muted">Error 404 - Página no encontrada</h4>
 
-                                <p class="text-center">seguimos trabajando en esta funcion del sistema</p>
+                                <p class="text-center">Seguimos trabajando en esta funcion del sistema</p>
 
                                 <p class="buttons"><a th:href="@{/ecommerce/principal}" class="btn btn-primary"><i class="fa fa-home"></i> ir a Principal</a>
                                 </p>
