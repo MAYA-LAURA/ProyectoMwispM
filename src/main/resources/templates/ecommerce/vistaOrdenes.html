@@ -31,7 +31,7 @@
 				<td th:text="${objIterar.persona.ap_Paterno}"></td>
 				<td th:text="${objIterar.persona.telefono}"></td>
 				<td th:text="${objIterar.persona.correo}"></td>
-				<td><a href="#"><button class="btn btn-info">ver</button></a></td>
+				<td><a th:href="@{/Admin/ordenDetalles/}+ ${objIterar.idVenta}"><button class="btn btn-info">ver</button></a></td>
 			</tr>
 		</tbody>
 	</table>

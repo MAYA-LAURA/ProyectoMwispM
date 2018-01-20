@@ -1,5 +1,8 @@
 package com.mx.mwisp.mwsipfinal.model;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 /**
  * @author Jorge este objeto tiene una variable cantida y produto, que se
  *         utiliza para calcular el monto total por producto
@@ -28,9 +31,13 @@ public class CarritoOnlineInfo {
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
+	
 
+	//obtiene el monto por producto
 	public double getMonto() {
-		return this.productoModel.getPrecioMxm() * this.cantidad;
+		BigDecimal bd=new BigDecimal(this.productoModel.getPrecioMxm() * this.cantidad);
+		bd=bd.setScale(2, RoundingMode.HALF_UP);
+		return bd.doubleValue();
 	}
 
 	@Override

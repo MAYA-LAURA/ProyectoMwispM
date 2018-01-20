@@ -28,6 +28,12 @@ public class VentasServiceImpl implements VentasService {
 		// TODO Auto-generated method stub
 		return ventasJpaRepository.findAll();
 	}
+
+	@Override
+	public Ventas encontrarPordId(int id) {
+		// TODO Auto-generated method stub
+		return ventasJpaRepository.findOne(id);
+	}
 	
 
 }

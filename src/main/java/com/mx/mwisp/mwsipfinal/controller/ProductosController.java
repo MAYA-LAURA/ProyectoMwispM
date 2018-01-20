@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.UUID;
 
 import org.apache.commons.logging.Log;
@@ -24,9 +25,12 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.mx.mwisp.mwsipfinal.entity.DetalleVenta;
 import com.mx.mwisp.mwsipfinal.entity.Productos;
+import com.mx.mwisp.mwsipfinal.entity.Ventas;
 import com.mx.mwisp.mwsipfinal.model.ProductoModel;
 import com.mx.mwisp.mwsipfinal.service.CategoriaService;
+import com.mx.mwisp.mwsipfinal.service.DetallesVetasService;
 import com.mx.mwisp.mwsipfinal.service.MarcaService;
 import com.mx.mwisp.mwsipfinal.service.ProductoService;
 import com.mx.mwisp.mwsipfinal.service.VentasService;
@@ -54,12 +58,26 @@ public class ProductosController {
 	@Autowired
 	@Qualifier("ventasServiceImpl")
 	VentasService ventasServiceImpl;
+	@Autowired
+	@Qualifier("detallesVentasServiceImpl")
+	DetallesVetasService detallesVentasServiceImpl;
+	
 	
 	//este metodo es paver la lista de ordenes
 	@GetMapping("/ordenes")
 	public String ordenes(Model model) {
 		model.addAttribute("ordenes", ventasServiceImpl.listarVentas());
 		return "/ecommerce/vistaOrdenes";
+	}
+	//este metodo muestra los detalles de cada orde. muestra los productos y la acantidad de produtos que se compraron
+	@GetMapping("/ordenDetalles/{idDetalles}")
+	public String verDetallesOrdenes(@PathVariable (value="idDetalles")int id,Model model) {
+		Ventas venta=ventasServiceImpl.encontrarPordId(id);
+		List<DetalleVenta> detalles=detallesVentasServiceImpl.encontrarPorIdVenta(venta);
+		LOG.info(detalles);
+		model.addAttribute("detalles", detalles);
+		return "/ecommerce/ordenDetalles";
+		
 	}
 
 	// este metodo muestra los detalles de un producto

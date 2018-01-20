@@ -272,7 +272,8 @@ public class ControllerEcommerce {
 	public ModelAndView vistaDetail(@PathVariable(value = "modelo") String modelo) {
 		ModelAndView mav = new ModelAndView("/ecommerce/detail");
 		Productos producto = productoServiceImpl.encontraPorModelo(modelo);
-		mav.addObject("productoFind", producto);
+		ProductoModel productoModel=productoConverter.entityModel(producto);
+		mav.addObject("productoFind", productoModel);
 		return mav;
 	}
 

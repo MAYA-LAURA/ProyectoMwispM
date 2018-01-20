@@ -7,5 +7,6 @@ import com.mx.mwisp.mwsipfinal.entity.Ventas;
 public interface VentasService {
 	public abstract Ventas addVentas(Ventas ventas);
 	public abstract List<Ventas> listarVentas();
+	public abstract Ventas encontrarPordId(int id);
 
 }
