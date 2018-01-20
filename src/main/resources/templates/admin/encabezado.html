@@ -213,9 +213,9 @@
 					</ul></li>
 				<!-- User Account: style can be found in dropdown.less -->
 				<li class="dropdown user user-menu"><a href="#"
-					class="dropdown-toggle" data-toggle="dropdown"> <h:graphicImage
-							value="/resources/admin/img/user2-160x160.jpg" class="user-image"
-							alt="User Image" /> <span class="hidden-xs">Admin MWM</span>
+					class="dropdown-toggle" data-toggle="dropdown"> 
+					<img th:src="@{/admin/img/user2-160x160.jpg}" class="user-image" alt="User Image" />
+ <span class="hidden-xs">Admin MWM</span>
 				</a>
 					<ul class="dropdown-menu">
 						<!-- User image -->
@@ -291,8 +291,8 @@
 				</span>
 			</a>
 				<ul class="treeview-menu">
-					<li><a th:href="@{/Admin/listaProductosAdmin}"><i class="fa fa-circle-o"></i>
-							LISTA DE PRODUCTOS</a></li>
+					<li><a th:href="@{/Admin/listaProductosAdmin}"><i class="fa fa-circle-o"></i>VER LISTA DE PRODUCTOS</a></li>
+					<li><a th:href="@{/Admin/ordenes}"><i class="fa fa-circle-o"></i>VER LISTA DE COMPRAS</a></li>
 				</ul></li>
 			<li class="treeview"><a href="#"> <i class="fa fa-user-o"></i>
 					<span>Clientes</span> <span class="pull-right-container"> <span

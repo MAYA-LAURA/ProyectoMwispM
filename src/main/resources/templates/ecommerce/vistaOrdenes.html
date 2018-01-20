@@ -5,7 +5,20 @@
 <title>Insert title here</title>
 <link th:href="@{/ecommerce/css/bootstrap.min.css}" rel="stylesheet" />
 </head>
-<body>
+<body class="hold-transition skin-blue sidebar-mini wrapper">
+<th:block th:include="/admin/encabezado"></th:block>
+
+		<div class="content-wrapper">
+			<!-- Content Header (Page header) -->
+
+			<!-- Main content -->
+			<section class="content"> <!-- /.row -->
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="box">
+						<div class="box-header">
+							<h3 class="box-title">Órdenes</h3>
+							
 	<table class="table table-striped table-bordered tableUpdated">
 		<thead>
 			<tr>
@@ -35,5 +48,12 @@
 			</tr>
 		</tbody>
 	</table>
+		</div>
+	</div>
+	</div>
+	</div>
+	</section>
+	</div>
+		<th:block th:include="/admin/piePag"></th:block>
 </body>
 </html>

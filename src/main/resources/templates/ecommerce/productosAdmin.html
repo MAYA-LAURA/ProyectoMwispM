@@ -28,7 +28,7 @@
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini wrapper">
-	<div class=""> 
+	
 <th:block th:include="/admin/encabezado"></th:block>
 		<!-- Left side column. contains the logo and sidebar -->
 		<!-- Content Wrapper. Contains page content -->
@@ -43,20 +43,6 @@
 						<div class="box-header">
 							<h3 class="box-title">PRODUCTOS</h3>
 
-							<div class="box-tools">
-								<div class="input-group input-group-sm" style="width: 150px;">
-									<input type="text" name="table_search"
-										class="form-control pull-right" placeholder="Search" />
-
-									<div class="input-group-btn">
-										<button type="submit" class="btn btn-default">
-											<i class="fa fa-search"></i>
-										</button>
-									</div>
-								</div>
-							</div>
-						
-							
 <div class="col-md-8 hola box p-y-1">
 	<div class="alert alert-success" role="alert" th:if="${success!= null}" th:text="${success}"></div>
 	<div th:if="${result==0}" class="alert alert-danger" role="alert">Error al agregar Producto</div>
@@ -125,7 +111,6 @@
 	<!-- /.content -->
 	</div>
 
-	</div>
 	<!-- ./wrapper -->
 
 	<!-- AdminLTE for demo purposes -->
