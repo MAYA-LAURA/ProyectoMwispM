@@ -12,35 +12,8 @@
 <script th:src="@{/ecommerce/js/bootstrap.min.js}"></script>
 <script th:src="@{/ecommerce/js/wizard.js}"></script>
 
-<script type="text/javascript">
-        $(document).ready(function() {
-            OpenPay.setId('mexcviwsqt2snzeylcy5');
-            OpenPay.setApiKey('pk_41f1c1b5d9e3450a85f4e5e882c13ca7');
-            OpenPay.setSandboxMode(true);
-            //Se genera el id de dispositivo
-            var deviceSessionId = OpenPay.deviceData.setup("payment-form", "deviceIdHiddenFieldName");
-            
-            $('#pay-button').on('click', function(event) {
-             event.preventDefault();
-                $("#pay-button").prop( "disabled", true);
-                OpenPay.token.extractFormAndCreate('payment-form', sucess_callbak, error_callbak);                
-            });
-     
-            var sucess_callbak = function(response) {
-              var token_id = response.data.id;
-               alert(token_id);
-              $('#token_id').val(token_id);
-              $('#payment-form').submit();
-            };
 
-            var error_callbak = function(response) {
-                var desc = response.data.description != undefined ? response.data.description : response.message;
-                alert("ERROR [" + response.status + "] " + desc);
-                $("#pay-button").prop("disabled", false);
-            };
 
-        });
-    </script>
 </head>
 <body>
  <th:block th:include="/ecommerce/encabezado"></th:block>
@@ -96,13 +69,13 @@
 						</div>
 						<div class="form-group">
 							<label class="control-label">E-mail</label> <input
-								maxlength="100" type="text" required="required"
+								maxlength="100" type="email" required="required"
 								th:field="*{email}" class="form-control"
 								placeholder="ejemplo@hotmail.com" />
 						</div>
 						<div class="form-group">
 							<label class="control-label">Telefono</label> <input
-								maxlength="100" type="text" required="required"
+								maxlength="100" type="number" required="required"
 								th:field="*{numeroTelefono}" class="form-control"
 								placeholder="Ingrese su número de teléfono" />
 						</div>
@@ -157,19 +130,19 @@
 						</div>
 						<div class="form-group">
 							<label class="control-label">Numero Exterior</label> <input
-								th:field="*{numeroExterior}" maxlength="200" type="text"
+								th:field="*{numeroExterior}" maxlength="200" type="number"
 								required="required" class="form-control"
 								placeholder="Número Exterior" />
 						</div>
 						<div class="form-group">
 							<label class="control-label">Numero Interior</label> <input
-								th:field="*{numeroInterior}" maxlength="200" type="text"
+								th:field="*{numeroInterior}" maxlength="200" type="number"
 								required="required" class="form-control"
 								placeholder="Número Interior" />
 						</div>
 						<div class="form-group">
 							<label class="control-label">Codigo Postal</label> <input
-								th:field="*{codigoPostal}" maxlength="200" type="text"
+								th:field="*{codigoPostal}" maxlength="200" type="number"
 								required="required" class="form-control"
 								placeholder="Código Postal" />
 						</div>
@@ -288,7 +261,8 @@
 				    <div class="col-md-2">     
 				              <img  th:src="@{/ecommerce/img/banco_famsa.jpg}" class="img-responsive"  alt=""/>  
 				    </div>
-				</div> 		
+				</div> 	
+				<button class="btn btn-success btn-lg pull-right" type="submit" id="btn-comprar">Comprar!</button>	
 		</div>
 	</div>
 </div></div>
@@ -391,7 +365,8 @@
 		      </div>      
 		      <br/>
 		      <p class="h5">Y MUCHAS MÁS...</p>
-		</div>             
+		</div>
+		<button class="btn btn-success btn-lg pull-right" type="submit" id="btn-comprar">Comprar!</button>             
 	</div>
 </div>
 
@@ -440,7 +415,7 @@
                             <div class="shield">Tus pagos se realizan de forma segura con encriptación de 256 bits</div>
                         </div>
                         <div class="sctn-row">
-                                <a class="button rght" id="pay-button">Pagar</a>
+                                <a data-toggle="collapse" class="button rght" id="pay-button">Pagar</a>
                         </div>
                     </div>
                 </div>
@@ -452,8 +427,6 @@
 </div>
 <br/>
 <br/></div>
-<br/>
-<button class="btn btn-success btn-lg pull-right" type="submit">Comprar!</button>
 </div>
 </div>	
 </div>	
