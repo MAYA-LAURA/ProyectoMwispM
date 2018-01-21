@@ -3,7 +3,7 @@
 
 
 <head>
-<meta charset="utf-8" />
+<meta charset="UTF-8"/>
 <meta name="robots" content="all,follow" />
 <meta name="googlebot" content="index,follow,snippet,archive" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -52,7 +52,7 @@
 				<div class="col-md-12">
 					<ul class="breadcrumb">
 						<li><a th:href="@{/ecommerce/principal}">Inicio</a></li>
-						<li>Videovigilancia</li>
+						<li>Redes</li>
 					</ul>
 				</div>
 
@@ -67,32 +67,31 @@
 
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked category-menu">
-								<li><a href="category.xhtml">Videovigilancia<span
-										class="badge pull-right">42</span></a>
+								<li><a href="#">Videovigilancia
+<!-- 								<span class="badge pull-right">42</span> -->
+										</a>
 									<ul>
-										<li><a href="category.xhtml">Accesorios</a></li>
-										<li><a href="category.xhtml">Audio</a></li>
-
-										<li><a href="category.xhtml">Cables</a></li>
-										<li><a href="category.xhtml">Herramientas</a></li>
+										<li><a th:href="@{/ecommerce/categoria/Hikvision}">Hikvision</a></li>
+										
 									</ul></li>
-								<li class="active"><a href="category.xhtml">Torres y
-										accesorios <span class="badge pull-right">123</span>
+<!-- 								<li class="active"><a href="category.xhtml">Torres y -->
+<!-- 										accesorios  -->
+<!-- 										<span class="badge pull-right">123</span> -->
+<!-- 								</a> -->
+<!-- 									<ul> -->
+<!-- 										<li><a href="category.xhtml">Accesorios para torres -->
+<!-- 												arriostradas</a></li> -->
+<!-- 										<li><a href="category.xhtml">Mastiles</a></li> -->
+<!-- 										<li><a href="category.xhtml">Torres serie G</a></li> -->
+<!-- 									</ul></li> -->
+									
+								<li class="active"><a href="#">Redes
+<!-- 								<span class="badge pull-right">11</span> -->
 								</a>
 									<ul>
-										<li><a href="category.xhtml">Accesorios para torres
-												arriostradas</a></li>
-										<li><a href="category.xhtml">Mastiles</a></li>
-										<li><a href="category.xhtml">Torres serie G</a></li>
-									</ul></li>
-								<li><a href="category.xhtml">Redes<span
-										class="badge pull-right">11</span></a>
-									<ul>
-										<li><a href="category.xhtml">Antenas</a></li>
-										<li><a href="category.xhtml">Racks y gabinetes</a></li>
-										<li><a href="category.xhtml">ProtecciÃ³n contra
-												descargas</a></li>
-										<li><a href="category.xhtml">Redes</a></li>
+										<li ><a th:href="@{/ecommerce/categoria/ubiquiti}">Ubiquiti networks</a></li>
+										<li><a th:href="@{/ecommerce/categoria/mikrotik}">Mikrotik</a></li>
+										
 									</ul></li>
 
 							</ul>
@@ -100,44 +99,44 @@
 						</div>
 					</div>
 
-					<div class="panel panel-default sidebar-menu">
+<!-- 					<div class="panel panel-default sidebar-menu"> -->
 
-						<div class="panel-heading">
-							<h3 class="panel-title">
-								Marcas<a class="btn btn-xs btn-danger pull-right" href="#"></a>
-							</h3>
-						</div>
+<!-- 						<div class="panel-heading"> -->
+<!-- 							<h3 class="panel-title"> -->
+<!-- 								Marcas<a class="btn btn-xs btn-danger pull-right" href="#"></a> -->
+<!-- 							</h3> -->
+<!-- 						</div> -->
 
-						<div class="panel-body">
+<!-- 						<div class="panel-body"> -->
 
-							<h:form>
-								<div class="form-group">
-									<div class="checkbox">
-										<label> <input type="checkbox" />Ubiquiti
-										</label>
-									</div>
-									<div class="checkbox">
-										<label> <input type="checkbox" />Mimosa
-										</label>
-									</div>
-									<div class="checkbox">
-										<label> <input type="checkbox" />Epcom
-										</label>
-									</div>
-									<div class="checkbox">
-										<label> <input type="checkbox" />Hikvision
-										</label>
-									</div>
-								</div>
+<!-- 							<form> -->
+<!-- 								<div class="form-group"> -->
+<!-- 									<div class="checkbox"> -->
+<!-- 										<label> <input type="checkbox" />Ubiquiti -->
+<!-- 										</label> -->
+<!-- 									</div> -->
+<!-- 									<div class="checkbox"> -->
+<!-- 										<label> <input type="checkbox" />Mimosa -->
+<!-- 										</label> -->
+<!-- 									</div> -->
+<!-- 									<div class="checkbox"> -->
+<!-- 										<label> <input type="checkbox" />Epcom -->
+<!-- 										</label> -->
+<!-- 									</div> -->
+<!-- 									<div class="checkbox"> -->
+<!-- 										<label> <input type="checkbox" />Hikvision -->
+<!-- 										</label> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
 
-								<button class="btn btn-default btn-sm btn-primary">
-									<i class="fa fa-pencil"></i>Aplicar
-								</button>
+<!-- 								<button class="btn btn-default btn-sm btn-primary"> -->
+<!-- 									<i class="fa fa-pencil"></i>Aplicar -->
+<!-- 								</button> -->
 
-							</h:form>
+<!-- 							</form> -->
 
-						</div>
-					</div>
+<!-- 						</div> -->
+<!-- 					</div> -->
 
 					<!-- *** MENUS AND FILTERS END *** -->
 
@@ -151,8 +150,8 @@
 
 				<div class="col-md-9">
 					<div class="box">
-						<h1>Videovigilancia</h1>
-						<p>En nuestro departamento de "Videovigilancia" ofrecemos una
+						<h1>Ubiquiti networks</h1>
+						<p>En nuestro departamento de "Ubiquiti Networks" ofrecemos una
 							amplia gama de los mejores productos</p>
 					</div>
 
@@ -190,7 +189,7 @@
 
 					<div class="row products">
 
-						<div class="col-md-4 col-sm-6" th:each="objEach : ${listProduc}">
+						<div class="col-md-4 col-sm-6" th:each="objEach : ${listaUbiquiti}">
 							<div class="product">
 								<div class="flip-container">
 									<div class="flipper">

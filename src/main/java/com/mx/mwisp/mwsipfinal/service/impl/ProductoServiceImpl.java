@@ -19,12 +19,11 @@ import com.mx.mwisp.mwsipfinal.service.CategoriaService;
 import com.mx.mwisp.mwsipfinal.service.MarcaService;
 import com.mx.mwisp.mwsipfinal.service.ProductoService;
 
-
 @Service("productoServiceImpl")
-public class ProductoServiceImpl implements ProductoService{
-   
-	private static final Log log=LogFactory.getLog(ProductoServiceImpl.class);
-	
+public class ProductoServiceImpl implements ProductoService {
+
+	private static final Log log = LogFactory.getLog(ProductoServiceImpl.class);
+
 	@Autowired
 	@Qualifier("productoJpaRepository")
 	private ProductoJpaRepository productoJpaRepository;
@@ -37,31 +36,32 @@ public class ProductoServiceImpl implements ProductoService{
 	@Autowired
 	@Qualifier("categoriaServiceImpl")
 	private CategoriaService categoriaServiceImpl;
-	
+
 	@Override
 	public List<ProductoModel> listarProductos() {
 		List<Productos> productos = productoJpaRepository.findAll();
-		List<ProductoModel> productoModels= new ArrayList<ProductoModel>();
-		for(Productos producto: productos){
+		List<ProductoModel> productoModels = new ArrayList<ProductoModel>();
+		for (Productos producto : productos) {
 			productoModels.add(productoConverter.entityModel(producto));
 		}
-		log.info("lamando:"+"ListarProductos");
+		log.info("lamando:" + "ListarProductos");
 		return productoModels;
 	}
 
 	@Override
 	public ProductoModel addProducto(ProductoModel productoModel) {
 		// TODO Auto-generated method stub
-		
+
 		log.info(productoModel.getCategoria().getNombreCategoria());
 		log.info(productoModel.getMarca().getMarca());
-		Categoria categoria=categoriaServiceImpl.encontrarCategoria(productoModel.getCategoria().getNombreCategoria());
-		Marca marca=marcaService.encontrarMarca(productoModel.getMarca().getMarca());
+		Categoria categoria = categoriaServiceImpl
+				.encontrarCategoria(productoModel.getCategoria().getNombreCategoria());
+		Marca marca = marcaService.encontrarMarca(productoModel.getMarca().getMarca());
 		log.info(marca);
-		Productos productos=  productoConverter.modelEntity(productoModel);
+		Productos productos = productoConverter.modelEntity(productoModel);
 		productos.setCategoria(categoria);
 		productos.setMarca(marca);
-		
+
 		return productoConverter.entityModel(productoJpaRepository.save(productos));
 	}
 
@@ -73,13 +73,13 @@ public class ProductoServiceImpl implements ProductoService{
 
 	@Override
 	public Productos actualizarProducto(Productos producto) {
-		
+
 		return productoJpaRepository.save(producto);
 	}
 
 	@Override
 	public Productos encontrarPorId(int id) {
-		
+
 		return productoJpaRepository.findOne(id);
 	}
 
@@ -87,6 +87,18 @@ public class ProductoServiceImpl implements ProductoService{
 	public Productos encontraPorModelo(String modelo) {
 		// TODO Auto-generated method stub
 		return productoJpaRepository.findByModelo(modelo);
+	}
+
+	@Override
+	public List<ProductoModel> encontrarPorMarca(Marca marca) {
+		// TODO Auto-generated method stub
+		List<Productos> productos=productoJpaRepository.findByMarca(marca);
+		List<ProductoModel> productoModels = new ArrayList<ProductoModel>();
+		for (Productos producto : productos) {
+			productoModels.add(productoConverter.entityModel(producto));
+		}
+		
+		return productoModels;
 	}
 
 }

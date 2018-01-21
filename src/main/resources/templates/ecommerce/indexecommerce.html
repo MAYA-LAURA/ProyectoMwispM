@@ -2,91 +2,116 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8" />
-    <meta name="robots" content="all,follow"/>
-    <meta name="googlebot" content="index,follow,snippet,archive"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="Obaju e-commerce template"/>
-    <meta name="author" content="Ondrej Svestka | ondrejsvestka.cz"/>
-    <meta name="keywords" content=""/>
-    <title>MWM E-commerce</title>
-    <meta name="keywords" content=""/>
-    <!-- Estilos -->
-    <link  th:href="@{/ecommerce/css/font-awesome.css}" rel="stylesheet"/>
-    <link  th:href="@{/ecommerce/css/font-awesome.min.css}" rel="stylesheet"/>
-    <link  th:href="@{/ecommerce/css/bootstrap.min.css}" rel="stylesheet"/>     
-    <link th:href="@{/ecommerce/css/animate.min.css}" rel="stylesheet"/>     
-    <link th:href="@{/ecommerce/css/owl.carousel.css}" rel="stylesheet"/>     
-    <link th:href="@{/ecommerce/css/owl.theme.css}" rel="stylesheet"/>        
-    <link  th:href="@{/ecommerce/css/style2.blue.css}" rel="stylesheet" id="theme-stylesheet"/>
+<meta name="robots" content="all,follow" />
+<meta name="googlebot" content="index,follow,snippet,archive" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Obaju e-commerce template" />
+<meta name="author" content="Ondrej Svestka | ondrejsvestka.cz" />
+<meta name="keywords" content="" />
+<title>MWM E-commerce</title>
+<meta name="keywords" content="" />
+<!-- Estilos -->
+<link th:href="@{/ecommerce/css/font-awesome.css}" rel="stylesheet" />
+<link th:href="@{/ecommerce/css/font-awesome.min.css}" rel="stylesheet" />
+<link th:href="@{/ecommerce/css/bootstrap.min.css}" rel="stylesheet" />
+<link th:href="@{/ecommerce/css/animate.min.css}" rel="stylesheet" />
+<link th:href="@{/ecommerce/css/owl.carousel.css}" rel="stylesheet" />
+<link th:href="@{/ecommerce/css/owl.theme.css}" rel="stylesheet" />
+<link th:href="@{/ecommerce/css/style2.blue.css}" rel="stylesheet"
+	id="theme-stylesheet" />
 </head>
 <body>
- <th:block th:include="/ecommerce/encabezado"></th:block>
-    <div id="all">
-<p></p>
-        <div id="content">
-            <div class="container">
-                <div class="col-md-12">
-                    <div id="main-slider">
-                        <div class="item">
-                               <img  th:src="@{/ecommerce/img/fondo1-2.jpg}" class="img-responsive"  alt=""/>                           
-                        </div>
-                        <div class="item">
-                               <img  th:src="@{/ecommerce/img/fondo2-2.jpg}" class="img-responsive"  alt=""/>                               
-                        </div>
-                        <div class="item">
-                            <img  th:src="@{/ecommerce/img/fondo3.jpg}" class="img-responsive"  alt=""/>                                
-                        </div>
-                        <div class="item">
-                            <img  th:src="@{/ecommerce/img/fondo4.jpg}" class="img-responsive"  alt=""/>
-                        </div>
-                    </div>
-                    <!-- /#main-slider -->
-                </div>
-            </div>
-            <div id="hot">
-                <div class="box">
-                    <div class="container">
-                        <div class="col-md-12">
-                            <h2>Lo más vendido</h2>
-                        </div>
-                    </div>
-                </div>
-<div class="container">
-                    <div class="product-slider">
-                        <div class="item" th:each="objEach : ${listProduc}">
-                            <div class="product">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a th:href="@{/ecommerce/}+${objEach.modelo}+@{/detalles}">
-                                                 <img th:src="@{'/uploads/' + ${objEach.imagen1}}"  class="img-responsive img-thumbnail img-principal" alt=""/>     
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a th:href="@{/ecommerce/}+${objEach.modelo}+@{/detalles}">
-                                                  <img th:src="@{'/uploads/' + ${objEach.imagen2}}" class="img-responsive img-thumbnail img-principal" alt=""/>    
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>         
-                                <div class="text">
-                                	<h3><a th:href="@{/ecommerce/}+${objEach.modelo}+@{/detalles}" ><span th:text="${objEach.nombreProducto}"></span></a></h3>
-                                    <h3 class="margen-top"><a th:href="@{/ecommerce/}+${objEach.modelo}+@{/detalles}" >Modelo: <span  th:text="${objEach.modelo}"></span></a></h3>
-                                    <p  class="price margen-top">$<span th:text="${objEach.precioMxm}"></span> MXM</p>   
-                                </div>
-                               <a th:href="@{|/ecommerce/comprarProducto?id=${objEach.idProdcutos}|}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Agregar al carrito</a>
-                                <!-- /.text -->        
-                            </div>
-                            <!-- /.product -->
-                        </div>                       
-                    </div>
-                    <!-- /.product-slider -->
-                </div>      
-      
-                <!-- /.container -->
-            </div>
-            <!-- /#hot -->
-<!-- DIV PARA EL ENLACE AL BLOG
+	<th:block th:include="/ecommerce/encabezado"></th:block>
+	<div id="all">
+		<p></p>
+		<div id="content">
+			<div class="container">
+				<div class="col-md-12">
+					<div id="main-slider">
+						<div class="item">
+							<a th:href="@{/ecommerce/categoria/ubiquiti}"> <img
+								th:src="@{/ecommerce/img/fondo1-2.jpg}" class="img-responsive"
+								alt="" />
+							</a>
+						</div>
+						<div class="item">
+							<img th:src="@{/ecommerce/img/fondo2-2.jpg}"
+								class="img-responsive" alt="" />
+						</div>
+						<div class="item">
+						<a th:href="@{/ecommerce/categoria/Hikvision}">
+							<img th:src="@{/ecommerce/img/fondo3.jpg}" class="img-responsive"
+								alt="" />
+							</a>
+						</div>
+						<div class="item">
+						<a th:href="@{/ecommerce/categoria/Hikvision}">
+							<img th:src="@{/ecommerce/img/fondo4.jpg}" class="img-responsive"
+								alt="" />
+								</a>
+						</div>
+					</div>
+					<!-- /#main-slider -->
+				</div>
+			</div>
+			<div id="hot">
+				<div class="box">
+					<div class="container">
+						<div class="col-md-12">
+							<h2>Lo más vendido</h2>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="product-slider">
+						<div class="item" th:each="objEach : ${listProduc}">
+							<div class="product">
+								<div class="flip-container">
+									<div class="flipper">
+										<div class="front">
+											<a th:href="@{/ecommerce/}+${objEach.modelo}+@{/detalles}">
+												<img th:src="@{'/uploads/' + ${objEach.imagen1}}"
+												class="img-responsive img-thumbnail img-principal" alt="" />
+											</a>
+										</div>
+										<div class="back">
+											<a th:href="@{/ecommerce/}+${objEach.modelo}+@{/detalles}">
+												<img th:src="@{'/uploads/' + ${objEach.imagen2}}"
+												class="img-responsive img-thumbnail img-principal" alt="" />
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="text">
+									<h3>
+										<a th:href="@{/ecommerce/}+${objEach.modelo}+@{/detalles}"><span
+											th:text="${objEach.nombreProducto}"></span></a>
+									</h3>
+									<h3 class="margen-top">
+										<a th:href="@{/ecommerce/}+${objEach.modelo}+@{/detalles}">Modelo:
+											<span th:text="${objEach.modelo}"></span>
+										</a>
+									</h3>
+									<p class="price margen-top">
+										$<span th:text="${objEach.precioMxm}"></span> MXM
+									</p>
+								</div>
+								<a
+									th:href="@{|/ecommerce/comprarProducto?id=${objEach.idProdcutos}|}"
+									class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Agregar
+									al carrito</a>
+								<!-- /.text -->
+							</div>
+							<!-- /.product -->
+						</div>
+					</div>
+					<!-- /.product-slider -->
+				</div>
+
+				<!-- /.container -->
+			</div>
+			<!-- /#hot -->
+			<!-- DIV PARA EL ENLACE AL BLOG
             <div class="box text-center">
                 <div class="container">
                     <div class="col-md-12">
@@ -97,20 +122,20 @@
                     </div>
                 </div>
             </div>
-               -->         
-     <th:block th:include="/ecommerce/piePag"></th:block>
-        </div> 
-        </div>               
+               -->
+			<th:block th:include="/ecommerce/piePag"></th:block>
+		</div>
+	</div>
 
-    <!-- * SCRIPTS TO INCLUDE *
+	<!-- * SCRIPTS TO INCLUDE *
  ___________________ -->
-<script th:src="@{/ecommerce/js/jquery-1.11.0.min.js}"></script>     
-    <script th:src="@{/ecommerce/js/bootstrap.min.js}"></script>     
-    <script th:src="@{/ecommerce/js/jquery.cookie.js}"></script>     
-    <script th:src="@{/ecommerce/js/waypoints.min.js}"></script>     
-    <script th:src="@{/ecommerce/js/modernizr.js}"></script>     
-    <script th:src="@{/ecommerce/js/bootstrap-hover-dropdown.js}"></script>     
-    <script th:src="@{/ecommerce/js/owl.carousel.min.js}"></script>     
-    <script th:src="@{/ecommerce/js/front.js}"></script>
+	<script th:src="@{/ecommerce/js/jquery-1.11.0.min.js}"></script>
+	<script th:src="@{/ecommerce/js/bootstrap.min.js}"></script>
+	<script th:src="@{/ecommerce/js/jquery.cookie.js}"></script>
+	<script th:src="@{/ecommerce/js/waypoints.min.js}"></script>
+	<script th:src="@{/ecommerce/js/modernizr.js}"></script>
+	<script th:src="@{/ecommerce/js/bootstrap-hover-dropdown.js}"></script>
+	<script th:src="@{/ecommerce/js/owl.carousel.min.js}"></script>
+	<script th:src="@{/ecommerce/js/front.js}"></script>
 </body>
 </html>
