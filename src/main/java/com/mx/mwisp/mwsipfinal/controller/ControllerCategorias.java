@@ -46,5 +46,21 @@ public class ControllerCategorias {
 		mav.addObject("listaUbiquiti", productoServiceImpl.encontrarPorMarca(marca));
 		return mav;
 	}
+	
+	@GetMapping("/Epcom")
+	public ModelAndView categoriaEpcom() {
+		ModelAndView mav=new ModelAndView("/ecommerce/categoryEpcom");
+		Marca marca=marcaServiceImpl.encontrarMarca("EPCOM");
+		mav.addObject("listaUbiquiti", productoServiceImpl.encontrarPorMarca(marca));
+		return mav;
+	}
+	
+	@GetMapping("/Epcom_Power_Line")
+	public ModelAndView categoriaKenwood() {
+		ModelAndView mav=new ModelAndView("/ecommerce/categoryPowerLine");
+		Marca marca=marcaServiceImpl.encontrarMarca("EPCOM POWER LINE");
+		mav.addObject("listaUbiquiti", productoServiceImpl.encontrarPorMarca(marca));
+		return mav;
+	}
 
 }

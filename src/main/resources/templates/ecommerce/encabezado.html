@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<meta charset="utf-8"/>
+<meta charset="utf-8" />
 <meta name="robots" content="all,follow" />
 <meta name="googlebot" content="index,follow,snippet,archive" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -48,7 +48,7 @@
 </head>
 
 <body>
-	
+
 
 
 	<div class="navbar navbar-default yamm  navbar-fixed-top"
@@ -65,9 +65,9 @@
 
 				<!-- Botones para la vista movil -->
 				<div class="navbar-buttons">
-					<a  th:href="@{/login}" type="button" class="navbar-toggle" data-toggle="modal"
-						>
-						<span class="sr-only">Loggin</span> <i class="fa fa-user-circle"></i>
+					<a th:href="@{/login}" type="button" class="navbar-toggle"
+						data-toggle="modal"> <span class="sr-only">Loggin</span> <i
+						class="fa fa-user-circle"></i>
 					</a>
 					<button type="button" class="navbar-toggle" data-toggle="collapse"
 						data-target="#navigation">
@@ -87,17 +87,18 @@
 			<div class="navbar-collapse collapse" id="navigation">
 				<ul class="nav navbar-nav navbar-left">
 					<li class="active"><a th:href="@{/ecommerce/principal}">Inicio</a></li>
-					<li class="dropdown yamm-fw"><a th:href="@{/ecommerce/categoria/ubiquiti}"
-						class="dropdown-toggle" data-toggle="dropdown"
-						data-hover="dropdown" data-delay="200">Redes</a></li>
-					<li class="dropdown yamm-fw"><a href="#"
-						class="dropdown-toggle" data-toggle="dropdown"
-						data-hover="dropdown" data-delay="200">Videovigilancia</a></li>
-					<li class="dropdown yamm-fw"><a href="#"
-						class="dropdown-toggle" data-toggle="dropdown"
-						data-hover="dropdown" data-delay="200">Cableado Estructurado</a></li>
+					<li class="dropdown yamm-fw"><a
+						th:href="@{/ecommerce/categoria/ubiquiti}" data-hover="dropdown"
+						data-delay="200">Redes</a></li>
+					<li class="dropdown yamm-fw"><a
+						th:href="@{/ecommerce/categoria/Hikvision}" data-hover="dropdown"
+						data-delay="200">Videovigilancia</a></li>
 
-					
+					<li class="dropdown yamm-fw"><a
+						th:href="@{/ecommerce/categoria/Epcom_Power_Line}"
+						data-hover="dropdown" data-delay="200">Energía</a></li>
+
+
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -106,14 +107,14 @@
 
 
 				<div class="navbar-collapse collapse right" id="search-not-mobile">
-					<a th:href="@{/login}" type="button" class="btn navbar-btn btn-login"
-						data-toggle="modal" >
-						<span class="sr-only">Login</span> <i class="fa fa-user-circle"></i>
+					<a th:href="@{/login}" type="button"
+						class="btn navbar-btn btn-login" data-toggle="modal"> <span
+						class="sr-only">Login</span> <i class="fa fa-user-circle"></i>
 					</a>
 				</div>
 
 				<div class="navbar-collapse collapse right" id="basket-overview">
-					<a th:href= "@{/ecommerce/carrito}" class="btn btn-login navbar-btn"><i
+					<a th:href="@{/ecommerce/carrito}" class="btn btn-login navbar-btn"><i
 						class="fa fa-shopping-cart"></i><span class="hidden-sm">
 							Productos</span></a>
 				</div>
@@ -121,11 +122,11 @@
 				<!-- Boton de search en menú -->
 				<div class="navbar-collapse collapse right" id="search-not-mobile">
 					<a type="button" class="btn navbar-btn btn-login"
-						data-toggle="collapse" data-target="#search" >
-						<span class="sr-only">Login</span> <i class="fa fa-search"></i>
+						data-toggle="collapse" data-target="#search"> <span
+						class="sr-only">Login</span> <i class="fa fa-search"></i>
 					</a>
-					
-					
+
+
 				</div>
 
 			</div>
