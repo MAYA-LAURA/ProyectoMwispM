@@ -17,8 +17,8 @@ img.img-detalles{
 }
 /*ESTILOS IMAGENES, PAGINA PRINCIPAL*/
 img.img-categoria{
-	width:253px;
-	height:253px;
+	width:181px;
+	height:140px;
 }
 /*ESTILOS IMAGENES, PAGINA CATEGORIA*/
 img.img-principal{
@@ -766,10 +766,12 @@ h1 {
   overflow: hidden;
   white-space:nowrap;
   text-overflow: ellipsis;
+  margin-top:-98px;
+  font-size:15px;
 }
 
 #content .product .text-categoria .margen-top{
-	margin-top:-30px
+	margin-top:-37px
 }
 
 #content .product .text-categoria h3 a {
@@ -778,8 +780,10 @@ h1 {
 #content .product .text-categoria p.price {
   font-size: 18px;
   text-align: center;
-  font-weight: 500;
+margin-top:-40px;
     color: red;
+      font-size:15px;
+  font-weight:800;
 }
 #content .product .text-categoria p.price del {
   color: red;
@@ -787,12 +791,14 @@ h1 {
 #content .product .text-categoria .buttons {
   clear: both;
   text-align: center;
+  margin-top:-15px;
+  margin-bottom:4px;
+
 }
 #content .product .text-categoria .buttons .btn {
-  margin-bottom: 10px;
+  margin-bottom: 4px;
+  font-size:10px
 }
-
-
 
 #content .banner {
   margin-bottom: 30px;
