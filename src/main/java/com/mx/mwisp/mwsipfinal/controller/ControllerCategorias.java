@@ -39,6 +39,20 @@ public class ControllerCategorias {
 		mav.addObject("listaUbiquiti", productoServiceImpl.encontrarPorMarca(marca));
 		return mav;
 	}
+	@GetMapping("/Engenius")
+	public ModelAndView categoriaEngenius() {
+		ModelAndView mav=new ModelAndView("/ecommerce/categoryEngenius");
+		Marca marca=marcaServiceImpl.encontrarMarca("ENGENIUS");
+		mav.addObject("listaUbiquiti", productoServiceImpl.encontrarPorMarca(marca));
+		return mav;
+	}
+	@GetMapping("/Mimosa")
+	public ModelAndView categoriaMimosa() {
+		ModelAndView mav=new ModelAndView("/ecommerce/categoryMimosa");
+		Marca marca=marcaServiceImpl.encontrarMarca("MIMOSA NETWORKS");
+		mav.addObject("listaUbiquiti", productoServiceImpl.encontrarPorMarca(marca));
+		return mav;
+	}
 	@GetMapping("/Hikvision")
 	public ModelAndView categoriaHikvision() {
 		ModelAndView mav=new ModelAndView("/ecommerce/categoryHikvision");
@@ -55,10 +69,25 @@ public class ControllerCategorias {
 		return mav;
 	}
 	
+	@GetMapping("/Samsung")
+	public ModelAndView categoriaSamsung() {
+		ModelAndView mav=new ModelAndView("/ecommerce/categorySamsungWisenet");
+		Marca marca=marcaServiceImpl.encontrarMarca("SAMSUNG WISENET");
+		mav.addObject("listaUbiquiti", productoServiceImpl.encontrarPorMarca(marca));
+		return mav;
+	}
+	
 	@GetMapping("/Epcom_Power_Line")
 	public ModelAndView categoriaKenwood() {
 		ModelAndView mav=new ModelAndView("/ecommerce/categoryPowerLine");
 		Marca marca=marcaServiceImpl.encontrarMarca("EPCOM POWER LINE");
+		mav.addObject("listaUbiquiti", productoServiceImpl.encontrarPorMarca(marca));
+		return mav;
+	}
+	@GetMapping("/Epsolar")
+	public ModelAndView categoriaEpsolar() {
+		ModelAndView mav=new ModelAndView("/ecommerce/categoryEpsolar");
+		Marca marca=marcaServiceImpl.encontrarMarca("EPSOLAR");
 		mav.addObject("listaUbiquiti", productoServiceImpl.encontrarPorMarca(marca));
 		return mav;
 	}

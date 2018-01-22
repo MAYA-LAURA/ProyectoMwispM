@@ -36,9 +36,7 @@
                     <ul class="breadcrumb">
                         <li><a th:href="@{/ecommerce/principal}">Inicio</a>
                         </li>
-                        <li><a href="#">Compras</a>
-                        </li>
-                        <li><a th:href="@{/ecommerce/categoria}">Categoría</a>
+                        <li><a href="javascript:history.back();">Categoria</a>
                         </li>
                         <li><span th:text="${productoFind.nombreProducto}"></span></li>
                     </ul>
@@ -54,7 +52,7 @@
                                 <img  th:src="@{'/uploads/'+${productoFind.imagen2}}" class="img-responsive img-thumbnail img-detalles"  alt=""/>
                             </div>
                             <div class="ribbon new">
-                                <div class="theribbon">Nuevo</div>
+<!--                                 <div class="theribbon">Nuevo</div> -->
                                 <div class="ribbon-background"></div>
                             </div>
                             <!-- /.ribbon -->
@@ -69,10 +67,10 @@
     <div class="row">                
         <div class="col-sm-2"></div>
         <div class="col-sm-2">
-            <img  th:src="@{/ecommerce/img/oxxo.jpg}" class="img-responsive"  alt=""/>        
+            <img  th:src="@{/ecommerce/img/eleven.jpg}" class="img-responsive"  alt=""/>        
         </div>
         <div class="col-sm-2">
-        <img  th:src="@{/ecommerce/img/paypal.jpg}" class="img-responsive"  alt=""/>
+        <img  th:src="@{/ecommerce/img/aurrera.png}" class="img-responsive"  alt=""/>
         </div>
         <div class="col-sm-2">
         <img  th:src="@{/ecommerce/img/visa.jpg}" class="img-responsive"  alt=""/>
@@ -92,27 +90,27 @@
                                                                                                                                       
                         </div>
                     </div>
-                    <div class="box" id="details">             
-                            <h4>Características generales</h4>
-					<ul>
-                        <li>Peso: 155g.</li>
-                        <li>Altura de bracket: 143.5mm.</li>
-                        <li>Base de bracket: 82mm X 58mm.</li>
-                        <li>Movimiento del bracket ajustable.</li>
-                        <li>Led indicador: Parpadeo cada 2 segundos.</li>
-                        <li>Alimentación: 2 baterías AAA (no incluidas).</li>  
-                     </ul>
-                            <blockquote>
-                                <p><em>Especificaciones, Precios y Fotografías de los Productos: <hr></hr>
-									Las especificaciones, características, funciones, cualidades,
-									colores, precios, así como las fotografías son ciertas al momento 
-									de la publicación, pero ocasionalmente hay ligeros cambios debido a la tecnología cambiante.
-									Los precios finales están calculados con un 4% de descuento adicional tomando en cuenta que 
-									el tipo de pago es a contado, ya sea en efectivo o con transferencia electrónica. El precio 
-									del producto puede cambiar dependiendo de la forma de pago. Los precios publicados son precios sin IVA</em>
-                                </p>
-                            </blockquote>
-                    </div>                                   
+<!--                     <div class="box" id="details">              -->
+<!--                             <h4>Características generales</h4> -->
+<!-- 					<ul> -->
+<!--                         <li>Peso: 155g.</li> -->
+<!--                         <li>Altura de bracket: 143.5mm.</li> -->
+<!--                         <li>Base de bracket: 82mm X 58mm.</li> -->
+<!--                         <li>Movimiento del bracket ajustable.</li> -->
+<!--                         <li>Led indicador: Parpadeo cada 2 segundos.</li> -->
+<!--                         <li>Alimentación: 2 baterías AAA (no incluidas).</li>   -->
+<!--                      </ul> -->
+<!--                             <blockquote> -->
+<!--                                 <p><em>Especificaciones, Precios y Fotografías de los Productos: <hr></hr> -->
+<!-- 									Las especificaciones, características, funciones, cualidades, -->
+<!-- 									colores, precios, así como las fotografías son ciertas al momento  -->
+<!-- 									de la publicación, pero ocasionalmente hay ligeros cambios debido a la tecnología cambiante. -->
+<!-- 									Los precios finales están calculados con un 4% de descuento adicional tomando en cuenta que  -->
+<!-- 									el tipo de pago es a contado, ya sea en efectivo o con transferencia electrónica. El precio  -->
+<!-- 									del producto puede cambiar dependiendo de la forma de pago. Los precios publicados son precios sin IVA</em> -->
+<!--                                 </p> -->
+<!--                             </blockquote> -->
+<!--                     </div>                                    -->
             </div>
             </div>
             </div>                                                       

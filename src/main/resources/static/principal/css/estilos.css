@@ -7,7 +7,7 @@ body {
   color: #111111; }
 
 .bienvenidos {
-  background: url("../img/fondo-encabezado-2.png") no-repeat center top;
+  background: url("../img/fondo-encabezado.jpg") no-repeat center top;
   color: #fff;
   background-size: cover;
   background-attachment: fixed !important;
@@ -470,7 +470,7 @@ EMPIEZAN LAS MEDIAS QUERIES
   .servicios .btn-secondary {
     margin-top: auto; }
   .bienvenidos {
-    background: url("../img/fondo-encabezado-grande-2.jpeg") no-repeat center top;
+    background: url("../img/fondo-encabezado-grande.jpg") no-repeat center top;
     background-size: cover; }
 
   .tu-mejor-eleccion ul li {
