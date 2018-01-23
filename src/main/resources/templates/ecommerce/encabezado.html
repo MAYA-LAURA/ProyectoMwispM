@@ -65,22 +65,25 @@
 
 				<!-- Botones para la vista movil -->
 				<div class="navbar-buttons">
-					<a th:href="@{/login}" target="_blank" type="button" class="navbar-toggle"
-						data-toggle="modal"> <span class="sr-only">Loggin</span> <i
-						class="fa fa-user-circle"></i>
-					</a>
 					<button type="button" class="navbar-toggle" data-toggle="collapse"
 						data-target="#navigation">
 						<span class="sr-only">Menu</span> <i class="fa fa-align-justify"></i>
 					</button>
+					
+				<a th:href="@{/login}" target="_blank" type="button" class="navbar-toggle"
+						data-toggle="modal"> <span class="sr-only">Loggin</span> <i
+						class="fa fa-user-circle"></i>
+					</a>
+					<a th:href="@{/ecommerce/carrito}" type="button" class="navbar-toggle"
+						data-toggle="modal"> <span class="sr-only">Loggin</span> <i
+						class="fa fa-shopping-cart"></i>
+					</a>
+					
 					<button type="button" class="navbar-toggle" data-toggle="collapse"
 						data-target="#search">
 						<span class="sr-only">Buscar</span> <i class="fa fa-search"></i>
 					</button>
-					<button type="button" class="navbar-toggle" data-toggle="collapse"
-						data-target="#search">
-						<span class="sr-only">Car</span> <i class="fa fa-shopping-cart"></i>
-					</button>
+
 				</div>
 			</div>
 			<!--/.navbar-header -->

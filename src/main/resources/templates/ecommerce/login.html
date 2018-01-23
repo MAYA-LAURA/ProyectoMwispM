@@ -15,7 +15,7 @@
   <body>
  <th:block th:include="/ecommerce/encabezado"></th:block>
 
-    <div class="container piedepag">
+    <div class="container login">
 
       <form class="form-signin"  th:action="@{/logincheck}"  method="POST">
       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
