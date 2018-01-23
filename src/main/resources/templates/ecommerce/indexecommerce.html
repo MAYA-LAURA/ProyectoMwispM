@@ -107,6 +107,52 @@
 					</div>
 					<!-- /.product-slider -->
 				</div>
+				
+				<div class="container">
+					<div class="product-slider">
+						<div class="item" th:each="objEach : ${listProduc2}">
+							<div class="product">
+								<div class="flip-container">
+									<div class="flipper">
+										<div class="front">
+											<a th:href="@{/ecommerce/}+${objEach.modelo}+@{/detalles}">
+												<img th:src="@{'/uploads/' + ${objEach.imagen1}}"
+												class="img-responsive img-thumbnail img-principal" alt="" />
+											</a>
+										</div>
+										<div class="back">
+											<a th:href="@{/ecommerce/}+${objEach.modelo}+@{/detalles}">
+												<img th:src="@{'/uploads/' + ${objEach.imagen2}}"
+												class="img-responsive img-thumbnail img-principal" alt="" />
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="text">
+									<h3>
+										<a th:href="@{/ecommerce/}+${objEach.modelo}+@{/detalles}"><span
+											th:text="${objEach.nombreProducto}"></span></a>
+									</h3>
+									<h3 class="margen-top">
+										<a th:href="@{/ecommerce/}+${objEach.modelo}+@{/detalles}">Modelo:
+											<span th:text="${objEach.modelo}"></span>
+										</a>
+									</h3>
+									<p class="price margen-top">
+										$<span th:text="${objEach.precioMxm}"></span> MXM
+									</p>
+								</div>
+								<a
+									th:href="@{|/ecommerce/comprarProducto?id=${objEach.idProdcutos}|}"
+									class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Agregar
+									al carrito</a>
+								<!-- /.text -->
+							</div>
+							<!-- /.product -->
+						</div>
+					</div>
+					<!-- /.product-slider -->
+				</div>
 
 				<!-- /.container -->
 			</div>

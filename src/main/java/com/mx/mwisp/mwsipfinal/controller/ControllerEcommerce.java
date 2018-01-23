@@ -19,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mx.mwisp.mwsipfinal.converter.impl.ProductoConverter;
+import com.mx.mwisp.mwsipfinal.entity.Marca;
 import com.mx.mwisp.mwsipfinal.entity.Productos;
 import com.mx.mwisp.mwsipfinal.model.CarritoInfo;
 import com.mx.mwisp.mwsipfinal.model.PagoModeloForm;
@@ -30,6 +31,7 @@ import com.mx.mwisp.mwsipfinal.openpay.ClienteOpenpay;
 import com.mx.mwisp.mwsipfinal.openpay.ObjPeticion;
 import com.mx.mwisp.mwsipfinal.openpay.ObjetoPeticionCard;
 import com.mx.mwisp.mwsipfinal.openpay.RespuestaPeticion;
+import com.mx.mwisp.mwsipfinal.service.MarcaService;
 import com.mx.mwisp.mwsipfinal.service.PersonaService;
 import com.mx.mwisp.mwsipfinal.service.ProductoService;
 import com.mx.mwisp.mwsipfinal.service.VentasService;
@@ -55,12 +57,19 @@ public class ControllerEcommerce {
 	@Autowired
 	@Qualifier("ventasServiceImpl")
 	VentasService ventaServiceImpl;
+	@Autowired
+	@Qualifier("marcaServiceImpl")
+	private MarcaService marcaServiceImpl;
 	
 	
 	@GetMapping("/principal")
 	public ModelAndView vistaPrincipal() {
 		ModelAndView mav = new ModelAndView("/ecommerce/indexecommerce");
-		mav.addObject("listProduc", productoServiceImpl.listarProductos());
+		Marca marca=marcaServiceImpl.encontrarMarca("UBIQUITI NETWORKS");
+		Marca marca2=marcaServiceImpl.encontrarMarca("MIKROTIK");
+		  mav.addObject("listProduc",productoServiceImpl.encontrarPorMarca(marca));
+		  mav.addObject("listProduc2",productoServiceImpl.encontrarPorMarca(marca2));
+		//mav.addObject("listProduc", productoServiceImpl.listarProductos());
 		return mav;
 	}
 
