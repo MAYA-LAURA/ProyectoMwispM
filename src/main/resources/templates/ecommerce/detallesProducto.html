@@ -2,79 +2,94 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1" />
-	<link th:href="@{/ecommerce/css/style2.blue.css}" rel="stylesheet" />
-	<link th:href="@{/ecommerce/css/bootstrap.min.css}" rel="stylesheet" />
+<link th:href="@{/ecommerce/css/style2.blue.css}" rel="stylesheet" />
+<link th:href="@{/ecommerce/css/bootstrap.min.css}" rel="stylesheet" />
 
 <title>Admin-Detalles de Productos</title>
 </head>
 <body>
-<th:block th:include="/admin/encabezado"></th:block>
+	<th:block th:include="/admin/encabezado"></th:block>
 
-<div class="content-wrapper">
+	<div class="content-wrapper">
 
-<section class="content"> <!-- /.row -->
-	
-				<div class="col-xs-12">
-					<div class="box">
-						<div class="box-header">
-							<div class="h3" th:text="${titulo}"></div>
+		<section class="content">
+			<!-- /.row -->
 
-							<div class="box-tools">
-								<div class="input-group input-group-sm" style="width: 150px;">
-									<input type="text" name="table_search"
-										class="form-control pull-right" placeholder="Search" />
+			<div class="col-xs-12">
+				<div class="box">
+					<div class="box-header">
+						<div class="h3" th:text="${titulo}"></div>
 
-									<div class="input-group-btn">
-										<button type="submit" class="btn btn-default">
-											<i class="fa fa-search"></i>
-										</button>
+						<div class="box-tools">
+							<div class="input-group input-group-sm" style="width: 150px;">
+								<input type="text" name="table_search"
+									class="form-control pull-right" placeholder="Search" />
+
+								<div class="input-group-btn">
+									<button type="submit" class="btn btn-default">
+										<i class="fa fa-search"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="container py-4 col-md-14 box">
+							<div class="card bg-light">
+								<div class="card-body col-md-12">
+									<div class="row col-md-6">
+										<p class="listaproductp">IMAGEN 1</p>
+									</div>
+									<div class="row col-md-6">
+										<p class="listaproductp">IMAGEN 2</p>
+									</div>
+									<div class="row imagenes col-md-6">
+										<img th:if="${#strings.length(producto.imagen1)>0}"
+											class="img-thumbnail rounded float-left img_detall"
+											th:alt="${producto.imagen1}"
+											th:src="@{'/uploads/'+${producto.imagen1}} " />
+									</div>
+									<div class="row imagenes col-md-6">
+										<img th:if="${#strings.length(producto.imagen2)>0}"
+											class="img-thumbnail rounded float-left img_detall "
+											th:alt="${producto.imagen2}"
+											th:src="@{'/uploads/'+${producto.imagen2}}  " />
+									</div>
+
+									<div class="row col-md-10">
+										<ul style="list-style: none">
+											<li class="list-group-item detalles">ID: <span
+												class="span" th:text="${producto.idProdcutos}"></span></li>
+											<li class="list-group-item detalles">Nombre: <span
+												class="span" th:text="${producto.nombreProducto}"></span></li>
+											<li class="list-group-item detalles">Modelo: <span
+												class="span" th:text="${producto.modelo}"></span></li>
+											<li class="list-group-item detalles">Precio: $<span
+												class="span" th:text="${producto.precio}"></span></li>
+											<li class="list-group-item detalles">Descripcion: <span
+												class="span" th:text="${producto.descripcion}"></span></li>
+											<li class="list-group-item detalles">Garantia: <span
+												class="span" th:text="${producto.tiempoGarantia}"></span></li>
+											<li th:if="${producto.pdf!=null}" class="list-group-item detalles">Pdf: <a
+												th:href="@{'/uploads/'+${producto.pdf}}" target="_blank"><button
+														type="button" class="btn btn-info"
+														style="float-vertical: middle">
+														<span class="fa fa-file-pdf-o" aria-hidden="true"></span>
+													</button></a></li>
+										</ul>
 									</div>
 								</div>
 							</div>
-						
-				<div class="container py-4 col-md-14 box">
-		<div class="card bg-light">
-			<div class="card-body col-md-12">
-			<div class="row col-md-6">
-			<p class="listaproductp">IMAGEN 1 </p>
-			 </div>		
-			 <div class="row col-md-6">
-			 <p class="listaproductp">IMAGEN 2</p> 
-			 </div>
-			<div  class="row imagenes col-md-6">
-				<img th:if="${#strings.length(producto.imagen1)>0}" class="img-thumbnail rounded float-left img_detall"
-				     th:alt="${producto.imagen1}" 
-				     th:src="@{'/uploads/'+${producto.imagen1}} " /> 
-			 </div>
-			 <div  class="row imagenes col-md-6">
-			 <img  th:if="${#strings.length(producto.imagen2)>0}" class="img-thumbnail rounded float-left img_detall "
-					th:alt="${producto.imagen2}"
-					th:src="@{'/uploads/'+${producto.imagen2}}  "/>	
-			 </div>
-			
-			<div class="row col-md-10">
-					<ul style="list-style:none">
-                        <li class="list-group-item detalles">ID: <span class="span" th:text="${producto.idProdcutos}"></span></li>
-                        <li class="list-group-item detalles">Nombre: <span class="span" th:text="${producto.nombreProducto}"></span></li>
-                        <li class="list-group-item detalles">Modelo: <span class="span" th:text="${producto.modelo}"></span></li>
-                        <li class="list-group-item detalles">Precio: $<span class="span" th:text="${producto.precio}"></span></li>
-                        <li class="list-group-item detalles">Descripcion: <span class="span" th:text="${producto.descripcion}"></span></li>
-                        <li class="list-group-item detalles">Garantia: <span  class="span" th:text="${producto.tiempoGarantia}"></span></li>  
-                     </ul>
+							<br /> <a th:href="@{/Admin/listaProductosAdmin}"
+								class="btn btn-primary">Ok</a>
+						</div>
+					</div>
+				</div>
+				<!-- /.box-header -->
+				<!-- /.box -->
 			</div>
-			</div>
-		</div>
-		<br/>
-		<a th:href="@{/Admin/listaProductosAdmin}" class="btn btn-primary">Ok</a>	
-	</div>			
-	   </div>
+		</section>
 	</div>
-	<!-- /.box-header -->
-	<!-- /.box -->
-	</div>
-	</section>
-	</div>
-	
+
 	<th:block th:include="/admin/piePag"></th:block>
 </body>
 </html>

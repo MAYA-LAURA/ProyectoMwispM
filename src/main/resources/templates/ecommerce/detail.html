@@ -1,130 +1,147 @@
 <!DOCTYPE html  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" >
 <html xmlns:th="http://www.thymeleaf.org">
-<head>    
-    <meta name="robots" content="all,follow"/>
-    <meta name="googlebot" content="index,follow,snippet,archive"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="Obaju e-commerce template"/>
-    <meta name="author" content="Ondrej Svestka | ondrejsvestka.cz"/>
-    <meta name="keywords" content=""/>
-    <title>
-      MWM E-commerce
-    </title>
-    <meta name="keywords" content=""/>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'/>
-<!-- Estilos -->    
-    <link  th:href="@{/ecommerce/css/font-awesome.css}" rel="stylesheet"/>
-    <link  th:href="@{/ecommerce/css/font-awesome.min.css}" rel="stylesheet"/>
-    <link  th:href="@{/ecommerce/css/bootstrap.min.css}" rel="stylesheet"/>     
-    <link th:href="@{/ecommerce/css/animate.min.css}" rel="stylesheet"/>     
-    <link th:href="@{/ecommerce/css/owl.carousel.css}" rel="stylesheet"/>     
-    <link th:href="@{/ecommerce/css/owl.theme.css}" rel="stylesheet"/>        
+<head>
+<meta name="robots" content="all,follow" />
+<meta name="googlebot" content="index,follow,snippet,archive" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Obaju e-commerce template" />
+<meta name="author" content="Ondrej Svestka | ondrejsvestka.cz" />
+<meta name="keywords" content="" />
+<title>MWM E-commerce</title>
+<meta name="keywords" content="" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link
+	href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100'
+	rel='stylesheet' type='text/css' />
+<!-- Estilos -->
+<link th:href="@{/ecommerce/css/font-awesome.css}" rel="stylesheet" />
+<link th:href="@{/ecommerce/css/font-awesome.min.css}" rel="stylesheet" />
+<link th:href="@{/ecommerce/css/bootstrap.min.css}" rel="stylesheet" />
+<link th:href="@{/ecommerce/css/animate.min.css}" rel="stylesheet" />
+<link th:href="@{/ecommerce/css/owl.carousel.css}" rel="stylesheet" />
+<link th:href="@{/ecommerce/css/owl.theme.css}" rel="stylesheet" />
 
 <!-- CHECAR ESTA PARTE -->
-    <link  th:href="@{/ecommerce/css/style2.blue.css}" rel="stylesheet" id="theme-stylesheet"/>          
+<link th:href="@{/ecommerce/css/style2.blue.css}" rel="stylesheet"
+	id="theme-stylesheet" />
 </head>
 
 <body>
-  <th:block th:include="/ecommerce/encabezado"></th:block>  
-    <!-- *** NAVBAR END *** -->
-    <div id="all">
-        <div id="content">
-            <div class="container">
+	<th:block th:include="/ecommerce/encabezado"></th:block>
+	<!-- *** NAVBAR END *** -->
+	<div id="all">
+		<div id="content">
+			<div class="container">
 
-                <div class="col-md-12">
-                    <ul class="breadcrumb">
-                        <li><a th:href="@{/ecommerce/principal}">Inicio</a>
-                        </li>
-                        <li><a href="javascript:history.back();">Categoria</a>
-                        </li>
-                        <li><span th:text="${productoFind.nombreProducto}"></span></li>
-                    </ul>
-                </div>                                                    
-                <div class="col-md-12">
-                    <div class="row" id="productMain">
-                        <div class="col-sm-7 imag-detalles">
-                            <div id="mainImage" class="col-sm-5 img-thumbnail">
-                                <img  th:src="@{'/uploads/'+${productoFind.imagen1}}" class="img-responsive img-thumbnail img-detalles"  alt=""/>
-                            </div>
-                     		 <div class="col-sm-1"></div>
-                             <div id="mainImage" class="col-sm-5 img-thumbnail">
-                                <img  th:src="@{'/uploads/'+${productoFind.imagen2}}" class="img-responsive img-thumbnail img-detalles"  alt=""/>
-                            </div>
-                            <div class="ribbon new">
-<!--                                 <div class="theribbon">Nuevo</div> -->
-                                <div class="ribbon-background"></div>
-                            </div>
-                            <!-- /.ribbon -->
-                        </div>
-                        <div class="col-sm-5">
-                            <div class="box">
-                                <h3 class="text-center"><span th:text="${productoFind.descripcion}"></span></h3>   
-                                <h4 class="text-center">Modelo: <span  th:text="${productoFind.modelo}"></span></h4>                             
-                                <p class="price">$ <span th:text="${productoFind.precioMxm}"></span > MXM</p>
-                                
-<div class="formas-pago">        
-    <div class="row">                
-        <div class="col-sm-2"></div>
-        <div class="col-sm-2">
-            <img  th:src="@{/ecommerce/img/eleven.jpg}" class="img-responsive"  alt=""/>        
-        </div>
-        <div class="col-sm-2">
-        <img  th:src="@{/ecommerce/img/aurrera.png}" class="img-responsive"  alt=""/>
-        </div>
-        <div class="col-sm-2">
-        <img  th:src="@{/ecommerce/img/visa.jpg}" class="img-responsive"  alt=""/>
-        </div>
-        <div class="col-sm-2">
-        <img  th:src="@{/ecommerce/img/mastercard.jpg}" class="img-responsive"  alt=""/>
-        </div>        
-        <div class="col-sm-2"></div>
-    </div>        
-</div>             
-<hr/>                                                                                                    
-                  <p class="text-center buttons">
-                     <a th:href="@{|/ecommerce/comprarProducto?id=${productoFind.idProdcutos}|}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Agregar al carrito</a>                                     
-                  </p>
-                  </div>                          
-                            <hr></hr>                            
-                                                                                                                                      
-                        </div>
-                    </div>
-<!--                     <div class="box" id="details">              -->
-<!--                             <h4>Características generales</h4> -->
-<!-- 					<ul> -->
-<!--                         <li>Peso: 155g.</li> -->
-<!--                         <li>Altura de bracket: 143.5mm.</li> -->
-<!--                         <li>Base de bracket: 82mm X 58mm.</li> -->
-<!--                         <li>Movimiento del bracket ajustable.</li> -->
-<!--                         <li>Led indicador: Parpadeo cada 2 segundos.</li> -->
-<!--                         <li>Alimentación: 2 baterías AAA (no incluidas).</li>   -->
-<!--                      </ul> -->
-<!--                             <blockquote> -->
-<!--                                 <p><em>Especificaciones, Precios y Fotografías de los Productos: <hr></hr> -->
-<!-- 									Las especificaciones, características, funciones, cualidades, -->
-<!-- 									colores, precios, así como las fotografías son ciertas al momento  -->
-<!-- 									de la publicación, pero ocasionalmente hay ligeros cambios debido a la tecnología cambiante. -->
-<!-- 									Los precios finales están calculados con un 4% de descuento adicional tomando en cuenta que  -->
-<!-- 									el tipo de pago es a contado, ya sea en efectivo o con transferencia electrónica. El precio  -->
-<!-- 									del producto puede cambiar dependiendo de la forma de pago. Los precios publicados son precios sin IVA</em> -->
-<!--                                 </p> -->
-<!--                             </blockquote> -->
-<!--                     </div>                                    -->
-            </div>
-            </div>
-            </div>                                                       
-     <th:block th:include="/ecommerce/piePag"></th:block>        
-        </div>               
-    <!-- *** SCRIPTS TO INCLUDE ***
+				<div class="col-md-12">
+					<ul class="breadcrumb">
+						<li><a th:href="@{/ecommerce/principal}">Inicio</a></li>
+						<li><a href="javascript:history.back();">Categoria</a></li>
+						<li><span th:text="${productoFind.nombreProducto}"></span></li>
+					</ul>
+				</div>
+				<div class="col-md-12">
+					<div class="row" id="productMain">
+						<div class="col-sm-7 imag-detalles">
+							<div id="mainImage" class="col-sm-5 img-thumbnail">
+								<img th:src="@{'/uploads/'+${productoFind.imagen1}}"
+									class="img-responsive img-thumbnail img-detalles" alt="" />
+							</div>
+							<div class="col-sm-1"></div>
+							<div id="mainImage" class="col-sm-5 img-thumbnail">
+								<img th:src="@{'/uploads/'+${productoFind.imagen2}}"
+									class="img-responsive img-thumbnail img-detalles" alt="" />
+							</div>
+							<div class="ribbon new">
+								<!--                                 <div class="theribbon">Nuevo</div> -->
+								<div class="ribbon-background"></div>
+							</div>
+							<!-- /.ribbon -->
+						</div>
+						<div class="col-sm-5">
+							<div class="box">
+								<h3 class="text-center">
+									<span th:text="${productoFind.descripcion}"></span>
+								</h3>
+								<h4 class="text-center">
+									Modelo: <span th:text="${productoFind.modelo}"></span>
+								</h4>
+								<p class="price">
+									$ <span th:text="${productoFind.precioMxm}"></span> MXM
+								</p>
+
+								<div class="formas-pago">
+									<div class="row">
+										<div class="col-sm-2"></div>
+										<div class="col-sm-2">
+											<img th:src="@{/ecommerce/img/eleven.jpg}"
+												class="img-responsive" alt="" />
+										</div>
+										<div class="col-sm-2">
+											<img th:src="@{/ecommerce/img/aurrera.png}"
+												class="img-responsive" alt="" />
+										</div>
+										<div class="col-sm-2">
+											<img th:src="@{/ecommerce/img/visa.jpg}"
+												class="img-responsive" alt="" />
+										</div>
+										<div class="col-sm-2">
+											<img th:src="@{/ecommerce/img/mastercard.jpg}"
+												class="img-responsive" alt="" />
+										</div>
+										<div class="col-sm-2"></div>
+									</div>
+								</div>
+								<hr />
+								<p class="text-center buttons">
+									<a
+										th:href="@{|/ecommerce/comprarProducto?id=${productoFind.idProdcutos}|}"
+										class="btn btn-primary"><i class="fa fa-shopping-cart"></i>
+										Agregar al carrito</a>
+								</p>
+							</div>
+							<hr></hr>
+
+						</div>
+					</div>
+					<div class="box" id="details">
+						<h4>Características generales</h4>
+						<ul>
+							<li th:if="${productoFind.pdf!=null}"
+								class="list-group-item detalles">Pdf: <a
+								th:href="@{'/uploads/'+${productoFind.pdf}}" target="_blank"><button
+										type="button" class="btn btn-info"
+										style="float-vertical: middle">
+										<span class="fa fa-file-pdf-o" aria-hidden="true"></span>
+									</button></a></li>
+						</ul>
+						<blockquote>
+							<p>
+								<em>Especificaciones, Precios y Fotografías de los
+									Productos:
+									<hr></hr> Las especificaciones, características, funciones,
+									cualidades, colores, precios, así como las fotografías son
+									ciertas al momento de la publicación, pero ocasionalmente hay
+									ligeros cambios debido a la tecnología cambiante.
+								</em>
+							</p>
+						</blockquote>
+					</div>
+				</div>
+			</div>
+		</div>
+		<th:block th:include="/ecommerce/piePag"></th:block>
+	</div>
+	<!-- *** SCRIPTS TO INCLUDE ***
  _________________________________________________________ -->
-<script th:src="@{/ecommerce/js/jquery-1.11.0.min.js}"></script>     
-    <script th:src="@{/ecommerce/js/bootstrap.min.js}"></script>     
-    <script th:src="@{/ecommerce/js/jquery.cookie.js}"></script>     
-    <script th:src="@{/ecommerce/js/waypoints.min.js}"></script>     
-    <script th:src="@{/ecommerce/js/modernizr.js}"></script>     
-    <script th:src="@{/ecommerce/js/bootstrap-hover-dropdown.js}"></script>     
-    <script th:src="@{/ecommerce/js/owl.carousel.min.js}"></script>     
-    <script th:src="@{/ecommerce/js/front.js}"></script>
+	<script th:src="@{/ecommerce/js/jquery-1.11.0.min.js}"></script>
+	<script th:src="@{/ecommerce/js/bootstrap.min.js}"></script>
+	<script th:src="@{/ecommerce/js/jquery.cookie.js}"></script>
+	<script th:src="@{/ecommerce/js/waypoints.min.js}"></script>
+	<script th:src="@{/ecommerce/js/modernizr.js}"></script>
+	<script th:src="@{/ecommerce/js/bootstrap-hover-dropdown.js}"></script>
+	<script th:src="@{/ecommerce/js/owl.carousel.min.js}"></script>
+	<script th:src="@{/ecommerce/js/front.js}"></script>
 </body>
 </html>

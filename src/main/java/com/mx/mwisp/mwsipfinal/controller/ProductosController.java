@@ -41,7 +41,7 @@ public class ProductosController {
 	private static final Log LOG=LogFactory.getLog(ProductosController.class);
 	
 	private static final String ruta="uploads";
-	//private static final String ruta="/Users/maya/Desktop/uploads";
+		//private static final String ruta="/Users/maya/Desktop/uploads";
 	private static final String vistaProductoAdmin = "/ecommerce/productosAdmin";
 	@Autowired
 	@Qualifier("productoServiceImpl")
@@ -129,7 +129,33 @@ public class ProductosController {
 
 	@PostMapping("/addProducto")
 	public String agregarProductos(@ModelAttribute("prod") ProductoModel productoModel,	RedirectAttributes flass,
-			@RequestParam("file") MultipartFile imagen,@RequestParam("file2") MultipartFile imagen2) {
+			@RequestParam("file") MultipartFile imagen,@RequestParam("file2") MultipartFile imagen2,@RequestParam("file3")
+			MultipartFile pdf) {
+		//subida del pdf
+		if(!pdf.isEmpty()) {
+			//si ya existe el pdf lo elimina
+			if(productoModel.getPdf()!=null) {
+				Path rootPath3=Paths.get(ruta).resolve(productoModel.getPdf()).toAbsolutePath();
+				File archivo3=rootPath3.toFile();
+				if (archivo3.exists() && archivo3.canRead()) {
+					archivo3.delete();
+				 }
+			}
+//			String rootPatch="c://imagenes//uploads";  * esta es la ruta que se usa para agregar la configuracion en el paquete configuration
+			//en esta parte se genera un nombre unico para la imagen que se guarda en el sistema
+			String unicoNombre3=UUID.randomUUID().toString()+"_"+pdf.getOriginalFilename();
+			Path rootPatch3=Paths.get(ruta).resolve(unicoNombre3);
+			Path rootAbsolutPath3=rootPatch3.toAbsolutePath();
+			LOG.info("rootPatch"+rootPatch3);
+			LOG.info("rootAbsolutPath"+rootAbsolutPath3);
+			try {
+				Files.copy(pdf.getInputStream(), rootAbsolutPath3);
+				productoModel.setPdf(unicoNombre3);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
 		///si la imagen1 existe entonces guarda la imagen en el directorio c:/imagenes/uploads
 		if(!imagen.isEmpty()) {
 			//si ya existe una imagen la elimina
@@ -200,8 +226,10 @@ public class ProductosController {
 		 //falta cambiar la entity por un modelo 
 		 Path rootPath1=Paths.get(ruta).resolve(producto.getImagen1()).toAbsolutePath();
 		 Path rootPath2=Paths.get(ruta).resolve(producto.getImagen2()).toAbsolutePath();
+		 Path rootPath3=Paths.get(ruta).resolve(producto.getPdf()).toAbsolutePath();
 		 File archivo1=rootPath1.toFile();
 		 File archivo2=rootPath2.toFile();
+		 File archivo3=rootPath3.toFile();
 		 if (archivo1.exists() && archivo1.canRead()) {
 			 if(archivo1.delete()) {
 				 LOG.info("Imagen"+producto.getImagen1()+"eliminada");
@@ -210,6 +238,11 @@ public class ProductosController {
 		 if (archivo2.exists() && archivo2.canRead()) {
 			 if(archivo2.delete()) {
 				 LOG.info("Imagen"+producto.getImagen2()+"eliminada");
+			 }
+		 }
+		 if (archivo3.exists() && archivo3.canRead()) {
+			 if(archivo3.delete()) {
+				 LOG.info("Imagen"+producto.getPdf()+"eliminada");
 			 }
 		 }
 		 

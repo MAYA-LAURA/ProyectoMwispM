@@ -20,9 +20,10 @@ public class UploadConfig extends WebMvcConfigurerAdapter{
 		// TODO Auto-generated method stub
 		super.addResourceHandlers(registry);
 		Path rootBase=Paths.get("uploads").toAbsolutePath();
+		//Path rootBase2=Paths.get("uploads2").toAbsolutePath();
 		String resourcePath=Paths.get("uploads").toAbsolutePath().toUri().toString();	
-				//String resourcePath=Paths.get("/Users/maya/Desktop/uploads").toAbsolutePath().toUri().toString();
-				//LOG.info(resourcePath);
+		//String resourcePath2=Paths.get("uploads2").toAbsolutePath().toUri().toString();
+				
 		if(!Files.exists(rootBase)) {
 			try {
 				Files.createDirectories(rootBase);
@@ -32,9 +33,10 @@ public class UploadConfig extends WebMvcConfigurerAdapter{
 				e.printStackTrace();
 			}
 		}
-				
+						
 		registry.addResourceHandler("/uploads/**")
 		.addResourceLocations(resourcePath);
+		
 	}
 
 }
